@@ -1,15 +1,23 @@
 import os
-import sys
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 import pandas as pd
 import json
 from services.ResumeInfoExtraction import ResumeInfoExtraction
+from services.JobInfoExtraction import JobInfoExtraction
 from source.schemas.resumeextracted import ResumeExtractedModel
+from source.schemas.jobextracted import JobExtractedModel
 import ast
 from pypdf import PdfReader
-import warnings
+import warnings 
+import logging
+from cryptography.utils import CryptographyDeprecationWarning
+
+logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
+
+
 
 def get_resumes(directory):
     
@@ -49,7 +57,7 @@ def transform_dataframe_to_json(dataframe):
     return json_data
 
 
-def extraction(resume):
+def resume_extraction(resume):
     degrees_patterns_path = 'Resources/data/degrees.jsonl'
     majors_patterns_path = 'Resources/data/majors.jsonl'
     skills_patterns_path = 'Resources/data/skills.jsonl'
@@ -75,8 +83,41 @@ def extraction(resume):
     
     return jobs_json
 
+
+def job_info_extraction(resume):
+    degrees_patterns_path = 'Resources/data/degrees.jsonl'
+    majors_patterns_path = 'Resources/data/majors.jsonl'
+    skills_patterns_path = 'Resources/data/skills.jsonl'
+    jobs = resume
+    job_extraction = JobInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, jobs)
+    jobs = job_extraction.extract_entities(jobs)
+    for i, row in jobs.iterrows():
+        minimum_degree_level = jobs['Minimum degree level'][i]
+        acceptable_majors = jobs['Acceptable majors'][i]
+        skills = jobs['Skills'][i]
+
+        job_extracted = JobExtractedModel(minimum_degree_level=minimum_degree_level if minimum_degree_level else '',
+                                          acceptable_majors=acceptable_majors if acceptable_majors else [],
+                                          skills=skills if skills else [])
+        job_extracted = jsonable_encoder(job_extracted)
+        # new_job_extracted = database.get_collection("jobsextracted").insert_one(job_extracted)
+    jobs_json = transform_dataframe_to_json(jobs)
+    return jobs_json
+
 if __name__ == "__main__":
+    # Create DF for resumes
     df = get_resumes("resumes")
-    res = extraction(df)
+    res = resume_extraction(df)
     df = pd.read_json(res)
-    print(res)
+    print(df)
+
+    # Create DF for jobs
+    with open('job_descriptions/description.txt', 'r') as file:
+        job_description = file.read()
+
+    job_description = [job_description]
+    df2 = pd.DataFrame(job_description, columns=["raw"])
+    res = job_info_extraction(df2)
+    df2 = pd.read_json(res)
+    print(df2)
+    
