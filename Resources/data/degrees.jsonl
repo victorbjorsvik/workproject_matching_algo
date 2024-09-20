@@ -22,6 +22,7 @@
 {"label": "DEGREE|MS-LEVEL", "pattern": [{"LOWER": "master"}]}
 {"label": "DEGREE|MS-LEVEL", "pattern": [{"LOWER": "master's"}]}
 {"label": "DEGREE|MS-LEVEL", "pattern": [{"LOWER": "ms"}]}
+{"label": "DEGREE|MS-LEVEL", "pattern": [{"LOWER": "msc"}]}
 {"label": "DEGREE|MS-LEVEL", "pattern": [{"LOWER": "m.s"}]}
 {"label": "DEGREE|PHD-LEVEL", "pattern": [{"LOWER": "phd"}]}
 {"label": "DEGREE|PHD-LEVEL", "pattern": [{"LOWER": "ph.d"}]}
