@@ -11,11 +11,10 @@ import ast
 from pypdf import PdfReader
 import warnings 
 import logging
-from cryptography.utils import CryptographyDeprecationWarning
 
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
-warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
+
 
 
 

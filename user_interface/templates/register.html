@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Nova SBE Crypto Exchange</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-zmvONaEtH6XFvXQ5QjYzTEzU1f3AsqMrnQ11Pv1yJlXmHVznLtJTz8dpQxL5RFvVuXtMQDQyWJtFPQopC4v4Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/NovaSBE_Logo.svg/2560px-NovaSBE_Logo.svg.png"
+                alt="Nova Sbe Logo" class="logo">
+            <h1>NOVA SBE Crypto Exchange</h1>
+            <div class="login-link">
+                <a href="/login" class="login-button">
+                    <button class="login-button">Login</button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="register-container">
+        <div class="welcome-message">
+            <p>Let's get started! </p>
+        </div>
+        <h2>Create your account now 📝</h2>
+        <form action="/register" method="post">
+            <!-- Added action attribute -->
+            <div class="form-group">
+                <input autocomplete="off" id="username" name="username" placeholder="Username" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-password"></label>
+                <input id="password" name="password" placeholder="Password" type="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password"></label>
+                <input id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" required>
+            </div>
+            <button class="register-form-button" type="submit">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

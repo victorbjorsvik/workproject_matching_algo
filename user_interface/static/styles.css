@@ -1,0 +1,446 @@
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #3e3e3e;
+    color: white;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Aligns items to the start */
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 80px;
+    margin-right: 20px;
+    filter: invert(100%);
+}
+
+.register-link,
+.login-link,
+.logout {
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.register-link a,
+.login-link a,
+.logout {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-container,
+.register-container {
+    max-width: 400px;
+    margin: 100px auto 30px auto;
+    /* Increased top margin */
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.login-form-button,
+.register-form-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3e3e3e;
+    ;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form-button:hover,
+.register-form-button:hover {
+    background-color: #292828;
+    ;
+}
+
+.logout {
+    margin-left: auto;
+}
+
+.register-button,
+.login-button,
+.logout-button {
+    background-color: #e33e3e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-button:hover,
+.login-button:hover,
+.logout-button:hover {
+    background-color: #f00e0e;
+}
+
+/* Navigation styles */
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 15px 50px;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+}
+
+/* Main styles */
+main {
+    padding: 20px;
+}
+
+.hello-user {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    order: 1;
+}
+
+.balances {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Adjust as needed */
+}
+
+.balance-item {
+    background: #f8f8f8;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    margin: 0 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance-item h3 {
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.balance-item p {
+    color: #7d57c1;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Wide search bar */
+.wide-search {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.wide-search input[type="text"],
+.wide-search button {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.wide-search input[type="text"] {
+    flex: 1;
+    border: 1px solid #ccc;
+}
+
+.wide-search button {
+    background-color: #3e3e3e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wide-search button:hover {
+    background-color: #292828;
+}
+
+/* Price window styles */
+.price-window {
+    background-color: #eaeaea;
+    border: 1px solid #d3d3d3;
+    /* Thin gray border */
+    padding: 20px;
+    /* Padding around the text */
+    font-family: Arial, sans-serif;
+    /* Same font family as the table */
+    font-size: 16px;
+    /* Same font size as the table */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: calc(50% - 40px);
+    margin: 0 auto;
+    /* Center the box horizontally */
+    margin-top: 30px;
+}
+
+/* Table styling */
+.price-table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.price-table td {
+    padding: 5px;
+}
+
+.sell-button {
+    background-color: #e33e3e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.div-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    /* Adjust the gap between the divs as needed */
+}
+
+.left-div, .right-div {
+    flex-basis: 50%;
+    /* Adjust the width as needed, ensures both divs take up equal space */
+    /* Apply any common styling for these divs here */
+}
+
+/* Buy button styling */
+.buy-button {
+    background-color: #e33e3e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.buy-button:hover {
+    background-color: #f00e0e;
+}
+
+/* Container for specific content and charts */
+.specific-content {
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 60px);
+    box-sizing: border-box;
+}
+
+/* Styles for the table */
+.table-title {
+    margin-bottom: 40px;
+}
+
+#positions {
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#all-coins {
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.style-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Styles for the table header */
+.style-thead th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #3e3e3e;
+    color: white;
+}
+
+.style-thead th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.style-thead th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Styles for the table body */
+.style-tbody td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styles for alternate row colors */
+.style-tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for row hover */
+.style-tbody tr:hover {
+    background-color: #ddd;
+}
+
+.style-tbody th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.style-tbody td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.style-tbody th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.style-tbody td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.chart-container {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 60px);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    /* Adjust as per the desired spacing */
+    align-items: flex-start;
+    gap: 20px;
+    /* Optional: Use gap to add space between the boxes */
+}
+
+/* Chart box styles */
+.chart-box {
+    flex: 1;
+    max-width: calc(50% - 10px);
+    /* Adjust width as needed */
+    padding: 20px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+    flex: 1;
+    min-height: 400px;
+    /* Adjust as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chart-container {
+        flex-direction: column;
+    }
+
+    .chart-box {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 150px;
+    text-align: center;
+}
+
+.error-image {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.error-message,
+.error-code {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 1.5em;
+    /* Example size, adjust as needed */
+    color: #333;
+    /* Example color, adjust as needed */
+    margin: 20px 0;
+    /* Provide some spacing around the text */
+}
