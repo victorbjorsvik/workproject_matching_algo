@@ -15,6 +15,13 @@ import logging
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
+# Get the absolute path of the root directory
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+# Paths to your pattern files
+degrees_patterns_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'Resources', 'data', 'degrees.jsonl')
+majors_patterns_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'Resources', 'data', 'majors.jsonl')
+skills_patterns_path = os.path.join(ROOT_DIR, 'matching_algo_internal','Resources', 'data', 'skills.jsonl')
 
 
 
@@ -57,9 +64,6 @@ def transform_dataframe_to_json(dataframe):
 
 
 def resume_extraction(resume):
-    degrees_patterns_path = 'Resources/data/degrees.jsonl'
-    majors_patterns_path = 'Resources/data/majors.jsonl'
-    skills_patterns_path = 'Resources/data/skills.jsonl'
     jobs = resume
     names = transform_dataframe_to_json(jobs[["name"]])
     job_extraction = ResumeInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, jobs, names)
@@ -84,9 +88,6 @@ def resume_extraction(resume):
 
 
 def job_info_extraction(resume):
-    degrees_patterns_path = 'Resources/data/degrees.jsonl'
-    majors_patterns_path = 'Resources/data/majors.jsonl'
-    skills_patterns_path = 'Resources/data/skills.jsonl'
     jobs = resume
     job_extraction = JobInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, jobs)
     jobs = job_extraction.extract_entities(jobs)
@@ -111,12 +112,14 @@ if __name__ == "__main__":
     print(df)
 
     # Create DF for jobs
-    with open('job_descriptions/description.txt', 'r') as file:
+    # Create the full path to the 'description.txt' file
+    description_file_path = os.path.join(root_dir, 'job_descriptions', 'description.txt')
+    with open(description_file_path, 'r') as file:
         job_description = file.read()
+
 
     job_description = [job_description]
     df2 = pd.DataFrame(job_description, columns=["raw"])
     res = job_info_extraction(df2)
     df2 = pd.read_json(res)
-    print(df2)
     
