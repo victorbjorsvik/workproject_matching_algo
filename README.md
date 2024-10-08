@@ -35,3 +35,7 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
+### Acknowledgements
+Big thanks to Amira for letting us use [her code](https://github.com/amiradridi/Job-Resume-Matching) as a building block for our project:
+
