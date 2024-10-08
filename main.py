@@ -9,9 +9,29 @@ from source.schemas.resumeextracted import ResumeExtractedModel
 from source.schemas.jobextracted import JobExtractedModel
 import ast
 from pypdf import PdfReader
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+import ast
+#import openai
+import time
+import seaborn as sns
+import matplotlib.pyplot as plt
+import json
 import warnings 
 import logging
-
+import main
+import os
+import json
+import pandas as pd
+import pandas as pd
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+import ast
+#import openai
+import time
+import seaborn as sns
+import matplotlib.pyplot as plt
+import json
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
@@ -87,8 +107,7 @@ def resume_extraction(resume):
     return jobs_json
 
 
-def job_info_extraction(resume):
-    jobs = resume
+def job_info_extraction(jobs):
     job_extraction = JobInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, jobs)
     jobs = job_extraction.extract_entities(jobs)
     for i, row in jobs.iterrows():
@@ -100,9 +119,50 @@ def job_info_extraction(resume):
                                           acceptable_majors=acceptable_majors if acceptable_majors else [],
                                           skills=skills if skills else [])
         job_extracted = jsonable_encoder(job_extracted)
-        # new_job_extracted = database.get_collection("jobsextracted").insert_one(job_extracted)
     jobs_json = transform_dataframe_to_json(jobs)
     return jobs_json
+
+def calc_similarity(applicant_df, job_df):
+    """"Calculate cosine simlarity based on BERT embeddings of skills"""
+
+    def semantic_similarity_sbert_base_v2(job,resume):
+        """calculate similarity with SBERT all-mpnet-base-v2"""
+        model = SentenceTransformer('all-mpnet-base-v2')
+        #Encoding:
+        score = 0
+        sen = job+resume
+        sen_embeddings = model.encode(sen)
+        for i in range(len(job)):
+            if job[i] in resume:
+                score += 1
+            else:
+                max_cosine_sim = max(cosine_similarity([sen_embeddings[i]],sen_embeddings[len(job):])[0]) 
+                if max_cosine_sim >= 0.4:
+                    score += max_cosine_sim
+        score = score/len(job)  
+        return round(score,3)
+    
+    columns = ['applicant', 'job_id', 'all-mpnet-base-v2_score']
+    matching_dataframe = pd.DataFrame(columns=columns)
+    
+    for job_index in range(job_df.shape[0]):
+        columns = ['applicant', 'job_id', 'all-mpnet-base-v2_score']
+        matching_dataframe = pd.DataFrame(columns=columns)
+        ranking_dataframe = pd.DataFrame(columns=columns)
+        
+        matching_data = []
+        
+        for applicant_id in range(applicant_df.shape[0]):
+            matching_dataframe_job = {
+                "applicant": applicant_df.iloc[applicant_id, 0],
+                "job_id": job_index,
+                "all-mpnet-base-v2_score": semantic_similarity_sbert_base_v2(job_df['Skills'][job_index], applicant_df['Skills'][applicant_id])
+            }
+            matching_data.append(matching_dataframe_job)
+        
+        matching_dataframe = pd.concat([matching_dataframe, pd.DataFrame(matching_data)], ignore_index=True)
+    matching_dataframe['rank'] = matching_dataframe['all-mpnet-base-v2_score'].rank(ascending=False)
+    return matching_dataframe
 
 if __name__ == "__main__":
     # Create DF for resumes
@@ -113,7 +173,7 @@ if __name__ == "__main__":
 
     # Create DF for jobs
     # Create the full path to the 'description.txt' file
-    description_file_path = os.path.join(root_dir, 'job_descriptions', 'description.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'job_descriptions', 'description.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
 

@@ -7,10 +7,6 @@ External Recruiting
 {% block main %}
 <h1>External Recruiting</h1>
 <div>
-    <!-- [Content omitted for brevity] -->
-</div>
-
-<div>
     <h2>List of Candidates</h2>
     <ul>
         {% for applicant in applicants %}
@@ -30,11 +26,21 @@ External Recruiting
     </form>
 </div>
 
+<div>
+    <h2>Input Job Description</h2>
+    <form method="post" action="{{ url_for('ext_recruit') }}">
+        <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
+        <br>
+        <input type="submit" value="Save Job Description" class="action-button job-desc-button">
+    </form>
+</div>
+
 <!-- Run Analysis Button -->
 <div>
     <h2>Run Analysis</h2>
-    <form method="get" action="{{ url_for('ext_recruit') }}" id="analysis-form">
-        <button type="submit" name="analyze" value="1" class="action-button run-button" {% if not applicants %}disabled{% endif %}>Run Similarity Analysis</button>
+    <form method="post" action="{{ url_for('ext_recruit') }}" id="analysis-form">
+        <input type="hidden" name="action" value="run_analysis">
+        <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>Run Similarity Analysis</button>
     </form>
 </div>
 
@@ -47,29 +53,30 @@ External Recruiting
 <!-- Analysis Results -->
 <div>
     {% if analysis_data %}
-        <h2>Analysis Results</h2>
+        <h2>Applicants</h2>
         <table border="1">
+            <thead>
             <tr>
-                <th>Name</th>
-                <th>Degrees</th>
-                <th>Max Degree Level</th>
-                <th>Acceptable Majors</th>
-                <th>Skills</th>
+                {% for column in analysis_data_df.columns %}
+                <th>{{ column }}</th>
+                {% endfor %}
             </tr>
-            {% for item in analysis_data %}
-            <tr>
-                <td>{{ item.name or 'N/A' }}</td>
-                <td>{{ item.Degrees | join(', ') if item.Degrees else 'N/A' }}</td>
-                <td>{{ item['Maximum degree level'] or 'N/A' }}</td>
-                <td>{{ item['Acceptable majors'] | join(', ') if item['Acceptable majors'] else 'N/A' }}</td>
-                <td>{{ item.Skills | join(', ') if item.Skills else 'N/A' }}</td>
-            </tr>
-            {% endfor %}
+            </thead>
+            <tbody>
+                {% for index, row in analysis_data_df.iterrows() %}
+                    <tr>
+                        {% for item in row %}
+                    <td>{{ item }}</td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
         </table>
     {% else %}
         <p>No analysis data available.</p>
     {% endif %}
 </div>
+
 <!-- Clear All Results Button -->
 <div style="padding: 10px 0px;">
     <form method="post" action="{{ url_for('clear_results') }}" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
@@ -159,7 +166,28 @@ External Recruiting
         background-color: darkgreen;
     }
 
+        /* Styles for the Job Description button */
+        .job-desc-button {
+        background-color: #8e44ad; /* Purple color */
+    }
 
+    .job-desc-button:hover {
+        background-color: #71368a;
+    }
+
+    .job-desc-button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+    }
+
+    /* Styles for the textarea */
+    textarea {
+        width: 100%;
+        max-width: 600px;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+    }
 </style>
 {% endblock %}
 

@@ -138,45 +138,73 @@ def register():
 @login_required
 def ext_recruit():
     if request.method == 'POST':
-        # Get the list of uploaded files
-        files = request.files.getlist('files')
-        if not files or files[0].filename == '':
-            flash('No files selected')
-            return redirect(request.url)
-
-        for file in files:
-            if allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                file.save(upload_path)
-            else:
-                flash(f'File type not allowed: {file.filename}')
+        # Determine which form was submitted
+        if 'files' in request.files:
+            # Handle file uploads
+            files = request.files.getlist('files')
+            if not files or files[0].filename == '':
+                flash('No files selected')
                 return redirect(request.url)
 
-        flash('Files successfully uploaded')
-        return redirect(url_for('ext_recruit'))
+            for file in files:
+                if allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                    file.save(upload_path)
+                else:
+                    flash(f'File type not allowed: {file.filename}')
+                    return redirect(request.url)
 
-    else:
-        # Rest of the GET method remains the same
-        applicants = []
-        upload_folder = app.config['UPLOAD_FOLDER']
-        for file in os.listdir(upload_folder):
-            if file.endswith('.pdf'):
-                applicants.append(file)
-        
-        # Check if the user has requested to run the analysis
-        if request.args.get('analyze') == '1' and applicants:
+            flash('Files successfully uploaded')
+            return redirect(url_for('ext_recruit'))
+
+        elif 'job_description' in request.form:
+            # Handle job description submission
+            job_description = request.form['job_description']
+            session['job_description'] = job_description
+            flash('Job description saved')
+            return redirect(url_for('ext_recruit'))
+
+        elif request.form.get('action') == 'run_analysis':
+            # Handle running the analysis
+            job_description = session.get('job_description')
+            upload_folder = app.config['UPLOAD_FOLDER']
+            applicants = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
+
+            if not applicants:
+                flash('No applicants to analyze')
+                return redirect(url_for('ext_recruit'))
+
+            if not job_description:
+                flash('No job description provided')
+                return redirect(url_for('ext_recruit'))
+
+            # Extract Skills, Degrees, and Majors from resumes
             resumes = main.get_resumes(upload_folder)
             res = main.resume_extraction(resumes)
-            # Assuming res is a JSON string, parse it
-            analysis_data = json.loads(res)
-            # Remove 'raw' data
-            for applicant in analysis_data:
-                applicant.pop('raw', None)
-        else:
-            analysis_data = []
+            applicant_df = pd.read_json(res)
 
-        return render_template("ext_recruit.html", applicants=applicants, analysis_data=analysis_data)
+            # Extract skills, degrees, and majors from job description
+            jobs = pd.DataFrame([job_description], columns=["raw"])
+            jobs = main.job_info_extraction(jobs)
+            job_df = pd.read_json(jobs)
+
+            # Compare job description with applicants
+            analysis_data_df = main.calc_similarity(applicant_df, job_df).sort_values(by='rank')
+            analysis_data = analysis_data_df.to_dict(orient='records')
+
+            return render_template("ext_recruit.html", applicants=applicants, analysis_data=analysis_data, analysis_data_df=analysis_data_df)
+
+    else:
+        # Handle GET request
+        upload_folder = app.config['UPLOAD_FOLDER']
+        applicants = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
+        job_description = session.get('job_description', '')
+
+        # Initialize analysis_data as empty
+        analysis_data = []
+
+        return render_template("ext_recruit.html", applicants=applicants, analysis_data=analysis_data, job_description=job_description)
 
 
 

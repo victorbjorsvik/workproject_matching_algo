@@ -26,16 +26,30 @@
 
 
 
-### Installation
+### Setting up the conda venv
+First create a new conda environment for the project (e.g.)
 ```bash
-pip install -r requirements.txt
+conda create -n workproject
 ```
+Then activate the environment
+```bash
+conda activate workproject
+```
+Lastly config the environment with the config-file
+```bash
+conda env create -f environment.yml
+```
+Conda should now have set you up with all the necessary dependencies to run the project.
 
 ### Usage
+#### To run the flask application locally on your machine (first navigate to the user_interface directory)
 ```bash
-python main.py
+flask run
+```
+(or for debug mode)
+```bash
+python app.py
 ```
 
 ### Acknowledgements
 Big thanks to Amira for letting us use [her code](https://github.com/amiradridi/Job-Resume-Matching) as a building block for our project:
-
