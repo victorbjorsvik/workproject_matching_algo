@@ -10,6 +10,7 @@ from helpers import apology_login, login_required
 import main
 import pandas as pd
 import json
+import datetime
 
 # Configure application
 app = Flask(__name__)
@@ -26,6 +27,7 @@ def get_db():
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect(DATABASE)
+        db.execute('PRAGMA foreign_keys = ON;')
     return db
 
 @app.teardown_appcontext
@@ -181,13 +183,11 @@ def ext_recruit():
 
             # Extract Skills, Degrees, and Majors from resumes
             resumes = main.get_resumes(upload_folder)
-            res = main.resume_extraction(resumes)
-            applicant_df = pd.read_json(res)
+            applicant_df = main.resume_extraction(resumes)
 
             # Extract skills, degrees, and majors from job description
             jobs = pd.DataFrame([job_description], columns=["raw"])
-            jobs = main.job_info_extraction(jobs)
-            job_df = pd.read_json(jobs)
+            job_df = main.job_info_extraction(jobs)
 
             # Compare job description with applicants
             analysis_data_df = main.calc_similarity(applicant_df, job_df).sort_values(by='rank')

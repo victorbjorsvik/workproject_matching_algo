@@ -1,37 +1,20 @@
 import os
-from fastapi import FastAPI
-from fastapi.encoders import jsonable_encoder
 import pandas as pd
 import json
 from services.ResumeInfoExtraction import ResumeInfoExtraction
 from services.JobInfoExtraction import JobInfoExtraction
-from source.schemas.resumeextracted import ResumeExtractedModel
-from source.schemas.jobextracted import JobExtractedModel
-import ast
+from source.schemas.resumeextracted import ResumeExtractedModel # Let's reintroduce later on
+from source.schemas.jobextracted import JobExtractedModel # Let's reintroduce later on
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import ast
 #import openai
-import time
-import seaborn as sns
-import matplotlib.pyplot as plt
 import json
 import warnings 
 import logging
-import main
 import os
 import json
 import pandas as pd
-import pandas as pd
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-import ast
-#import openai
-import time
-import seaborn as sns
-import matplotlib.pyplot as plt
-import json
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
@@ -73,54 +56,21 @@ def get_resumes(directory):
     
     return df
 
-def transform_dataframe_to_json(dataframe):
 
-    # transforms the dataframe into json
-    result = dataframe.to_json(orient="records")
-    parsed = json.loads(result)
-    json_data = json.dumps(parsed, indent=4)
-
-    return json_data
-
-
-def resume_extraction(resume):
-    jobs = resume
-    names = transform_dataframe_to_json(jobs[["name"]])
-    job_extraction = ResumeInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, jobs, names)
-    jobs = job_extraction.extract_entities(jobs)
-    for i, row in jobs.iterrows():
-        name = row["name"]
-        degrees = jobs.loc[i, 'Degrees']
-        maximum_degree_level = jobs.loc[i, 'Maximum degree level']
-        acceptable_majors = jobs.loc[i, 'Acceptable majors']
-        skills = jobs.loc[i, 'Skills']
-        
-
-        job_extracted = ResumeExtractedModel(maximum_degree_level=maximum_degree_level if maximum_degree_level else '',
-                                          acceptable_majors=acceptable_majors if acceptable_majors else [],
-                                          skills=skills if skills else [],
-                                          name=name if name else '',
-                                          degrees=degrees if degrees else [])
-        job_extracted = jsonable_encoder(job_extracted)
-    jobs_json = transform_dataframe_to_json(jobs)
-    
-    return jobs_json
+def resume_extraction(resumes):
+    resumes = resumes.copy()
+    names = resumes[["name"]]
+    resume_extraction = ResumeInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, resumes, names)
+    resumes_df = resume_extraction.extract_entities(resumes)
+    return resumes_df
 
 
 def job_info_extraction(jobs):
+    jobs = jobs.copy()
     job_extraction = JobInfoExtraction(skills_patterns_path, majors_patterns_path, degrees_patterns_path, jobs)
-    jobs = job_extraction.extract_entities(jobs)
-    for i, row in jobs.iterrows():
-        minimum_degree_level = jobs['Minimum degree level'][i]
-        acceptable_majors = jobs['Acceptable majors'][i]
-        skills = jobs['Skills'][i]
+    job_df = job_extraction.extract_entities(jobs)
+    return job_df
 
-        job_extracted = JobExtractedModel(minimum_degree_level=minimum_degree_level if minimum_degree_level else '',
-                                          acceptable_majors=acceptable_majors if acceptable_majors else [],
-                                          skills=skills if skills else [])
-        job_extracted = jsonable_encoder(job_extracted)
-    jobs_json = transform_dataframe_to_json(jobs)
-    return jobs_json
 
 def calc_similarity(applicant_df, job_df):
     """"Calculate cosine simlarity based on BERT embeddings of skills"""
@@ -165,21 +115,18 @@ def calc_similarity(applicant_df, job_df):
     return matching_dataframe
 
 if __name__ == "__main__":
-    # Create DF for resumes
-    df = get_resumes("resumes")
-    res = resume_extraction(df)
-    df = pd.read_json(res)
-    print(df)
+    # Create DataFrame for resumes
+    df_resumes = get_resumes("resumes")
+    df_resumes = resume_extraction(df_resumes)
+    print(df_resumes)
 
-    # Create DF for jobs
-    # Create the full path to the 'description.txt' file
+    # Create DataFrame for jobs
     description_file_path = os.path.join(ROOT_DIR, 'job_descriptions', 'description.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
 
+    df_jobs = pd.DataFrame([job_description], columns=["raw"])
+    df_jobs = job_info_extraction(df_jobs)
+    print(df_jobs)
 
-    job_description = [job_description]
-    df2 = pd.DataFrame(job_description, columns=["raw"])
-    res = job_info_extraction(df2)
-    df2 = pd.read_json(res)
     
