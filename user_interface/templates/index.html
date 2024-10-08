@@ -1,9 +1,48 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    
+Home
 {% endblock %}
 
 {% block main %}
-<p class="hello-user"> 👋 Hello! Welcome to our AI job recruiter</p>
+<p class="hello-user">👋 Hello! Welcome to our AI job recruiter</p>
+<div class="image-container">
+    <img src="{{ url_for('static', filename='images/job_stealer.jpg') }}" alt="Job Stealer" />
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* Center the greeting text */
+    .hello-user {
+        text-align: center;
+        font-size: 1.5em;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    /* Center and scale the image */
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .image-container img {
+        width: 90%;
+        max-width: 600px; /* Adjust as needed */
+        height: auto;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .hello-user {
+            font-size: 1.2em;
+        }
+
+        .image-container img {
+            max-width: 100%;
+        }
+    }
+</style>
 {% endblock %}
