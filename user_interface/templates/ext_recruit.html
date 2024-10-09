@@ -53,29 +53,30 @@ External Recruiting
 <!-- Analysis Results -->
 <div>
     {% if analysis_data %}
-        <h2>Applicants</h2>
-        <table border="1">
+        <h2>Analysis Results</h2>
+        <table class="table table-striped">
             <thead>
-            <tr>
-                {% for column in analysis_data_df.columns %}
-                <th>{{ column }}</th>
-                {% endfor %}
-            </tr>
+                <tr>
+                    {% for column in columns %}
+                        <th>{{ column.replace('_', ' ').title() }}</th>
+                    {% endfor %}
+                </tr>
             </thead>
             <tbody>
-                {% for index, row in analysis_data_df.iterrows() %}
+                {% for row in analysis_data %}
                     <tr>
-                        {% for item in row %}
-                    <td>{{ item }}</td>
-                  {% endfor %}
-                </tr>
-              {% endfor %}
+                        {% for column in columns %}
+                            <td>{{ row[column] }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     {% else %}
         <p>No analysis data available.</p>
     {% endif %}
 </div>
+
 
 <!-- Clear All Results Button -->
 <div style="padding: 10px 0px;">

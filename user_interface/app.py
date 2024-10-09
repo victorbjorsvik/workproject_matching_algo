@@ -171,9 +171,9 @@ def ext_recruit():
             # Handle running the analysis
             job_description = session.get('job_description')
             upload_folder = app.config['UPLOAD_FOLDER']
-            applicants = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
+            applicant_files = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
 
-            if not applicants:
+            if not applicant_files:
                 flash('No applicants to analyze')
                 return redirect(url_for('ext_recruit'))
 
@@ -181,19 +181,120 @@ def ext_recruit():
                 flash('No job description provided')
                 return redirect(url_for('ext_recruit'))
 
-            # Extract Skills, Degrees, and Majors from resumes
-            resumes = main.get_resumes(upload_folder)
-            applicant_df = main.resume_extraction(resumes)
+            db = get_db()
+            cursor = db.cursor()
 
-            # Extract skills, degrees, and majors from job description
-            jobs = pd.DataFrame([job_description], columns=["raw"])
-            job_df = main.job_info_extraction(jobs)
+            # Step 1: Insert Job Posting into the Database
+            # Extract skills from the job description
+            df_jobs = pd.DataFrame([{'raw': job_description}])
+            df_jobs = main.job_info_extraction(df_jobs)
 
-            # Compare job description with applicants
-            analysis_data_df = main.calc_similarity(applicant_df, job_df).sort_values(by='rank')
-            analysis_data = analysis_data_df.to_dict(orient='records')
+            required_skills = df_jobs.loc[0, 'Skills']
+            required_skills_json = json.dumps(required_skills)
 
-            return render_template("ext_recruit.html", applicants=applicants, analysis_data=analysis_data, analysis_data_df=analysis_data_df)
+            # Insert job posting into the database
+            cursor.execute("""
+                INSERT INTO job_postings (job_description, required_skills)
+                VALUES (?, ?)
+            """, (job_description, required_skills_json))
+            job_id = cursor.lastrowid  # Get the job_id of the inserted job
+
+            # Step 2: Insert Applicants into the Database
+            # Extract applicant data
+            df_resumes = main.get_resumes(upload_folder)
+            df_resumes = main.resume_extraction(df_resumes)
+
+            for _, row in df_resumes.iterrows():
+                name = row.get('name', '')
+                contact_info = ''  # Update as needed
+                skills = row.get('Skills', [])
+                skills_json = json.dumps(skills)
+                degrees = row.get('Degrees', [])
+                degrees_json = json.dumps(degrees)
+
+                # Insert or update applicant in the database
+                cursor.execute("""
+                    INSERT OR REPLACE INTO applicants (name, contact_info, skills, degrees)
+                    VALUES (?, ?, ?, ?)
+                """, (name, contact_info, skills_json, degrees_json))
+
+            # Commit the inserts
+            db.commit()
+
+            # Step 3: Perform Similarity Analysis
+            # Fetch applicants and job required skills from the database
+            cursor.execute("SELECT applicant_id, name, skills FROM applicants")
+            applicants = cursor.fetchall()
+
+            # Prepare data for similarity analysis
+            applicant_skills_list = []
+            applicant_ids = []
+            applicant_names = []
+            for applicant in applicants:
+                applicant_id, name, skills_json = applicant
+                skills = json.loads(skills_json) if skills_json else []
+                applicant_skills_list.append(skills)
+                applicant_ids.append(applicant_id)
+                applicant_names.append(name)
+
+            required_skills = json.loads(required_skills_json)
+
+            # Perform similarity analysis
+            # Build DataFrames for applicants and job
+            df_applicants = pd.DataFrame({
+                'applicant_id': applicant_ids,
+                'name': applicant_names,
+                'Skills': applicant_skills_list
+            })
+
+            df_job = pd.DataFrame({
+                'job_id': [job_id],
+                'Skills': [required_skills]
+            })
+
+            # Calculate similarity
+            matching_dataframe = main.calc_similarity(df_applicants, df_job)
+            
+            ############################################################################
+            print(matching_dataframe)
+            ############################################################################
+
+
+            # Update applicants with similarity scores and ranks
+            for _, row in matching_dataframe.iterrows():
+                applicant_id = row['applicant']
+                similarity_score = row['all-mpnet-base-v2_score']
+                rank = int(row['rank'])
+                interview_status = 'Selected' if rank <= 5 else 'Not Selected'  # Adjust as needed
+
+                cursor.execute("""
+                    UPDATE applicants
+                    SET similarity_score = ?, rank = ?, interview_status = ?
+                    WHERE applicant_id = ?
+                """, (similarity_score, rank, interview_status, applicant_id))
+
+            # Commit the updates
+            db.commit()
+
+            # Step 4: Retrieve Ranked Applicants for Display
+            cursor.execute("""
+                SELECT name, similarity_score, rank, interview_status
+                FROM applicants
+                ORDER BY rank ASC
+            """)
+            ranked_applicants = cursor.fetchall()
+
+            # Prepare data for template
+            analysis_data = [{
+                'name': row[0],
+                'similarity_score': round(row[1], 3),
+                'rank': row[2],
+                'interview_status': row[3]
+            } for row in ranked_applicants]
+
+            columns = ['name', 'similarity_score', 'rank', 'interview_status']
+
+            return render_template("ext_recruit.html", applicants=applicant_files, analysis_data=analysis_data, columns=columns)
 
     else:
         # Handle GET request
@@ -213,16 +314,25 @@ def ext_recruit():
 def clear_results():
     """Clear uploaded files and analysis results."""
     upload_folder = app.config['UPLOAD_FOLDER']
+    db = get_db()
+    cursor = db.cursor()
     try:
         # Delete all files in the uploads directory
         for filename in os.listdir(upload_folder):
             file_path = os.path.join(upload_folder, filename)
             if os.path.isfile(file_path):
                 os.unlink(file_path)
+
+        # Clear database tables
+        cursor.execute("DELETE FROM applicants")
+        cursor.execute("DELETE FROM job_postings")
+        db.commit()
+
         flash('All uploaded files and results have been cleared.')
     except Exception as e:
         flash(f'An error occurred while clearing files: {e}')
     return redirect(url_for('ext_recruit'))
+
     
 
 @app.route("/uploads/<name>")
