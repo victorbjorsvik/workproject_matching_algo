@@ -22,9 +22,9 @@ warnings.filterwarnings("ignore")
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Paths to your pattern files
-degrees_patterns_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'Resources', 'data', 'degrees.jsonl')
-majors_patterns_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'Resources', 'data', 'majors.jsonl')
-skills_patterns_path = os.path.join(ROOT_DIR, 'matching_algo_internal','Resources', 'data', 'skills.jsonl')
+degrees_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'Resources', 'data', 'degrees.jsonl')
+majors_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'Resources', 'data', 'majors.jsonl')
+skills_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo','Resources', 'data', 'skills.jsonl')
 
 
 
