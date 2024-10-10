@@ -114,19 +114,23 @@ def calc_similarity(applicant_df, job_df):
     matching_dataframe['rank'] = matching_dataframe['all-mpnet-base-v2_score'].rank(ascending=False)
     return matching_dataframe
 
+
 if __name__ == "__main__":
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
-    print(df_resumes)
+    # print(df_resumes)
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'job_descriptions', 'description.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'job_descriptions', 'description.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
 
     df_jobs = pd.DataFrame([job_description], columns=["raw"])
     df_jobs = job_info_extraction(df_jobs)
-    print(df_jobs)
+    # print(df_jobs)
+
+    analysis_data_df = calc_similarity(df_resumes, df_jobs)
+    # print(analysis_data_df)
 
     

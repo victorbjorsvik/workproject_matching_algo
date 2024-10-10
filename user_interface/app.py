@@ -254,11 +254,6 @@ def ext_recruit():
 
             # Calculate similarity
             matching_dataframe = main.calc_similarity(df_applicants, df_job)
-            
-            ############################################################################
-            print(matching_dataframe)
-            ############################################################################
-
 
             # Update applicants with similarity scores and ranks
             for _, row in matching_dataframe.iterrows():
@@ -283,6 +278,11 @@ def ext_recruit():
                 ORDER BY rank ASC
             """)
             ranked_applicants = cursor.fetchall()
+
+
+            ############################################################
+            print(ranked_applicants)
+            ############################################################ 
 
             # Prepare data for template
             analysis_data = [{
