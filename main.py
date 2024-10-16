@@ -75,6 +75,7 @@ def calc_similarity(applicant_df, job_df):
     def semantic_similarity_sbert_base_v2(job,resume):
         """calculate similarity with SBERT all-mpnet-base-v2"""
         model = SentenceTransformer('all-mpnet-base-v2')
+        model.eval()
         #Encoding:
         score = 0
         sen = job+resume
@@ -116,10 +117,10 @@ if __name__ == "__main__":
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
-    # print(df_resumes)
+    print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'job_descriptions', 'description.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'description.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
 
@@ -128,6 +129,6 @@ if __name__ == "__main__":
     # print(df_jobs)
 
     analysis_data_df = calc_similarity(df_resumes, df_jobs)
-    # print(analysis_data_df)
+    print(analysis_data_df.sort_values("rank", ascending=True))
 
     
