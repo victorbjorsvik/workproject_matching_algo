@@ -280,9 +280,6 @@ def ext_recruit():
             ranked_applicants = cursor.fetchall()
 
 
-            ############################################################
-            print(ranked_applicants)
-            ############################################################ 
 
             # Prepare data for template
             analysis_data = [{

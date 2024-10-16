@@ -9,12 +9,9 @@ from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 #import openai
-import json
 import warnings 
 import logging
 import os
-import json
-import pandas as pd
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
