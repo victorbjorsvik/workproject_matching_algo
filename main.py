@@ -73,56 +73,65 @@ def job_info_extraction(jobs):
 
 
 def calc_similarity(applicant_df, job_df):
-    """"Calculate cosine simlarity based on BERT embeddings of skills"""
+    """Calculate cosine similarity based on BERT embeddings of combined skills."""
 
-    def semantic_similarity_sbert_base_v2(job,resume):
-        """calculate similarity with SBERT all-mpnet-base-v2"""
-        model = SentenceTransformer('all-mpnet-base-v2')
-        #Encoding:
-        score = 0
-        sen = job+resume
-        sen_embeddings = model.encode(sen)
-        for i in range(len(job)):
-            if job[i] in resume:
-                score += 1
-            else:
-                max_cosine_sim = max(cosine_similarity([sen_embeddings[i]],sen_embeddings[len(job):])[0]) 
-                if max_cosine_sim >= 0.4:
-                    score += max_cosine_sim
-        score = score/len(job)  
-        return round(score,3)
-    
+    # Initialize the model once outside the loop for efficiency
+    model = SentenceTransformer('all-mpnet-base-v2')
+    model.eval()
+
     columns = ['applicant', 'job_id', 'all-mpnet-base-v2_score']
     matching_dataframe = pd.DataFrame(columns=columns)
-    
+
     for job_index in range(job_df.shape[0]):
-        columns = ['applicant', 'job_id', 'all-mpnet-base-v2_score']
-        matching_dataframe = pd.DataFrame(columns=columns)
-        ranking_dataframe = pd.DataFrame(columns=columns)
-        
+        # Get the list of skills for the current job
+        job_skills = job_df['Skills'][job_index]
+        # Remove duplicates and sort the skills
+        job_skills = sorted(set(job_skills)) if isinstance(job_skills, list) else []
+        # Combine job skills into a single string
+        job_text = ' '.join(job_skills)
+
         matching_data = []
-        
+
         for applicant_id in range(applicant_df.shape[0]):
+            # Get applicant name and skills
+            applicant_name = applicant_df.iloc[applicant_id]['name']
+            applicant_skills = applicant_df['Skills'][applicant_id]
+            # Remove duplicates and sort the skills
+            applicant_skills = sorted(set(applicant_skills)) if isinstance(applicant_skills, list) else []
+            # Combine applicant skills into a single string
+            resume_text = ' '.join(applicant_skills)
+
+            # Encode the combined skills for job and applicant
+            embeddings = model.encode([job_text, resume_text])
+
+            # Compute cosine similarity between the job and applicant embeddings
+            score = cosine_similarity([embeddings[0]], [embeddings[1]])[0][0]
+
             matching_dataframe_job = {
-                "applicant": applicant_df.iloc[applicant_id, 0],
+                "applicant": applicant_name,
                 "job_id": job_index,
-                "all-mpnet-base-v2_score": semantic_similarity_sbert_base_v2(job_df['Skills'][job_index], applicant_df['Skills'][applicant_id])
+                "all-mpnet-base-v2_score": round(score, 3)
             }
             matching_data.append(matching_dataframe_job)
-        
+
+        # Append the matching data to the dataframe
         matching_dataframe = pd.concat([matching_dataframe, pd.DataFrame(matching_data)], ignore_index=True)
+
+    # Rank the applicants based on their similarity scores
     matching_dataframe['rank'] = matching_dataframe['all-mpnet-base-v2_score'].rank(ascending=False)
+
     return matching_dataframe
+
 
 
 if __name__ == "__main__":
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
-    # print(df_resumes)
+    print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'matching_algo_internal', 'job_descriptions', 'description.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'description.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
 
@@ -131,6 +140,6 @@ if __name__ == "__main__":
     # print(df_jobs)
 
     analysis_data_df = calc_similarity(df_resumes, df_jobs)
-    # print(analysis_data_df)
+    print(analysis_data_df.sort_values("rank", ascending=True ))
 
     
