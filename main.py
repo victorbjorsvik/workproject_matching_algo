@@ -131,7 +131,7 @@ if __name__ == "__main__":
     print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'description.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'job1.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
 

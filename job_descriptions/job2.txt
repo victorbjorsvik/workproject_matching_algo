@@ -1,0 +1,45 @@
+Junior Data Engineer
+At Capgemini Engineering, the world leader in engineering services, we bring together a global team of engineers, scientists, and architects to help the world’s most innovative companies unleash their potential. From autonomous cars to life-saving robots, our digital and software technology experts think outside the box as they provide unique R&D and engineering services across all industries. Join us for a career full of opportunities. Where you can make a difference. Where no two days are the same.
+
+YOUR ROLE
+Design, develop, and maintain scalable and efficient data-centric applications and systems.
+Collaborate with cross-functional teams to implement new features and enhancements in cloud environments like AWS, GCP, or Azure.
+Design, build, and optimize data pipelines ensuring reliability, scalability, and compliance with industry standards.
+Conduct thorough data analysis, modeling, and interpretation to drive insights and support decision-making processes.
+Create and maintain ELT/ETL processes, focusing on data quality, reliability, and efficiency.
+Evaluate, recommend, and implement improvements in data infrastructure and methodologies to reduce costs and enhance performance.
+Support ongoing AI & Analytics operations and systems, interpret trends
+Communicate findings, proposals, and technical solutions effectively to diverse stakeholders.
+Team work in a data-driven, solution oriented and critical mind-set is greatly encouraged and valued.
+Profiency in English is greatly valued
+
+YOUR PROFILE
+At least 2 years of experience in data engineering roles with expertise in building and maintaining data pipelines, systems, and applications.
+Proficient in data warehouse design, implementation, and optimization, leveraging ETL/ELT processes, schema modeling, and ensuring efficient data retrieval for analytical purposes.
+Proficient in at least programming/querying languages used for data engineering such as Python and SQL, NoSQLs, or similar languages.
+Knowledge and Hands-on experience either with cloud platforms (AWS, GCP, or Azure), or in Linux OS
+Strong understanding of data modeling, both SQL and NoSQL, with expertise in distributed systems design.
+Experience with big data technologies such as Spark or other distributed processing technologies
+Familiarity with tools for workflow orchestration such as Airflow
+Knowledge of data governance, metadata management, and best practices in ensuring data quality and compliance.
+Excellent communication skills and the ability to collaborate effectively in cross-functional teams.
+Analytical mindset, attention to detail, and problem-solving skills to address complex data challenges.
+Familiarity with Standard AI/ML processes &amp; operations is greatly valued.
+Degree in computer science, software engineering, or other engineering domains.
+Proficiency in English is mandatory. Additional languages are an advantage
+
+
+WHAT YOU'LL LOVE ABOUT WORKING HERE
+Join a multicultural and inclusive team environment.
+Enjoy a supportive atmosphere promoting work-life balance.
+Engage in exciting national and international projects.
+Hybrid work.
+Your career growth is central to our mission. Our array of career growth programs and diverse professionals are crafted to support you in exploring a world of opportunities.
+Training and certifications programs.
+Health and life insurance.
+Referral program with bonuses for talent recommendations.
+Great office locations.
+ABOUT CAPGEMINI
+Choosing Capgemini means choosing a company where you will be empowered to shape your career in the way you’d like, where you’ll be supported and inspired by a collaborative community of colleagues around the world, and where you’ll be able to reimagine what’s possible. Join us and help the world’s leading organizations unlock the value of technology and build a more sustainable, more inclusive world.
+
+Apply now!
