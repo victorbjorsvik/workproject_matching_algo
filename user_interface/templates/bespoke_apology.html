@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<p class="hello-user">Bespoke Apologies</p>
+    {% if losers %}
+    <div>
+        <h2>List of Losers:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Rank</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            {% for loser in losers %}
+            <tr>
+                <td>{{ loser[1] }}</td>
+                <td>{{ loser[5] | round(5, 'floor') }}</td>
+                <td>{{ loser[6] }}</td>
+                <td>{{ loser[3] }}</td>
+            </tr>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p>No analysis data available.</p>
+    {% endif %}
+
+
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}

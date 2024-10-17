@@ -72,7 +72,7 @@ def job_info_extraction(jobs):
     return job_df
 
 
-def calc_similarity(applicant_df, job_df):
+def calc_similarity(applicant_df, job_df, N=3):
     """Calculate cosine similarity based on BERT embeddings of combined skills."""
 
     # Initialize the model once outside the loop for efficiency
@@ -119,6 +119,7 @@ def calc_similarity(applicant_df, job_df):
 
     # Rank the applicants based on their similarity scores
     matching_dataframe['rank'] = matching_dataframe['all-mpnet-base-v2_score'].rank(ascending=False)
+    matching_dataframe['interview_status'] = matching_dataframe['rank'].apply(lambda x: 'Selected' if x <= N else 'Not Selected')
 
     return matching_dataframe
 

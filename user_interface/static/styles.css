@@ -5,7 +5,10 @@ body {
     padding: 0;
     background-color: #f8f8f8;
     overflow-x: hidden;
+
 }
+
+
 
 /* Header styles */
 header {
@@ -111,6 +114,23 @@ input[type="password"] {
 .login-button:hover,
 .logout-button:hover {
     background-color: #f00e0e;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Use the default text color for the link */
+    display: inline-block; /* Ensures the link wraps the entire content */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Vertically center the image and heading */
+}
+
+.logo-link h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px; /* Adjust the font size as needed */
 }
 
 /* Navigation styles */

@@ -222,51 +222,21 @@ def ext_recruit():
             db.commit()
 
             # Step 3: Perform Similarity Analysis
-            # Fetch applicants and job required skills from the database
-            cursor.execute("SELECT applicant_id, name, skills FROM applicants")
-            applicants = cursor.fetchall()
-
-            # Prepare data for similarity analysis
-            applicant_skills_list = []
-            applicant_ids = []
-            applicant_names = []
-            for applicant in applicants:
-                applicant_id, name, skills_json = applicant
-                skills = json.loads(skills_json) if skills_json else []
-                applicant_skills_list.append(skills)
-                applicant_ids.append(applicant_id)
-                applicant_names.append(name)
-
-            required_skills = json.loads(required_skills_json)
-
-            # Perform similarity analysis
-            # Build DataFrames for applicants and job
-            df_applicants = pd.DataFrame({
-                'applicant_id': applicant_ids,
-                'name': applicant_names,
-                'Skills': applicant_skills_list
-            })
-
-            df_job = pd.DataFrame({
-                'job_id': [job_id],
-                'Skills': [required_skills]
-            })
-
             # Calculate similarity
-            matching_dataframe = main.calc_similarity(df_applicants, df_job)
+            matching_dataframe = main.calc_similarity(df_resumes, df_jobs)
 
             # Update applicants with similarity scores and ranks
             for _, row in matching_dataframe.iterrows():
-                applicant_id = row['applicant']
+                name = row['applicant']
                 similarity_score = row['all-mpnet-base-v2_score']
                 rank = int(row['rank'])
-                interview_status = 'Selected' if rank <= 5 else 'Not Selected'  # Adjust as needed
+                interview_status = row['interview_status']
 
                 cursor.execute("""
                     UPDATE applicants
                     SET similarity_score = ?, rank = ?, interview_status = ?
-                    WHERE applicant_id = ?
-                """, (similarity_score, rank, interview_status, applicant_id))
+                    WHERE name = ?
+                """, (similarity_score, rank, interview_status, name))
 
             # Commit the updates
             db.commit()
@@ -278,11 +248,6 @@ def ext_recruit():
                 ORDER BY rank ASC
             """)
             ranked_applicants = cursor.fetchall()
-
-
-            ############################################################
-            print(ranked_applicants)
-            ############################################################ 
 
             # Prepare data for template
             analysis_data = [{
@@ -332,6 +297,29 @@ def clear_results():
     except Exception as e:
         flash(f'An error occurred while clearing files: {e}')
     return redirect(url_for('ext_recruit'))
+
+
+@app.route("/bespoke_apology", methods=["GET"])
+@login_required
+def bespoke_apology():
+    """ Endpoint for displaying the bespoke apologies for the applicants that didn't make it to the interviews """
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM applicants WHERE interview_status = 'Not Selected'")
+    losers = cursor.fetchall()
+
+    return render_template("bespoke_apology.html", losers=losers)
+
+@app.route("/tailored_interviews", methods=["GET"])
+@login_required
+def tailored_interviews():
+    """ Endpoint for displaying the tailored interviews for the applicants that made it to the interviews """
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM applicants WHERE interview_status = 'Selected'")
+    winners = cursor.fetchall()
+
+    return render_template("tailored_interviews.html", winners=winners)
 
     
 
