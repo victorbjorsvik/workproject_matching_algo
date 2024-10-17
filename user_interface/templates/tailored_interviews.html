@@ -6,32 +6,13 @@ Home
 
 {% block main %}
 <p class="hello-user">Tailored Interview Questions</p>
-    {% if winners %}
+    {% if response %}
     <div>
-        <h2>List of Winners:</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                    <th>Rank</th>
-                    <th>Skills</th>
-                </tr>
-            </thead>
-            {% for winner in winners %}
-            <tr>
-                <td>{{ winner[1] }}</td>
-                <td>{{ winner[5] | round(5, 'floor') }}</td>
-                <td>{{ winner[6] }}</td>
-                <td>{{ winner[3] }}</td>
-            </tr>
-            {% endfor %}
-        </ul>
+        {{ response | safe }}
     </div>
     {% else %}
     <p>No analysis data available.</p>
     {% endif %}
-
 
 {% endblock %}
 

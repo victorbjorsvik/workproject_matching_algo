@@ -314,12 +314,25 @@ def bespoke_apology():
 @login_required
 def tailored_interviews():
     """ Endpoint for displaying the tailored interviews for the applicants that made it to the interviews """
+    
+    # Fetch data
     db = get_db()
     cursor = db.cursor()
     cursor.execute("SELECT * FROM applicants WHERE interview_status = 'Selected'")
     winners = cursor.fetchall()
+    cursor.execute("SELECT required_skills FROM job_postings")
+    required_skills = cursor.fetchall()
+    if winners:
+        MODEL="gpt-4o-mini"
+        api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
 
-    return render_template("tailored_interviews.html", winners=winners)
+        # Retrieve tailored questions
+        response = main.tailored_questions(api_key, winners, required_skills, model=MODEL)
+    else:
+        response = []
+
+
+    return render_template("tailored_interviews.html", response=response)
 
     
 

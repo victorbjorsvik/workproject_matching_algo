@@ -8,13 +8,10 @@ from source.schemas.jobextracted import JobExtractedModel # Let's reintroduce la
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-#import openai
-import json
+from openai import OpenAI 
+import markdown
 import warnings 
 import logging
-import os
-import json
-import pandas as pd
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
@@ -123,6 +120,21 @@ def calc_similarity(applicant_df, job_df, N=3):
 
     return matching_dataframe
 
+def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini"):
+    client = OpenAI(api_key=api_key)
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates we want to interview for a job and we want to tailor interview questions to their skills."}, # <-- This is the system message that provides context to the model
+        {"role": "user", "content": f"Hello! Based on the following candidates: {applicants}, could you make a list of 5 interview questions for all of them based on their total pool of skills and how it relates to the skills required of the job - here: {required_skills} "}  # <-- This is the user message for which the model will generate a response
+    ]
+    )
+
+    markdown_output = completion.choices[0].message.content
+    html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
+
+    return html_output
+
 def bespoke_apologies():
     return None
 
@@ -131,18 +143,23 @@ if __name__ == "__main__":
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
-    print(df_resumes[["name", "Skills"]])
+    # print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
     description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'job1.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
-
     df_jobs = pd.DataFrame([job_description], columns=["raw"])
     df_jobs = job_info_extraction(df_jobs)
     # print(df_jobs)
 
+    # Conduct Similarity Analysis
     analysis_data_df = calc_similarity(df_resumes, df_jobs)
-    print(analysis_data_df.sort_values("rank", ascending=True ))
+    # print(analysis_data_df.sort_values("rank", ascending=True ))
 
-    
+    # Create tailored interview questions
+    # Set the API key and model name
+    MODEL="gpt-4o-mini"
+    api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+    output = tailored_questions(api_key, df_resumes, df_jobs['Skills'], model=MODEL)
+    print(output)
