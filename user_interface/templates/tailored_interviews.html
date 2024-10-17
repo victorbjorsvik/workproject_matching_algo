@@ -6,7 +6,7 @@ Home
 
 {% block main %}
 <p class="hello-user">Tailored Interview Questions</p>
-    {% if losers %}
+    {% if winners %}
     <div>
         <h2>List of Winners:</h2>
         <table>
@@ -18,12 +18,12 @@ Home
                     <th>Skills</th>
                 </tr>
             </thead>
-            {% for loser in losers %}
+            {% for winner in winners %}
             <tr>
-                <td>{{ loser[1] }}</td>
-                <td>{{ loser[5] | round(5, 'floor') }}</td>
-                <td>{{ loser[6] }}</td>
-                <td>{{ loser[3] }}</td>
+                <td>{{ winner[1] }}</td>
+                <td>{{ winner[5] | round(5, 'floor') }}</td>
+                <td>{{ winner[6] }}</td>
+                <td>{{ winner[3] }}</td>
             </tr>
             {% endfor %}
         </ul>

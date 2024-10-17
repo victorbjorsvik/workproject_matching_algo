@@ -123,6 +123,8 @@ def calc_similarity(applicant_df, job_df, N=3):
 
     return matching_dataframe
 
+def bespoke_apologies():
+    return None
 
 
 if __name__ == "__main__":

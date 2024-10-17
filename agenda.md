@@ -41,19 +41,22 @@ Back end:
 
 
 ## TODO:
-  * (PARADIGM) Rephrase our thinking: We are actually providing new value based on the skills-first approach. Argument derived from EDA and LR.
-  * (SYNTHETIC DATA & EVALUATION) Still need some way to evalute models - synthetic data is probably the way to go:
+  * **(PARADIGM)** Rephrase our thinking: We are actually providing new value based on the skills-first approach. Not creating the best possible matching algo based on traditional heurisitcs. Argument derived from EDA and LR.
+  * **(SYNTHETIC DATA & EVALUATION)** Still need some way to evalute models - synthetic data is probably the way to go:
          * Let's gather some job descriptions or CVs (REAL) to supplement the synthetic datset.
         PROS:
+
             * Accessibility, 
             * True skills-first paradigm
             * Tailored to our needs (format, labels, etc.)
             * Can add a column for quantifying the skills
             * Let's us make models with trainable parameters
         CONS:
+
             * Not real
-            * We will start modelling (or deciding) based on patterns already caåtured in the LLM
+            * We will start modelling (or deciding) based on patterns already captured in the LLM - why not just use the LLM
         Criteria:
+
             * COLUMNS: Job_id, Job_title, Job_description_skills, Job_description_skills_quantied, Resume_id, Resume_name, Resume_skills, Resume_skills_quantified 
         
         
