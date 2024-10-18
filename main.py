@@ -125,7 +125,7 @@ def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini
     completion = client.chat.completions.create(
     model=model,
     messages=[
-        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates we want to interview for a job and we want to tailor interview questions to their skills."}, # <-- This is the system message that provides context to the model
+        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates we want to interview for a job and we want to tailor interview questions to their skills. Note: to avoid bias we want the applicants to recieive the same questions"}, # <-- This is the system message that provides context to the model
         {"role": "user", "content": f"Hello! Based on the following candidates: {applicants}, could you make a list of 5 interview questions for all of them based on their total pool of skills and how it relates to the skills required of the job - here: {required_skills} "}  # <-- This is the user message for which the model will generate a response
     ]
     )
@@ -135,11 +135,24 @@ def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini
 
     return html_output
 
-def bespoke_apologies():
-    return None
+def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"):
+    client = OpenAI(api_key=api_key)
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates for a job, but unfortunately none of them made it to the first round of interviews."}, # <-- This is the system message that provides context to the model
+        {"role": "user", "content": f"""Hello! Based on the following candidates: {applicants}, could you make a bespoke aplogy letter to each of them and explain that their skills were not a 
+        prefect match with the required skills here:{required_skills}. For each of the applicants, please also provide them with some resources to improve the skills in which they are lacking so they have better chances in the next round of recruiting """}  # <-- This is the user message for which the model will generate a response
+    ]
+    )
+
+    markdown_output = completion.choices[0].message.content
+    html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
+
+    return html_output
 
 
-if __name__ == "__main__":
+def main(open_ai=False):
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
@@ -157,9 +170,20 @@ if __name__ == "__main__":
     analysis_data_df = calc_similarity(df_resumes, df_jobs)
     # print(analysis_data_df.sort_values("rank", ascending=True ))
 
-    # Create tailored interview questions
-    # Set the API key and model name
-    MODEL="gpt-4o-mini"
-    api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
-    output = tailored_questions(api_key, df_resumes, df_jobs['Skills'], model=MODEL)
-    print(output)
+    if open_ai:    
+        # Set the API key and model name
+        MODEL="gpt-4o-mini"
+        api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+
+        # Create tailored interview questions
+        tailored_questions = tailored_questions(api_key, df_resumes, df_jobs['Skills'], model=MODEL)
+        print(tailored_questions)
+
+        # Create bespoke apologies
+        bespoke_apologies = bespoke_apologies(api_key, df_resumes, df_jobs['Skills'], model=MODEL)
+        print(bespoke_apologies)
+
+
+if __name__ == "__main__":
+    main(open_ai=True)
+    

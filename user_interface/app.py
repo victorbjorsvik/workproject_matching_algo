@@ -299,18 +299,36 @@ def clear_results():
     return redirect(url_for('ext_recruit'))
 
 
-@app.route("/bespoke_apology", methods=["GET"])
+@app.route("/bespoke_apology", methods=["GET", "POST"])
 @login_required
 def bespoke_apology():
     """ Endpoint for displaying the bespoke apologies for the applicants that didn't make it to the interviews """
+    
+    # Fetch Data
     db = get_db()
     cursor = db.cursor()
     cursor.execute("SELECT * FROM applicants WHERE interview_status = 'Not Selected'")
     losers = cursor.fetchall()
+    cursor.execute("SELECT required_skills FROM job_postings")
+    required_skills = cursor.fetchall()
+    
 
-    return render_template("bespoke_apology.html", losers=losers)
+    if request.method == 'POST':
+        if losers:
+            MODEL="gpt-4o-mini"
+            api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
 
-@app.route("/tailored_interviews", methods=["GET"])
+            # Retrieve tailored questions
+            response = main.bespoke_apologies(api_key, losers, required_skills, model=MODEL)
+        else:
+            response = []
+        losers = []
+        required_skills = []
+        return render_template("bespoke_apology.html", losers=losers, response=response, required_skills=required_skills)
+    else:
+        return render_template("bespoke_apology.html", losers=losers, required_skills=required_skills)
+
+@app.route("/tailored_interviews", methods=["GET", "POST"])
 @login_required
 def tailored_interviews():
     """ Endpoint for displaying the tailored interviews for the applicants that made it to the interviews """
@@ -322,17 +340,22 @@ def tailored_interviews():
     winners = cursor.fetchall()
     cursor.execute("SELECT required_skills FROM job_postings")
     required_skills = cursor.fetchall()
-    if winners:
-        MODEL="gpt-4o-mini"
-        api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
 
-        # Retrieve tailored questions
-        response = main.tailored_questions(api_key, winners, required_skills, model=MODEL)
+
+    if request.method == 'POST':
+        if winners:
+            MODEL="gpt-4o-mini"
+            api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+
+            # Retrieve tailored questions
+            response = main.tailored_questions(api_key, winners, required_skills, model=MODEL)
+        else:
+            response = []
+        winners = []
+        required_skills = []
+        return render_template("tailored_interviews.html", winners=winners, response=response, required_skills=required_skills)
     else:
-        response = []
-
-
-    return render_template("tailored_interviews.html", response=response)
+        return render_template("tailored_interviews.html", winners=winners, required_skills=required_skills )
 
     
 
