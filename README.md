@@ -3,7 +3,6 @@
 
 ### Broad overview of the workflow and pipeline:
 * Datasets: {job descriptions, CVs}
-* Tokenization for both
 * Extract relevant skills using Spacy PhraseMatcher etc.
 * Matching rules (big job – dependent on which datasets we are using)
 * Embeddings (skill2Vec, BERT, etc.)
@@ -11,11 +10,8 @@
 
 
 ### Next steps:
-1. Job description (Curation, Cleaning, Tokenization)
-2. CVs (Curation, Cleaning, Tokenization)
-3. Extract relevant skills using Spacy PhraseMatcher etc.
-4. Copy / refine matching rules from previous work
-5. Embeddings (skill2Vec, BERT, etc.)
+1. Try to train a double encoder transformer architecture on synthetic data
+2. Fix database unique identifier issues
 
 
 ### CAVEATS:
@@ -27,19 +23,19 @@
 
 
 ### Setting up the conda venv
-First create a new conda environment for the project (e.g.)
-```bash
-conda create -n workproject
-```
-Then activate the environment
-```bash
-conda activate workproject
-```
-Lastly config the environment with the config-file
+
+Create the environment with the config-file
 ```bash
 conda env create -f environment.yml
 ```
-Conda should now have set you up with all the necessary dependencies to run the project.
+Conda should now have set you up with all the necessary dependencies to run the project. Please activate the environment:
+```bash
+conda activate workproject
+```
+You could also enable a jupyter-kernel if you want to use this environment in jupyter notebooks:
+```bash
+conda python -m ipykernel install --user --name workproject --display-name "workproject"
+```
 
 ### Usage
 #### To run the flask application locally on your machine (first navigate to the user_interface directory)

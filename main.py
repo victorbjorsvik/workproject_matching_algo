@@ -8,10 +8,10 @@ from source.schemas.jobextracted import JobExtractedModel # Let's reintroduce la
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-#import openai
+from openai import OpenAI 
+import markdown
 import warnings 
 import logging
-import os
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
@@ -69,66 +69,121 @@ def job_info_extraction(jobs):
     return job_df
 
 
-def calc_similarity(applicant_df, job_df):
-    """"Calculate cosine simlarity based on BERT embeddings of skills"""
+def calc_similarity(applicant_df, job_df, N=3):
+    """Calculate cosine similarity based on BERT embeddings of combined skills."""
 
-    def semantic_similarity_sbert_base_v2(job,resume):
-        """calculate similarity with SBERT all-mpnet-base-v2"""
-        model = SentenceTransformer('all-mpnet-base-v2')
-        model.eval()
-        #Encoding:
-        score = 0
-        sen = job+resume
-        sen_embeddings = model.encode(sen)
-        for i in range(len(job)):
-            if job[i] in resume:
-                score += 1
-            else:
-                max_cosine_sim = max(cosine_similarity([sen_embeddings[i]],sen_embeddings[len(job):])[0]) 
-                if max_cosine_sim >= 0.4:
-                    score += max_cosine_sim
-        score = score/len(job)  
-        return round(score,3)
-    
+    # Initialize the model once outside the loop for efficiency
+    model = SentenceTransformer('all-mpnet-base-v2')
+    model.eval()
+
     columns = ['applicant', 'job_id', 'all-mpnet-base-v2_score']
     matching_dataframe = pd.DataFrame(columns=columns)
-    
+
     for job_index in range(job_df.shape[0]):
-        columns = ['applicant', 'job_id', 'all-mpnet-base-v2_score']
-        matching_dataframe = pd.DataFrame(columns=columns)
-        ranking_dataframe = pd.DataFrame(columns=columns)
-        
+        # Get the list of skills for the current job
+        job_skills = job_df['Skills'][job_index]
+        # Remove duplicates and sort the skills
+        job_skills = sorted(set(job_skills)) if isinstance(job_skills, list) else []
+        # Combine job skills into a single string
+        job_text = ' '.join(job_skills)
+
         matching_data = []
-        
+
         for applicant_id in range(applicant_df.shape[0]):
+            # Get applicant name and skills
+            applicant_name = applicant_df.iloc[applicant_id]['name']
+            applicant_skills = applicant_df['Skills'][applicant_id]
+            # Remove duplicates and sort the skills
+            applicant_skills = sorted(set(applicant_skills)) if isinstance(applicant_skills, list) else []
+            # Combine applicant skills into a single string
+            resume_text = ' '.join(applicant_skills)
+
+            # Encode the combined skills for job and applicant
+            embeddings = model.encode([job_text, resume_text])
+
+            # Compute cosine similarity between the job and applicant embeddings
+            score = cosine_similarity([embeddings[0]], [embeddings[1]])[0][0]
+
             matching_dataframe_job = {
-                "applicant": applicant_df.iloc[applicant_id, 0],
+                "applicant": applicant_name,
                 "job_id": job_index,
-                "all-mpnet-base-v2_score": semantic_similarity_sbert_base_v2(job_df['Skills'][job_index], applicant_df['Skills'][applicant_id])
+                "all-mpnet-base-v2_score": round(score, 3)
             }
             matching_data.append(matching_dataframe_job)
-        
+
+        # Append the matching data to the dataframe
         matching_dataframe = pd.concat([matching_dataframe, pd.DataFrame(matching_data)], ignore_index=True)
+
+    # Rank the applicants based on their similarity scores
     matching_dataframe['rank'] = matching_dataframe['all-mpnet-base-v2_score'].rank(ascending=False)
+    matching_dataframe['interview_status'] = matching_dataframe['rank'].apply(lambda x: 'Selected' if x <= N else 'Not Selected')
+
     return matching_dataframe
 
+def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini"):
+    client = OpenAI(api_key=api_key)
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates we want to interview for a job and we want to tailor interview questions to their skills. Note: to avoid bias we want the applicants to recieive the same questions"}, # <-- This is the system message that provides context to the model
+        {"role": "user", "content": f"Hello! Based on the following candidates: {applicants}, could you make a list of 5 interview questions for all of them based on their total pool of skills and how it relates to the skills required of the job - here: {required_skills} "}  # <-- This is the user message for which the model will generate a response
+    ]
+    )
 
-if __name__ == "__main__":
+    markdown_output = completion.choices[0].message.content
+    html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
+
+    return html_output
+
+def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"):
+    client = OpenAI(api_key=api_key)
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates for a job, but unfortunately none of them made it to the first round of interviews."}, # <-- This is the system message that provides context to the model
+        {"role": "user", "content": f"""Hello! Based on the following candidates: {applicants}, could you make a bespoke aplogy letter to each of them and explain that their skills were not a 
+        prefect match with the required skills here:{required_skills}. For each of the applicants, please also provide them with some resources to improve the skills in which they are lacking so they have better chances in the next round of recruiting """}  # <-- This is the user message for which the model will generate a response
+    ]
+    )
+
+    markdown_output = completion.choices[0].message.content
+    html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
+
+    return html_output
+
+
+def main(open_ai=False):
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
-    print(df_resumes[["name", "Skills"]])
+    # print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'description.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'job1.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
-
     df_jobs = pd.DataFrame([job_description], columns=["raw"])
     df_jobs = job_info_extraction(df_jobs)
     # print(df_jobs)
 
+    # Conduct Similarity Analysis
     analysis_data_df = calc_similarity(df_resumes, df_jobs)
-    print(analysis_data_df.sort_values("rank", ascending=True))
+    # print(analysis_data_df.sort_values("rank", ascending=True ))
 
+    if open_ai:    
+        # Set the API key and model name
+        MODEL="gpt-4o-mini"
+        api_key=os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+
+        # Create tailored interview questions
+        tailored_questions = tailored_questions(api_key, df_resumes, df_jobs['Skills'], model=MODEL)
+        print(tailored_questions)
+
+        # Create bespoke apologies
+        bespoke_apologies = bespoke_apologies(api_key, df_resumes, df_jobs['Skills'], model=MODEL)
+        print(bespoke_apologies)
+
+
+if __name__ == "__main__":
+    main(open_ai=True)
     

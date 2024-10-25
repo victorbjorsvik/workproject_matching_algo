@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Bespoke Apologies
+{% endblock %}
+
+{% block main %}
+<p class="hello-user">Bespoke Apologies</p>
+    {% if losers %}
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Rank</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            {% for loser in losers %}
+            <tr>
+                <td>{{ loser[1] }}</td>
+                <td>{{ loser[5] | round(5, 'floor') }}</td>
+                <td>{{ loser[6] }}</td>
+                <td>{{ loser[3] }}</td>
+            </tr>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p>No analysis data available.</p>
+    {% endif %}
+<form method="post" action="{{ url_for('bespoke_apology') }}" id="analysis-form" class="analysis-form">
+    <input type="hidden" name="action" value="run_analysis">
+    <button type="submit" class="action-button run-button" {% if not losers or not required_skills %}disabled{% endif %}>Get Bepsoke Apologies</button>
+</form>
+
+<!-- Loading Spinner Overlay -->
+<div id="loading-overlay">
+    <div class="spinner"></div>
+    <p>Making bespoke apologies, please wait...</p>
+</div>
+
+
+    {% if response %}
+    <div>
+        {{ response | safe }}
+    </div>
+    {% else %}
+    <p>Run Analysis</p>
+    {% endif %}
+
+
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* Loading Overlay Styles */
+    #loading-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        text-align: center;
+        padding-top: 200px;
+    }
+
+    /* Spinner Styles */
+    .spinner {
+        margin: 0 auto 20px auto;
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    /* Spinner Animation */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Button Styles */
+    /* Base styles for all action buttons */
+    .action-button {
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .action-button:hover {
+        opacity: 0.9;
+    }
+
+    .action-button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+    }
+
+    /* Run Analysis Button */
+    .run-button {
+        background-color: blue;
+    }
+
+    .run-button:hover {
+        background-color: darkblue;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Show the loading overlay when the analysis form is submitted
+    document.getElementById('analysis-form').addEventListener('submit', function() {
+        document.getElementById('loading-overlay').style.display = 'block';
+    });
+</script>
+{% endblock %}

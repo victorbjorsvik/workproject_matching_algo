@@ -6,41 +6,52 @@ External Recruiting
 
 {% block main %}
 <h1>External Recruiting</h1>
-<div>
-    <h2>List of Candidates</h2>
-    <ul>
-        {% for applicant in applicants %}
-            <li>{{ applicant }}</li>
-        {% else %}
-            <li>No candidates uploaded.</li>
-        {% endfor %}
-    </ul>
+
+
+<!-- Candidates and Upload Section (Left) -->
+<div class="flex-container">
+    <div class="left-section">
+        <div>
+            <h2>List of Candidates</h2>
+            <ul>
+                {% for applicant in applicants %}
+                    <li>{{ applicant }}</li>
+                {% else %}
+                    <li>No candidates uploaded.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Upload Resumes Button -->
+        <div>
+            <h2>Upload Resumes</h2>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="files" multiple required>
+                <input type="submit" value="Upload" class="action-button upload-button">
+            </form>
+        </div>
+    </div>
+
+    <!-- Job Description Section (Right) -->
+    <div class="right-section">
+        <h2>Input Job Description</h2>
+        <form method="post" action="{{ url_for('ext_recruit') }}">
+            <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
+            <br>
+            <input type="submit" value="Save Job Description" class="action-button job-desc-button">
+        </form>
+    </div>
 </div>
 
-<!-- Upload Resumes Button -->
-<div>
-    <h2>Upload Resumes</h2>
-    <form method="post" enctype="multipart/form-data">
-        <input type="file" name="files" multiple required>
-        <input type="submit" value="Upload" class="action-button upload-button">
-    </form>
-</div>
-
-<div>
-    <h2>Input Job Description</h2>
-    <form method="post" action="{{ url_for('ext_recruit') }}">
-        <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
-        <br>
-        <input type="submit" value="Save Job Description" class="action-button job-desc-button">
-    </form>
-</div>
-
-<!-- Run Analysis Button -->
-<div>
-    <h2>Run Analysis</h2>
-    <form method="post" action="{{ url_for('ext_recruit') }}" id="analysis-form">
+<!-- Buttons Section (Run Analysis + Clear Results) -->
+<div class="buttons-container">
+    <form method="post" action="{{ url_for('ext_recruit') }}" id="analysis-form" class="analysis-form">
         <input type="hidden" name="action" value="run_analysis">
         <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>Run Similarity Analysis</button>
+    </form>
+
+    <form method="post" action="{{ url_for('clear_results') }}" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
+        <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>Clear All Results</button>
     </form>
 </div>
 
@@ -78,17 +89,42 @@ External Recruiting
 </div>
 
 
-<!-- Clear All Results Button -->
+<!-- Clear All Results Button 
 <div style="padding: 10px 0px;">
     <form method="post" action="{{ url_for('clear_results') }}" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
         <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>Clear All Results</button>
     </form>
 </div>
+-->
 
 {% endblock %}
 
 {% block styles %}
 <style>
+      /* Flexbox layout for left and right sections */
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .left-section,
+    .right-section {
+        width: 48%;
+    }
+
+    .left-section {
+        margin-right: 20px;
+    }
+
+    /* Buttons Container for Run Analysis and Clear Results */
+    .buttons-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px; /* Space between buttons */
+        margin-top: 20px;
+    }
     /* Loading Overlay Styles */
     #loading-overlay {
         display: none; /* Hidden by default */
