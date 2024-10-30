@@ -41,6 +41,16 @@ Tailored Questions
     <p>Making Tailored Interview Questions, please wait...</p>
 </div>
 
+    
+    {% if required_skills %}
+    <h3>
+        Required Skills:
+    </h3>
+    <div>
+        {{ required_skills[0][0] }}
+    </div>
+    {% endif %}
+
 
     {% if response %}
     <div>
@@ -49,6 +59,8 @@ Tailored Questions
     {% else %}
     <p>Run Analysis</p>
     {% endif %}
+
+
 
 {% endblock %}
 

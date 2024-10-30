@@ -30,6 +30,8 @@ Bespoke Apologies
     {% else %}
     <p>No analysis data available.</p>
     {% endif %}
+
+ 
 <form method="post" action="{{ url_for('bespoke_apology') }}" id="analysis-form" class="analysis-form">
     <input type="hidden" name="action" value="run_analysis">
     <button type="submit" class="action-button run-button" {% if not losers or not required_skills %}disabled{% endif %}>Get Bepsoke Apologies</button>
@@ -40,6 +42,15 @@ Bespoke Apologies
     <div class="spinner"></div>
     <p>Making bespoke apologies, please wait...</p>
 </div>
+
+    {% if required_skills %}
+    <h3>
+        Required Skills:
+    </h3>
+    <div>
+        {{ required_skills[0][0] }}
+    </div>
+    {% endif %}
 
 
     {% if response %}

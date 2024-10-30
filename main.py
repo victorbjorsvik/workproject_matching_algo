@@ -152,6 +152,12 @@ def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"
     return html_output
 
 
+
+
+######################################################################################
+###                                  SCRIPT                                        ###
+######################################################################################
+
 def main(open_ai=False):
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
