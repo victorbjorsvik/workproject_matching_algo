@@ -223,12 +223,15 @@ def ext_recruit():
 
             # Step 3: Perform Similarity Analysis
             # Calculate similarity
-            matching_dataframe = main.calc_similarity(df_resumes, df_jobs)
+            matching_dataframe = main.calc_similarity(df_resumes, df_job, parallel=True)
 
+
+
+            print(matching_dataframe)
             # Update applicants with similarity scores and ranks
             for _, row in matching_dataframe.iterrows():
-                name = row['applicant']
-                similarity_score = row['all-mpnet-base-v2_score']
+                name = row['name']
+                similarity_score = row['similarity_score']
                 rank = int(row['rank'])
                 interview_status = row['interview_status']
 
