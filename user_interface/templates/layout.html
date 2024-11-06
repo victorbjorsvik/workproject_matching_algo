@@ -37,36 +37,20 @@ footer {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); /* Center the modal */
-      background-color: #fefefe;
-      padding: 20px;
-      border: 1px solid #888;
+      background-color: #010101;
+      padding: 0px;
+      border: 1px solid #0a0a0a;
       text-align: center;
       max-width: 100%;
       max-height: 100%;
       overflow: auto; /* Enable scrolling within the modal if content overflows */
   }
 
-  /* The Close Button */
-  .close {
-      color: #aaa;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-  }
-
-  .close:hover,
-  .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-  }
+ 
 
   /* Easter Egg Image */
   .easter-egg-image {
-      max-width: 50%;
+      max-width: 40%;
       height: auto;
   }
 
@@ -147,8 +131,8 @@ footer {
     {% block main %}{% endblock %}
   </main>
  
-  <footer id="easter-egg-footer" style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: left;">
-    <p>&copy; 2024 NOVA SBE JobMatcher.ai</p>
+  <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: left;">
+    <p id="easter-egg-footer">&copy; 2024 NOVA SBE JobMatcher.ai</p>
 </footer>
 
  <!-- Easter Egg Modal -->
@@ -185,26 +169,17 @@ footer {
 
       // When the mouse enters the footer, open the modal
       footer.addEventListener('mouseenter', openModal);
+      
 
-      // When the user clicks on <span> (x), close the modal
-      span.addEventListener('click', closeModal);
+       // Add a timeout to close the modal after 1 second of mouse leaving the footer
+      footer.addEventListener('mouseleave', closeModal);
+      
 
       // Optional: Close the modal when clicking outside the modal content
       modal.addEventListener('click', function(event) {
         if (event.target === modal) {
           closeModal();
         }
-      });
-
-      // Add a timeout to close the modal after 1 second of mouse leaving the footer
-      var timeoutId;
-      footer.addEventListener('mouseleave', function() {
-        timeoutId = setTimeout(closeModal, 0);
-      });
-
-      // Cancel the timeout when the mouse enters the modal
-      modal.addEventListener('mouseenter', function() {
-        clearTimeout(timeoutId);
       });
     });
   </script>
