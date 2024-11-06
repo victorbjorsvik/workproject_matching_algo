@@ -181,6 +181,12 @@ def tailored_interviews():
         return render_template("tailored_interviews.html", winners=winners, response=response, required_skills=required_skills)
     else:
         return render_template("tailored_interviews.html", winners=winners, required_skills=required_skills)
+    
+@app.route("/fin_analysis")
+@login_required
+def fin_analysis():
+    """Run an analysis on how much it would cost to train an employee on lacking skills rather than hiring externally """
+    return render_template("fin_analysis.html")
 
 @app.route("/uploads/<name>")
 @login_required

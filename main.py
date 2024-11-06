@@ -77,7 +77,6 @@ def calc_similarity(applicant_df, job_df, N=3, parallel=False):
     job_embeddings = model.encode(job_df['Skills_Text'].tolist())
     # Precompute applicant embeddings
     applicant_df['Skills_Text'] = applicant_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
-    import code; code.interact(local=locals()) 
     applicant_embeddings = model.encode(
         applicant_df['Skills_Text'].tolist(),
         batch_size=32,
