@@ -21,8 +21,38 @@ def ext_recruit():
 
     # Initialize analysis_data as empty
     analysis_data = []
+    columns = []
 
-    return render_template("ext_recruit.html", applicants=applicants, analysis_data=analysis_data, job_description=job_description)
+    # Connect to the database
+    db = get_db()
+    cursor = db.cursor()
+
+    # Check if analysis results exist in the database
+    cursor.execute("""
+        SELECT name, similarity_score, rank, interview_status
+        FROM applicants
+        WHERE similarity_score IS NOT NULL
+        ORDER BY rank ASC
+    """)
+    ranked_applicants = cursor.fetchall()
+
+    if ranked_applicants:
+        # Prepare data for template
+        analysis_data = [{
+            'name': row[0],
+            'similarity_score': round(row[1], 3),
+            'rank': row[2],
+            'interview_status': row[3]
+        } for row in ranked_applicants]
+        columns = ['name', 'similarity_score', 'rank', 'interview_status']
+
+    return render_template(
+        "ext_recruit.html",
+        applicants=applicants,
+        analysis_data=analysis_data,
+        job_description=job_description,
+        columns=columns
+    )
 
 @recruitment_bp.route('/ext_recruit/upload_files', methods=['POST'])
 @login_required
