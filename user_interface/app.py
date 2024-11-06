@@ -223,11 +223,8 @@ def ext_recruit():
 
             # Step 3: Perform Similarity Analysis
             # Calculate similarity
-            matching_dataframe = main.calc_similarity(df_resumes, df_job, parallel=True)
+            matching_dataframe = main.calc_similarity(df_resumes, df_jobs, parallel=True)
 
-
-
-            print(matching_dataframe)
             # Update applicants with similarity scores and ranks
             for _, row in matching_dataframe.iterrows():
                 name = row['name']
