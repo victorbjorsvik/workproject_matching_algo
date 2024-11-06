@@ -199,7 +199,7 @@ footer {
       // Add a timeout to close the modal after 1 second of mouse leaving the footer
       var timeoutId;
       footer.addEventListener('mouseleave', function() {
-        timeoutId = setTimeout(closeModal, 1000);
+        timeoutId = setTimeout(closeModal, 0);
       });
 
       // Cancel the timeout when the mouse enters the modal
