@@ -10,6 +10,8 @@ import sqlite3
 from flask import Flask, flash, redirect, render_template, request, session, send_from_directory, g, url_for, current_app
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
+import tenacity
+from openai import OpenAIError 
 
 from helpers import apology_login, login_required, get_db
 import main
@@ -136,10 +138,16 @@ def bespoke_apology():
     if request.method == 'POST':
         if losers:
             MODEL = "gpt-4o-mini"
-            api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
 
-            # Retrieve bespoke apologies
-            response = main.bespoke_apologies(api_key, losers, required_skills, model=MODEL)
+            if session.get("user_id") == 1:
+                api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+            else:
+                api_key = request.form.get("password")
+            try:
+                response = main.bespoke_apologies(api_key, losers, required_skills, model=MODEL)
+            except tenacity.RetryError as e:
+                return apology_login("Need a valid OpenAI API Key", 403)
+    
         else:
             response = []
         losers = []
@@ -163,10 +171,17 @@ def tailored_interviews():
     if request.method == 'POST':
         if winners:
             MODEL = "gpt-4o-mini"
-            api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
 
-            # Retrieve tailored interview questions
-            response = main.tailored_questions(api_key, winners, required_skills, model=MODEL)
+            if session.get("user_id") == 1:
+                api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+            else:
+                api_key = request.form.get("password")
+            try:
+                # Retrieve tailored interview questions
+                response = main.tailored_questions(api_key, winners, required_skills, model=MODEL)
+            except tenacity.RetryError as e:
+                return apology_login("Need a valid OpenAI API Key", 403)
+ 
         else:
             response = []
         winners = []
@@ -175,11 +190,38 @@ def tailored_interviews():
     else:
         return render_template("tailored_interviews.html", winners=winners, required_skills=required_skills)
     
-@app.route("/fin_analysis")
+@app.route("/fin_analysis", methods=["GET", "POST"])
 @login_required
 def fin_analysis():
     """Run an analysis on how much it would cost to train an employee on lacking skills rather than hiring externally """
-    return render_template("fin_analysis.html")
+    if request.method == 'POST':
+
+        # wage = request.form.get("wage")
+        
+        # # Get the levels for each skill
+        # applicant_levels = {}
+        # required_levels = {}
+
+        # for skill in required_skills:
+        #     skill_id = skill[0]
+        #     applicant_level_key = f"applicant_level_{skill_id}"
+        #     required_level_key = f"required_level_{skill_id}"
+            
+        #     # Access applicant and required levels
+        #     applicant_level = request.form.get(applicant_level_key)
+        #     required_level = request.form.get(required_level_key)
+            
+        #     # Store them in dictionaries for later use
+        #     applicant_levels[skill_id] = int(applicant_level) if applicant_level else None
+        #     required_levels[skill_id] = int(required_level) if required_level else None
+        return render_template("hanna.html")
+    else:
+        # Fetch data
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM required_skills")
+        required_skills = cursor.fetchall()
+        return render_template("fin_analysis.html", required_skills=required_skills)
 
 @app.route("/uploads/<name>")
 @login_required

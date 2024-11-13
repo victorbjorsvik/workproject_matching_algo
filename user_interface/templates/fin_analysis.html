@@ -5,9 +5,86 @@ Financial Analysis
 {% endblock %}
 
 {% block main %}
-<p class="hello-user">👋 Let's See how much money you can save on internal recruiting</p>
+<p class="hello-user">👋 Let's see how much money you can save on internal recruiting</p>
+<form action="{{ url_for('fin_analysis') }}" method="post">
+    <div class="form-group">
+        <p>Wage:</p>
+        <label for="wage"></label>
+        <input class="form-control" autocomplete="off" id="wage" name="wage" placeholder="Hourly Wage" type="number">
+    </div>
+    <div>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Include</th>
+                    <th>Skill</th>
+                    <th>Applicant Level</th>
+                    <th>Required Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for skill in required_skills %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>
+                        <input type="checkbox" id="include_skill_{{ skill[0] }}" name="include_skill_{{ skill[0] }}" value="1">
+                    </td>
+                    <td>{{ skill[1] }}</td>
+                    <td>
+                        <select class="form-control" id="applicant_level_{{ skill[0] }}" name="applicant_level_{{ skill[0] }}" disabled>
+                            {% for i in range(1, 11) %}
+                            <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control" id="required_level_{{ skill[0] }}" name="required_level_{{ skill[0] }}" disabled>
+                            {% for i in range(1, 11) %}
+                            <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <button class="btn btn-primary login-form-button" type="submit">Run Analysis</button>
+</form>
 {% endblock %}
 
 {% block styles %}
+<style>
+    .hello-user {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .login-form-button {
+        margin-top: 1rem;
+    }
+</style>
+{% endblock %}
 
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        {% for skill in required_skills %}
+        var checkbox{{ skill[0] }} = document.getElementById('include_skill_{{ skill[0] }}');
+        var applicantLevel{{ skill[0] }} = document.getElementById('applicant_level_{{ skill[0] }}');
+        var requiredLevel{{ skill[0] }} = document.getElementById('required_level_{{ skill[0] }}');
+
+        checkbox{{ skill[0] }}.addEventListener('change', function() {
+            if (this.checked) {
+                applicantLevel{{ skill[0] }}.disabled = false;
+                requiredLevel{{ skill[0] }}.disabled = false;
+            } else {
+                applicantLevel{{ skill[0] }}.disabled = true;
+                requiredLevel{{ skill[0] }}.disabled = true;
+            }
+        });
+        {% endfor %}
+    });
+</script>
 {% endblock %}
