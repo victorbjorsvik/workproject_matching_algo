@@ -7,53 +7,82 @@ External Recruiting
 {% block main %}
 <h1>External Recruiting</h1>
 
+<!-- Wrap the main content in a content wrapper -->
+<div class="content-wrapper">
+    <!-- Candidates and Upload Section (Left) -->
+    <div class="flex-container">
+        <div class="left-section">
+            <div>
+                <h2>List of Candidates</h2>
+                <ul>
+                    {% for applicant in applicants %}
+                        <li>{{ applicant }}</li>
+                    {% else %}
+                        <li>No candidates uploaded.</li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-<!-- Candidates and Upload Section (Left) -->
-<div class="flex-container">
-    <div class="left-section">
-        <div>
-            <h2>List of Candidates</h2>
-            <ul>
-                {% for applicant in applicants %}
-                    <li>{{ applicant }}</li>
-                {% else %}
-                    <li>No candidates uploaded.</li>
-                {% endfor %}
-            </ul>
+            <!-- Upload Resumes Button -->
+            <div>
+                <h2>Upload Resumes</h2>
+                <form action="{{ url_for('recruitment.upload_files') }}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="files" multiple required>
+                    <input type="submit" value="Upload" class="action-button upload-button">
+                </form>
+            </div>
         </div>
 
-        <!-- Upload Resumes Button -->
-        <div>
-            <h2>Upload Resumes</h2>
-            <form action="{{ url_for('recruitment.upload_files') }}" method="post" enctype="multipart/form-data">
-                <input type="file" name="files" multiple required>
-                <input type="submit" value="Upload" class="action-button upload-button">
+        <!-- Job Description Section (Right) -->
+        <div class="right-section">
+            <h2>Input Job Description</h2>
+            <form method="post" action="{{ url_for('recruitment.submit_job_description') }}">
+                <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
+                <br>
+                <input type="submit" value="Save Job Description" class="action-button job-desc-button">
             </form>
         </div>
     </div>
 
-    <!-- Job Description Section (Right) -->
-    <div class="right-section">
-        <h2>Input Job Description</h2>
-        <form method="post" action="{{ url_for('recruitment.submit_job_description') }}">
-            <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
-            <br>
-            <input type="submit" value="Save Job Description" class="action-button job-desc-button">
+    <!-- Buttons Section (Run Analysis + Clear Results) -->
+    <div class="buttons-container">
+        <form method="post" action="{{ url_for('recruitment.run_analysis') }}" id="analysis-form" class="analysis-form">
+            <input type="hidden" name="action" value="run_analysis">
+            <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>Run Similarity Analysis</button>
+        </form>
+
+        <form method="post" action="{{ url_for('recruitment.clear_results') }}" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
+            <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>Clear All Results</button>
         </form>
     </div>
-</div>
 
-<!-- Buttons Section (Run Analysis + Clear Results) -->
-<div class="buttons-container">
-    <form method="post" action="{{ url_for('recruitment.run_analysis') }}" id="analysis-form" class="analysis-form">
-        <input type="hidden" name="action" value="run_analysis">
-        <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>Run Similarity Analysis</button>
-    </form>
-
-    <form method="post" action="{{ url_for('recruitment.clear_results') }}" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
-        <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>Clear All Results</button>
-    </form>
-</div>
+    <!-- Analysis Results -->
+    <div class="analysis-results">
+        {% if analysis_data %}
+            <h2>Analysis Results</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        {% for column in columns %}
+                            <th>{{ column.replace('_', ' ').title() }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in analysis_data %}
+                        <tr>
+                            {% for column in columns %}
+                                <td>{{ row[column] }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No analysis data available.</p>
+        {% endif %}
+    </div>
+</div> <!-- End of content-wrapper -->
 
 <!-- Loading Spinner Overlay -->
 <div id="loading-overlay">
@@ -61,42 +90,37 @@ External Recruiting
     <p>Running analysis, please wait...</p>
 </div>
 
-<!-- Analysis Results -->
-<div>
-    {% if analysis_data %}
-        <h2>Analysis Results</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    {% for column in columns %}
-                        <th>{{ column.replace('_', ' ').title() }}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in analysis_data %}
-                    <tr>
-                        {% for column in columns %}
-                            <td>{{ row[column] }}</td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>No analysis data available.</p>
-    {% endif %}
-</div>
-
-
-
 {% endblock %}
 
 {% block styles %}
 <style>
-      /* Flexbox layout for left and right sections */
-      .flex-container {
+    /* Reset default margins and paddings */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Ensure html and body take full height */
+    html, body {
+        height: 100%;
+    }
+
+    /* Content wrapper to push the footer to the bottom */
+    .content-wrapper {
+        min-height: calc(100vh - 100px); /* Adjust 100px to match your footer height */
+        padding: 20px;
+    }
+
+    /* Footer styles (assuming your footer is in layout.html) */
+    footer {
+        height: 40px; /* Adjust to your footer's actual height */
+    }
+
+    /* Flexbox layout for left and right sections */
+    .flex-container {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 20px;
@@ -114,10 +138,11 @@ External Recruiting
     /* Buttons Container for Run Analysis and Clear Results */
     .buttons-container {
         display: flex;
-        justify-content: flex-start;
+        flex-wrap: wrap;
         gap: 20px; /* Space between buttons */
         margin-top: 20px;
     }
+
     /* Loading Overlay Styles */
     #loading-overlay {
         display: none; /* Hidden by default */
@@ -158,6 +183,7 @@ External Recruiting
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .action-button:hover {
@@ -169,7 +195,7 @@ External Recruiting
         cursor: not-allowed;
     }
 
-    /* Clear All Results Button */
+    /* Specific Button Styles */
     .clear-button {
         background-color: red;
     }
@@ -178,7 +204,6 @@ External Recruiting
         background-color: darkred;
     }
 
-    /* Run Analysis Button */
     .run-button {
         background-color: blue;
     }
@@ -187,7 +212,6 @@ External Recruiting
         background-color: darkblue;
     }
 
-    /* Upload Button */
     .upload-button {
         background-color: green;
     }
@@ -196,18 +220,12 @@ External Recruiting
         background-color: darkgreen;
     }
 
-        /* Styles for the Job Description button */
-        .job-desc-button {
+    .job-desc-button {
         background-color: #8e44ad; /* Purple color */
     }
 
     .job-desc-button:hover {
         background-color: #71368a;
-    }
-
-    .job-desc-button:disabled {
-        background-color: grey;
-        cursor: not-allowed;
     }
 
     /* Styles for the textarea */
@@ -217,6 +235,43 @@ External Recruiting
         font-size: 16px;
         padding: 10px;
         margin-top: 10px;
+    }
+
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even){background-color: #f9f9f9;}
+
+    th {
+        background-color: #9aa19a;
+        color: white;
+    }
+
+    /* Responsive design for smaller screens */
+    @media screen and (max-width: 768px) {
+        .left-section,
+        .right-section {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .buttons-container {
+            flex-direction: column;
+        }
+
+        .action-button {
+            width: 100%;
+        }
     }
 </style>
 {% endblock %}
