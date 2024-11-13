@@ -72,11 +72,9 @@ def calc_similarity(applicant_df, job_df, N=3, parallel=False):
     model = SentenceTransformer('all-mpnet-base-v2')
     model.eval()
 
-
      # Precompute job embeddings
     job_df['Skills_Text'] = job_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
     job_embeddings = model.encode(job_df['Skills_Text'].tolist())
-
     # Precompute applicant embeddings
     applicant_df['Skills_Text'] = applicant_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
     applicant_embeddings = model.encode(
@@ -91,11 +89,7 @@ def calc_similarity(applicant_df, job_df, N=3, parallel=False):
 
     # Create a DataFrame from the similarity matrix
     similarity_df = pd.DataFrame(similarity_matrix.T, index=applicant_df['name'], columns=job_df.index)
-
-    # Melt the DataFrame to long format
     similarity_df = similarity_df.reset_index().melt(id_vars='name', var_name='job_id', value_name='similarity_score')
-
-    # Rank and select applicants
     similarity_df['rank'] = similarity_df.groupby('job_id')['similarity_score'].rank(ascending=False)
     similarity_df['interview_status'] = similarity_df['rank'].apply(lambda x: 'Selected' if x <= N else 'Not Selected')
 

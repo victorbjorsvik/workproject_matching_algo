@@ -33,6 +33,10 @@ Bespoke Apologies
 
  
 <form method="post" action="{{ url_for('bespoke_apology') }}" id="analysis-form" class="analysis-form">
+    <div class="form-group">
+        <label for="password"></label>
+        <input id="password" name="password" placeholder="OpenAI API Key" type="password">
+    </div>
     <input type="hidden" name="action" value="run_analysis">
     <button type="submit" class="action-button run-button" {% if not losers or not required_skills %}disabled{% endif %}>Get Bepsoke Apologies</button>
 </form>
