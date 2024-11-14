@@ -132,7 +132,7 @@ def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"
 ######################################################################################
 ###                                  SCRIPT                                        ###
 ######################################################################################
-import time
+import time # for benchmarking during code optimization
 
 
 def main(open_ai=False):

@@ -1,5 +1,3 @@
-# helpers.py
-
 from flask import redirect, render_template, session, g
 from functools import wraps
 import sqlite3
@@ -20,9 +18,9 @@ def apology_login(message, code=400):
     """Render message as an apology to user."""
     return render_template("apology_login.html", code=code, message=message), code
 
-def apology_home(message, code=400):
+def apology_openai(message, code=400):
     """Render message as an apology to user."""
-    return render_template("apology_home.html", code=code, message=message), code
+    return render_template("apology_openai.html", code=code, message=message), code
 
 def login_required(f):
     """

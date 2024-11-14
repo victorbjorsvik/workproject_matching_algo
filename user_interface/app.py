@@ -1,4 +1,3 @@
-# app.py
 import os
 import sys
 # Add the parent directory to sys.path
@@ -13,7 +12,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import tenacity
 from openai import OpenAIError 
 
-from helpers import apology_login, login_required, get_db
+from helpers import apology_login, apology_openai, login_required, get_db
 import main
 from main import get_resumes, resume_extraction, job_info_extraction, calc_similarity
 
@@ -146,7 +145,7 @@ def bespoke_apology():
             try:
                 response = main.bespoke_apologies(api_key, losers, required_skills, model=MODEL)
             except tenacity.RetryError as e:
-                return apology_login("Need a valid OpenAI API Key", 403)
+                return apology_openai("Need a valid OpenAI API Key", 403)
     
         else:
             response = []
@@ -180,7 +179,7 @@ def tailored_interviews():
                 # Retrieve tailored interview questions
                 response = main.tailored_questions(api_key, winners, required_skills, model=MODEL)
             except tenacity.RetryError as e:
-                return apology_login("Need a valid OpenAI API Key", 403)
+                return apology_openai("Need a valid OpenAI API Key", 403)
  
         else:
             response = []

@@ -70,23 +70,25 @@ Financial Analysis
 {% block scripts %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // @js-ignore
-        {% for skill in required_skills %}
+        // Get the required skills data from the template
+        var skills = {{ required_skills | tojson }}; 
 
-        var checkbox{{ skill[0] }} = document.getElementById('include_skill_{{ skill[0] }}');
-        var applicantLevel{{ skill[0] }} = document.getElementById('applicant_level_{{ skill[0] }}');
-        var requiredLevel{{ skill[0] }} = document.getElementById('required_level_{{ skill[0] }}');
+        skills.forEach(function(skill) {
+            var skillId = skill[0];
+            var checkbox = document.getElementById('include_skill_' + skillId);
+            var applicantLevel = document.getElementById('applicant_level_' + skillId);
+            var requiredLevel = document.getElementById('required_level_' + skillId);
 
-        checkbox{{ skill[0] }}.addEventListener('change', function() {
-            if (this.checked) {
-                applicantLevel{{ skill[0] }}.disabled = false;
-                requiredLevel{{ skill[0] }}.disabled = false;
-            } else {
-                applicantLevel{{ skill[0] }}.disabled = true;
-                requiredLevel{{ skill[0] }}.disabled = true;
-            }
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    applicantLevel.disabled = false;
+                    requiredLevel.disabled = false;
+                } else {
+                    applicantLevel.disabled = true;
+                    requiredLevel.disabled = true;
+                }
+            });
         });
-        {% endfor %}
     });
 </script>
 {% endblock %}
