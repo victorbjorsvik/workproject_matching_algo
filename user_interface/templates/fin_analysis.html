@@ -70,7 +70,9 @@ Financial Analysis
 {% block scripts %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // @js-ignore
         {% for skill in required_skills %}
+
         var checkbox{{ skill[0] }} = document.getElementById('include_skill_{{ skill[0] }}');
         var applicantLevel{{ skill[0] }} = document.getElementById('applicant_level_{{ skill[0] }}');
         var requiredLevel{{ skill[0] }} = document.getElementById('required_level_{{ skill[0] }}');
