@@ -8,7 +8,7 @@ from helpers import allowed_file, get_db, login_required
 from werkzeug.utils import secure_filename
 import json
 import pandas as pd
-import main  # Import your main module that contains processing functions
+import main 
 
 recruitment_bp = Blueprint('recruitment', __name__, template_folder='../templates')
 

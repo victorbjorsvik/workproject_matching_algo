@@ -23,8 +23,10 @@ skills_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo','Resou
 
 
 def get_resumes(directory):
+    """ Function to parse and extract text from PDFs in a directory """
     
     def extract_pdf(path):
+        """ Helper function to extract the text from the PDFs using the PyMuPDF library"""
         try:
             with fitz.open(path) as doc:
                 text = ''.join(page.get_text() for page in doc)
@@ -33,18 +35,20 @@ def get_resumes(directory):
             logging.error(f"Error processing {path}: {e}")
             return ""
 
-    
+    # initialize empty dictionary
     dic = {}
     
     # Iterate over all files in the directory
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
         
+        # Extract text from pdf if file is pdf
         if os.path.isfile(file_path) and filename.endswith(".pdf"):
             name = filename.rstrip(".pdf")
             resume_text = extract_pdf(file_path)
             dic[name] = [resume_text]
     
+    # Create a pandas dataframe from the parsed PDFs
     df = pd.DataFrame(dic).T
     df.reset_index(inplace=True)
     df.rename(columns={"index": "name", 0: "raw"}, inplace=True)
@@ -53,6 +57,7 @@ def get_resumes(directory):
 
 
 def resume_extraction(resumes):
+    """ function to extract the relevant skills from a resume """
     names = resumes[["name"]]
     resume_extraction = ResumeInfoExtraction(skills_patterns_path, names)
     resumes_df = resume_extraction.extract_entities(resumes)
@@ -60,6 +65,7 @@ def resume_extraction(resumes):
 
 
 def job_info_extraction(jobs):
+    """ function to extract the relevant skills from a job description """
     job_extraction = JobInfoExtraction(skills_patterns_path)
     job_df = job_extraction.extract_entities(jobs)
     return job_df
@@ -97,6 +103,7 @@ def calc_similarity(applicant_df, job_df, N=3, parallel=False):
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini"):
+    """ function to create tailored interview questions with openai api """
     client = OpenAI(api_key=api_key)
     completion = client.chat.completions.create(
     model=model,
@@ -113,6 +120,7 @@ def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"):
+    """ function to create bespoke apology letters with openai api """
     client = OpenAI(api_key=api_key)
     completion = client.chat.completions.create(
     model=model,
