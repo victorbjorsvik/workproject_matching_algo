@@ -169,3 +169,7 @@ resumes/
 # Picture of my favorite green-haired girl
 user_interface/static/easter_egg.png
 user_interface/static/hanna.png
+
+
+# glove embeddings
+glove.6B/
