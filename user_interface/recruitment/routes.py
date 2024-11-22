@@ -137,7 +137,7 @@ def run_analysis():
     db.commit()
 
     # Step 3: Perform Similarity Analysis
-    matching_dataframe = main.calc_similarity(df_resumes, df_jobs, parallel=True)
+    matching_dataframe = main.calc_similarity(df_resumes, df_jobs, N=5, parallel=True)
 
     # Update applicants with similarity scores and ranks
     for _, row in matching_dataframe.iterrows():
