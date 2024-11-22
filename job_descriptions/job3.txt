@@ -1,0 +1,28 @@
+Software Engineer II, Android, Microsoft, London
+
+Full job description
+Our SwiftKey app empowers millions of people globally to communicate faster and more effectively with cutting-edge AI capabilities. With your help we will be able to deliver our mission at speed without compromising the stability and reliability of this integral piece of software. You’ll join our Android team in London, where we’re focusing on building engaging content, services, experiences, and platforms for our users.
+As a Software Engineer II you will have ample opportunity both to use the skills you already have, and to learn and grow in the areas most important to you, in the company of a vibrant team of other curious and capable engineers. This position allows for flexible working, with the expectation that the team will be in the London office for about half the week.
+Microsoft’s mission is to empower every person and every organization on the planet to achieve more. As employees we come together with a growth mindset, innovate to empower others, and collaborate to realize our shared goals. Each day we build on our values of respect, integrity, and accountability to create a culture of inclusion where everyone can thrive at work and beyond.
+
+Responsibilities
+Solving technical problems to deliver great outcomes for our customers, team, and business.
+Coordinating the technical delivery of various projects undertaken by the team through our two-week sprints by facilitating collaboration through all stages of the project lifecycle.
+Partnering with other teams across geographies and time zones to ensure best practice is followed, and to develop automated processes and systems to mitigate risk in the development process.
+Using runtime analysis and data to be able to identify root causes of issues to work to improve our customer’s experiences.
+Helping colleagues be successful, by promoting and modelling best practices, sharing your knowledge, giving them space to shine, being an ally, and generally contributing to an inclusive and inspiring team culture that encourages all to demonstrate a growth mindset and bring their best selves to work.
+Participating in innovation and ideation sessions, and in the time set aside for learning
+Embrace team culture and values of Respect, Integrity, and Accountability.
+
+Qualifications
+
+Required Qualifications:
+Bachelor's Degree in Computer Science or related technical field AND technical engineering experience with coding in languages including, but not limited to, C, C++, C#, Java, JavaScript, or Python OR equivalent experience.
+
+Preferred Qualifications:
+Experience communicating effectively to both technical and non-technical collaborators and stakeholders.
+Experience in, or are excited to learn about automation techniques and evaluating data from a variety of sources to draw conclusions about the quality and stability of software and use this to inform approaches to improve identified measures over time, processes and methods used to drive quality improvements.
+Experience with building, debuging and maintaining consumer-facing Android apps through multiple versions. Comfortable with Kotlin and Java, as well as version control, code review, pair programming, unit testing, integration testing, work item tracking, prioritisation, and continuous integration/deployment.
+English fluency.
+
+Microsoft is an equal opportunity employer. Consistent with applicable law, all qualified applicants will receive consideration for employment without regard to age, ancestry, citizenship, color, family or medical care leave, gender identity or expression, genetic information, immigration status, marital status, medical condition, national origin, physical or mental disability, political affiliation, protected veteran or military status, race, ethnicity, religion, sex (including pregnancy), sexual orientation, or any other characteristic protected by applicable local laws, regulations and ordinances. If you need assistance and/or a reasonable accommodation due to a disability during the application process, read more about requesting accommodations.

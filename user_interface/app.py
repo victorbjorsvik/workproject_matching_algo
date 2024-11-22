@@ -14,7 +14,7 @@ from openai import OpenAIError
 
 from helpers import apology_login, apology_openai, login_required, get_db
 import main
-from main import get_resumes, resume_extraction, job_info_extraction, calc_similarity
+# from main import get_resumes, resume_extraction, job_info_extraction, calc_similarity
 
 # Import the blueprint from the recruitment package
 from recruitment import recruitment_bp
@@ -162,7 +162,10 @@ def tailored_interviews():
     # Fetch data
     db = get_db()
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM applicants WHERE interview_status = 'Selected'")
+    cursor.execute(
+        """SELECT * FROM applicants
+          WHERE interview_status = 'Selected'
+          ORDER BY RANK""")
     winners = cursor.fetchall()
     cursor.execute("SELECT required_skills FROM job_postings")
     required_skills = cursor.fetchall()

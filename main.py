@@ -5,13 +5,16 @@ from services.JobInfoExtraction import JobInfoExtraction
 from source.schemas.resumeextracted import ResumeExtractedModel # Let's reintroduce later on
 from source.schemas.jobextracted import JobExtractedModel # Let's reintroduce later on
 import fitz  # PyMuPDF
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 from sklearn.metrics.pairwise import cosine_similarity
 from openai import OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 import markdown
 import warnings 
 import logging
+import torch
+import torch.nn.functional as F
+
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
@@ -72,17 +75,27 @@ def job_info_extraction(jobs):
 
 
 def calc_similarity(applicant_df, job_df, N=3, parallel=False):
-    """Calculate cosine similarity based on BERT embeddings of combined skills."""
+    """Calculate cosine similarity based on MPNET embeddings of combined skills."""
 
     # Initialize the model once outside the loop for efficiency
     model = SentenceTransformer('all-mpnet-base-v2')
+    model.max_seq_length = 75
+    model.tokenizer.padding_side="right"
     model.eval()
 
-     # Precompute job embeddings
-    job_df['Skills_Text'] = job_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
-    job_embeddings = model.encode(job_df['Skills_Text'].tolist())
+    def add_eos(input_examples):
+        """ helper function to add special tokens between each skills"""
+        input_examples = [input_example + model.tokenizer.eos_token for input_example in input_examples]
+        return input_examples
+
+        # Precompute job embeddings
+    job_df['Skills_Text'] = job_df['Skills'].apply(add_eos)
+    job_df['Skills_Text'] = job_df['Skills_Text'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
+    job_embeddings = model.encode(
+        job_df['Skills_Text'].tolist())
     # Precompute applicant embeddings
-    applicant_df['Skills_Text'] = applicant_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
+    applicant_df['Skills_Text'] = applicant_df['Skills'].apply(add_eos)
+    applicant_df['Skills_Text'] = applicant_df['Skills_Text'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
     applicant_embeddings = model.encode(
         applicant_df['Skills_Text'].tolist(),
         batch_size=32,
@@ -98,6 +111,36 @@ def calc_similarity(applicant_df, job_df, N=3, parallel=False):
     similarity_df = similarity_df.reset_index().melt(id_vars='name', var_name='job_id', value_name='similarity_score')
     similarity_df['rank'] = similarity_df.groupby('job_id')['similarity_score'].rank(ascending=False)
     similarity_df['interview_status'] = similarity_df['rank'].apply(lambda x: 'Selected' if x <= N else 'Not Selected')
+
+    return similarity_df
+
+
+def calc_cross(applicant_df, job_df, N=3, parallel=False):
+    """ Use Cross Encoder to calculate similarity of combined skills."""
+
+    # Initialize the model once outside the loop for efficiency
+    model = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+
+     # Precompute job embeddings
+    job_df['Skills_Text'] = job_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
+    query = job_df['Skills_Text'][0]
+    # Precompute applicant embeddings
+    applicant_df['Skills_Text'] = applicant_df['Skills'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
+    applicants = applicant_df['Skills_Text'].tolist()
+
+    ranks = model.rank(
+        query,
+        applicants,
+        batch_size=32,
+        num_workers=os.cpu_count() // 2 if parallel else 0,
+        show_progress_bar=False
+    )
+
+    similarity_df = pd.DataFrame(ranks)
+    similarity_df['softmaxed'] = F.softmax(torch.tensor(similarity_df['score']))
+    similarity_df = similarity_df.join(applicant_df[["name"]], on="corpus_id")
+    
+    # similarity_df['interview_status'] = similarity_df.index.apply(lambda x: 'Selected' if x <= N else 'Not Selected')
 
     return similarity_df
 
@@ -148,19 +191,24 @@ def main(open_ai=False):
     # Create DataFrame for resumes
     df_resumes = get_resumes("resumes")
     df_resumes = resume_extraction(df_resumes)
-    print(df_resumes[["name", "Skills"]])
+    if not open_ai:
+        print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'job1.txt')
+    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'job2.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
     df_jobs = pd.DataFrame([job_description], columns=["raw"])
     df_jobs = job_info_extraction(df_jobs)
-    print(df_jobs)
+    if not open_ai:
+        print(df_jobs)
 
     # Conduct Similarity Analysis
-    analysis_data_df = calc_similarity(df_resumes, df_jobs, parallel=True)
-    print(analysis_data_df.sort_values("rank", ascending=True ))
+    analysis_data = calc_similarity(df_resumes, df_jobs, parallel=True)
+    analysis_data_df = calc_cross(df_resumes, df_jobs, parallel=True)
+    if not open_ai:
+        print(analysis_data)
+        print(analysis_data_df)
 
     t1 = time.time()
     dt = t1 - t0
