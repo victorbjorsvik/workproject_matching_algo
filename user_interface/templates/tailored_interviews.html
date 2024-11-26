@@ -130,6 +130,44 @@ Tailored Questions
         background-color: darkblue;
     }
 
+        /* Table Styling */
+        table {
+        width: 100%; /* Full width */
+        border-collapse: collapse; /* Remove space between cells */
+        margin: 20px 0; /* Add some space around the table */
+        font-size: 16px; /* Font size for better readability */
+        text-align: left; /* Left-align text */
+    }
+
+    table th, table td {
+        border: 1px solid #ddd; /* Add borders */
+        padding: 12px; /* Add padding inside cells */
+    }
+
+    table th {
+        background-color: #4CAF50; /* Header background color */
+        color: white; /* Header text color */
+        font-weight: bold; /* Bold header text */
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9; /* Light grey for even rows */
+    }
+
+    table tr:hover {
+        background-color: #f1f1f1; /* Highlight row on hover */
+    }
+
+    table td {
+        word-wrap: break-word; /* Wrap long content */
+        max-width: 300px; /* Restrict column width */
+    }
+
+    /* Add some spacing to the outer div for better presentation */
+    div {
+        margin: 20px;
+    }
+
 </style>
 
 {% endblock %}
