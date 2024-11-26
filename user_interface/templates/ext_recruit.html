@@ -44,17 +44,28 @@ External Recruiting
         </div>
     </div>
 
-    <!-- Buttons Section (Run Analysis + Clear Results) -->
+   <!-- Buttons Section (Run Analysis + Clear Results) -->
+   <form method="post" action="/ext_recruit/run_analysis" id="analysis-form" class="analysis-form">
+    <div class="input-group">
+        <label for="num_applicants">Number of applicants to proceed with:</label>
+        <input type="number" id="num_applicants" name="num_applicants" min="1" value="3" required>
+    </div>
     <div class="buttons-container">
-        <form method="post" action="{{ url_for('recruitment.run_analysis') }}" id="analysis-form" class="analysis-form">
-            <input type="hidden" name="action" value="run_analysis">
-            <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>Run Similarity Analysis</button>
+        <!-- Input Field and Run Analysis Button -->
+       
+            <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>
+                Run Analysis
+            </button>
         </form>
 
-        <form method="post" action="{{ url_for('recruitment.clear_results') }}" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
-            <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>Clear All Results</button>
+        <!-- Clear All Results Button -->
+        <form method="post" action="/ext_recruit/clear" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
+            <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>
+                Clear All Results
+            </button>
         </form>
     </div>
+
 
     <!-- Analysis Results -->
     <div class="analysis-results">
@@ -137,10 +148,31 @@ External Recruiting
 
     /* Buttons Container for Run Analysis and Clear Results */
     .buttons-container {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: row; /* Arrange items in a row */
+        align-items: center; /* Vertically align the buttons */
+        gap: 15px; /* Add spacing between the buttons */
+        margin-top: 20px; /* Add spacing above */
+        justify-content: flex-start; /* Align buttons to the left */
+    }
+
+        /* Input Group for Number of Applicants */
+    .input-group {
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px; /* Space between buttons */
-        margin-top: 20px;
+        align-items: center; /* Vertically align label and input */
+        gap: 10px; /* Space between label and input */
+    }
+
+    .input-group label {
+        font-size: 14px; /* Ensure label text size matches input size */
+    }
+
+    .input-group input {
+        width: 60px; /* Adjust input width */
+        height: 35px; /* Match button height */
+        padding: 5px;
+        font-size: 14px;
+        text-align: center; /* Center align the number */
     }
 
     /* Loading Overlay Styles */
@@ -177,6 +209,7 @@ External Recruiting
     /* Button Styles */
     /* Base styles for all action buttons */
     .action-button {
+        flex: none;
         color: white;
         padding: 10px 20px;
         border: none;
@@ -184,6 +217,10 @@ External Recruiting
         cursor: pointer;
         font-size: 16px;
         margin-bottom: 10px;
+        height: 40px; /* Consistent height */
+        max-width: 200px; /* Constrain width */
+        width: auto; /* Allow natural width */
+        
     }
 
     .action-button:hover {

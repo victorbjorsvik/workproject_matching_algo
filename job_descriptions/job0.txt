@@ -1,16 +1,9 @@
 Data Scientist
 Lisbon
 
-
-
-Apply on employer site
-
-
-Apply on employer site
 GROUP BNP PARIBAS
 
 Present in more than 30 countries, BNP Paribas Personal Finance leads the personal and consumer credit business. In some markets we are leaders, and we bet on innovation to open up new opportunities, in others we are a fast growing business. In all markets, we value relationships, knowledge sharing and responsible action.
-
 The analytical team uses state of the art data analytical and visualization techniques to solve business issues and uncover opportunities for BNP Paribas Person Finance. We design and develop our own ML engines, and we make them available to all PF geographies. We have vast amounts of data in the Bank, and we know that the value will come with robust and secure solutions deployed in production.
 
 ABOUT THE JOB

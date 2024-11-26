@@ -101,9 +101,20 @@ def run_analysis():
         flash('No job description provided')
         return redirect(url_for('recruitment.ext_recruit'))
 
+    # Retrieve the number of applicants from the form data
+    num_applicants_str = request.form.get('num_applicants', '3')
+    try:
+        num_applicants = int(num_applicants_str)
+        if num_applicants < 1:
+            num_applicants = 1
+    except ValueError:
+        flash('Invalid number of applicants. Using default value of 3.')
+        num_applicants = 3
+
     db = get_db()
     cursor = db.cursor()
 
+    # Rest of your code remains the same, but pass num_applicants to calc_similarity
     # Step 1: Insert Job Posting into the Database
     df_jobs = pd.DataFrame([{'raw': job_description}])
     df_jobs = main.job_info_extraction(df_jobs)
@@ -137,7 +148,7 @@ def run_analysis():
     db.commit()
 
     # Step 3: Perform Similarity Analysis
-    matching_dataframe = main.calc_similarity(df_resumes, df_jobs, N=5, parallel=True)
+    matching_dataframe = main.calc_similarity(df_resumes, df_jobs, N=num_applicants, parallel=True)
 
     # Update applicants with similarity scores and ranks
     for _, row in matching_dataframe.iterrows():
@@ -172,7 +183,15 @@ def run_analysis():
 
     columns = ['name', 'similarity_score', 'rank', 'interview_status']
 
-    return render_template("ext_recruit.html", applicants=applicant_files, analysis_data=analysis_data, job_description=job_description, columns=columns)
+    return render_template(
+        "ext_recruit.html",
+        applicants=applicant_files,
+        analysis_data=analysis_data,
+        job_description=job_description,
+        columns=columns,
+        num_applicants=num_applicants  # Pass num_applicants to template
+    )
+
 
 @recruitment_bp.route('/ext_recruit/clear', methods=['POST'])
 @login_required
