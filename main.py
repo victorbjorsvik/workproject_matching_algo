@@ -1,7 +1,7 @@
 import os
 import pandas as pd
-from services.ResumeInfoExtraction import ResumeInfoExtraction
-from services.JobInfoExtraction import JobInfoExtraction
+from extraction.ResumeInfoExtraction import ResumeInfoExtraction
+from extraction.JobInfoExtraction import JobInfoExtraction
 from source.schemas.resumeextracted import ResumeExtractedModel # Let's reintroduce later on
 from source.schemas.jobextracted import JobExtractedModel # Let's reintroduce later on
 import fitz  # PyMuPDF
@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore")
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Paths to your pattern files
-skills_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo','Resources', 'data', 'skills.jsonl')
+skills_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo','patterns', 'skills.jsonl')
 
 
 def get_resumes(directory):
@@ -205,10 +205,10 @@ def main(open_ai=False):
 
     # Conduct Similarity Analysis
     analysis_data = calc_similarity(df_resumes, df_jobs, parallel=True)
-    analysis_data_df = calc_cross(df_resumes, df_jobs, parallel=True)
+    # analysis_data_df = calc_cross(df_resumes, df_jobs, parallel=True)
     if not open_ai:
-        print(analysis_data)
-        print(analysis_data_df)
+        print(analysis_data.sort_values("rank"))
+        # print(analysis_data_df)
 
     t1 = time.time()
     dt = t1 - t0
