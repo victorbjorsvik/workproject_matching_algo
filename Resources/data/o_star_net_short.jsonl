@@ -1,0 +1,176 @@
+{"label": "SKILL|Microsoft Outlook", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "outlook"}]}
+{"label": "SKILL|Microsoft Outlook", "pattern": [{"LOWER": "outlook"}]}
+{"label": "SKILL|ESRI ArcGIS software", "pattern": [{"LOWER": "esri"}, {"LOWER": "arcgis"}, {"LOWER": "software"}]}
+{"label": "SKILL|ESRI ArcGIS software", "pattern": [{"LOWER": "esri"}, {"LOWER": "arcgis"}]}
+{"label": "SKILL|Microsoft Visual Basic for Applications VBA", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "visual"}, {"LOWER": "basic"}, {"LOWER": "for"}, {"LOWER": "applications"}, {"LOWER": "vba"}]}
+{"label": "SKILL|Microsoft Visual Basic for Applications VBA", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "vba"}]}
+{"label": "SKILL|Microsoft Visual Basic for Applications VBA", "pattern": [{"LOWER": "vba"}]}
+{"label": "SKILL|Microsoft Visual Basic for Applications VBA", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "visual"}, {"LOWER": "basic"}]}
+{"label": "SKILL|IBM WebSphere MQ", "pattern": [{"LOWER": "ibm"}, {"LOWER": "websphere"}, {"LOWER": "mq"}]}
+{"label": "SKILL|IBM WebSphere MQ", "pattern": [{"LOWER": "ibm"}, {"LOWER": "mq"}]}
+{"label": "SKILL|Autodesk AutoCAD", "pattern": [{"LOWER": "autodesk"}, {"LOWER": "autocad"}]}
+{"label": "SKILL|Autodesk AutoCAD", "pattern": [{"LOWER": "autocad"}]}
+{"label": "SKILL|Microsoft Windows Server", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "windows"}, {"LOWER": "server"}]}
+{"label": "SKILL|NoSQL", "pattern": [{"LOWER": "nosql"}]}
+{"label": "SKILL|NoSQL", "pattern": [{"LOWER": "no-sql"}]}
+{"label": "SKILL|NoSQL", "pattern": [{"LOWER": "no sql"}]}
+{"label": "SKILL|Oracle PL/SQL", "pattern": [{"LOWER": "oracle"}, {"LOWER": "pl"}, {"LOWER": "sql"}]}
+{"label": "SKILL|MongoDB", "pattern": [{"LOWER": "mongodb"}]}
+{"label": "SKILL|React", "pattern": [{"LOWER": "react"}]}
+{"label": "SKILL|React", "pattern": [{"LOWER": "react.js"}]}
+{"label": "SKILL|Microsoft Power BI", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "power"}, {"LOWER": "bi"}]}
+{"label": "SKILL|Microsoft Power BI", "pattern": [{"LOWER": "power"}, {"LOWER": "bi"}]}
+{"label": "SKILL|Microsoft Word", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "word"}]}
+{"label": "SKILL|C++", "pattern": [{"LOWER": "c++"}]}
+{"label": "SKILL|Canva", "pattern": [{"LOWER": "canva"}]}
+{"label": "SKILL|Microsoft SQL Server Integration Services SSIS", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "sql"}, {"LOWER": "server"}, {"LOWER": "integration"}, {"LOWER": "services"}, {"LOWER": "ssis"}]}
+{"label": "SKILL|Google Android", "pattern": [{"LOWER": "google"}, {"LOWER": "android"}]}
+{"label": "SKILL|Jenkins CI", "pattern": [{"LOWER": "jenkins"}, {"LOWER": "ci"}]}
+{"label": "SKILL|Figma", "pattern": [{"LOWER": "figma"}]}
+{"label": "SKILL|Bootstrap", "pattern": [{"LOWER": "bootstrap"}]}
+{"label": "SKILL|Google Analytics", "pattern": [{"LOWER": "google"}, {"LOWER": "analytics"}]}
+{"label": "SKILL|R", "pattern": [{"LOWER": "r"}]}
+{"label": "SKILL|SAS", "pattern": [{"LOWER": "sas"}]}
+{"label": "SKILL|Kronos Workforce Timekeeper", "pattern": [{"LOWER": "kronos"}, {"LOWER": "workforce"}, {"LOWER": "timekeeper"}]}
+{"label": "SKILL|C", "pattern": [{"LOWER": "c"}]}
+{"label": "SKILL|JavaScript", "pattern": [{"LOWER": "javascript"}]}
+{"label": "SKILL|JavaScript", "pattern": [{"LOWER": "js"}]}
+{"label": "SKILL|Epic Systems", "pattern": [{"LOWER": "epic"}, {"LOWER": "systems"}]}
+{"label": "SKILL|Microsoft PowerShell", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "powershell"}]}
+{"label": "SKILL|Microsoft PowerShell", "pattern": [{"LOWER": "powershell"}]}
+{"label": "SKILL|Border Gateway Protocol BGP", "pattern": [{"LOWER": "border"}, {"LOWER": "gateway"}, {"LOWER": "protocol"}, {"LOWER": "bgp"}]}
+{"label": "SKILL|GitHub", "pattern": [{"LOWER": "github"}]}
+{"label": "SKILL|Dassault Systemes SolidWorks", "pattern": [{"LOWER": "dassault"}, {"LOWER": "systemes"}, {"LOWER": "solidworks"}]}
+{"label": "SKILL|Autodesk Revit", "pattern": [{"LOWER": "autodesk"}, {"LOWER": "revit"}]}
+{"label": "SKILL|Go", "pattern": [{"LOWER": "go"}]}
+{"label": "SKILL|Microsoft SQL Server", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "sql"}, {"LOWER": "server"}]}
+{"label": "SKILL|Bentley MicroStation", "pattern": [{"LOWER": "bentley"}, {"LOWER": "microstation"}]}
+{"label": "SKILL|Autodesk AutoCAD Civil 3D", "pattern": [{"LOWER": "autodesk"}, {"LOWER": "autocad"}, {"LOWER": "civil"}, {"LOWER": "3d"}]}
+{"label": "SKILL|TensorFlow", "pattern": [{"LOWER": "tensorflow"}]}
+{"label": "SKILL|Oracle Database", "pattern": [{"LOWER": "oracle"}, {"LOWER": "database"}]}
+{"label": "SKILL|Microsoft PowerPoint", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "powerpoint"}]}
+{"label": "SKILL|Microsoft PowerPoint", "pattern": [{"LOWER": "powerpoint"}]}
+{"label": "SKILL|Amazon Web Services AWS software", "pattern": [{"LOWER": "amazon"}, {"LOWER": "web"}, {"LOWER": "services"}, {"LOWER": "aws"}, {"LOWER": "software"}]}
+{"label": "SKILL|Amazon Web Services AWS software", "pattern": [{"LOWER": "amazon"}, {"LOWER": "web"}, {"LOWER": "services"}, {"LOWER": "aws"}]}
+{"label": "SKILL|Amazon Web Services AWS software", "pattern": [{"LOWER": "amazon"}, {"LOWER": "web"}, {"LOWER": "services"}]}
+{"label": "SKILL|Amazon Web Services AWS software", "pattern": [{"LOWER": "aws"}]}
+{"label": "SKILL|JavaScript Object Notation JSON", "pattern": [{"LOWER": "javascript"}, {"LOWER": "object"}, {"LOWER": "notation"}, {"LOWER": "json"}]}
+{"label": "SKILL|JavaScript Object Notation JSON", "pattern": [{"LOWER": "json"}]}
+{"label": "SKILL|Microsoft Access", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "access"}]}
+{"label": "SKILL|Python", "pattern": [{"LOWER": "python"}]}
+{"label": "SKILL|Google Angular", "pattern": [{"LOWER": "google"}, {"LOWER": "angular"}]}
+{"label": "SKILL|Google Angular", "pattern": [{"LOWER": "angular"}]}
+{"label": "SKILL|Adobe Illustrator", "pattern": [{"LOWER": "adobe"}, {"LOWER": "illustrator"}]}
+{"label": "SKILL|Atlassian JIRA", "pattern": [{"LOWER": "atlassian"}, {"LOWER": "jira"}]}
+{"label": "SKILL|Red Hat Enterprise Linux", "pattern": [{"LOWER": "red"}, {"LOWER": "hat"}, {"LOWER": "enterprise"}, {"LOWER": "linux"}]}
+{"label": "SKILL|ServiceNow", "pattern": [{"LOWER": "servicenow"}]}
+{"label": "SKILL|jQuery", "pattern": [{"LOWER": "jquery"}]}
+{"label": "SKILL|Google Workspace software", "pattern": [{"LOWER": "google"}, {"LOWER": "workspace"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Windows", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "windows"}]}
+{"label": "SKILL|Microsoft Windows", "pattern": [{"LOWER": "windows"}]}
+{"label": "SKILL|Scala", "pattern": [{"LOWER": "scala"}]}
+{"label": "SKILL|IBM Terraform", "pattern": [{"LOWER": "ibm"}, {"LOWER": "terraform"}]}
+{"label": "SKILL|IBM Terraform", "pattern": [{"LOWER": "terraform"}]}
+{"label": "SKILL|Microsoft Azure software", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "azure"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Azure software", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "azure"}]}
+{"label": "SKILL|Microsoft Azure software", "pattern": [{"LOWER": "azure"}]}
+{"label": "SKILL|Docker", "pattern": [{"LOWER": "docker"}]}
+{"label": "SKILL|Amazon Simple Storage Service S3", "pattern": [{"LOWER": "amazon"}, {"LOWER": "simple"}, {"LOWER": "storage"}, {"LOWER": "service"}, {"LOWER": "s3"}]}
+{"label": "SKILL|Drupal", "pattern": [{"LOWER": "drupal"}]}
+{"label": "SKILL|Transact-SQL", "pattern": [{"LOWER": "transact"}, {"LOWER": "sql"}]}
+{"label": "SKILL|Adobe Creative Cloud software", "pattern": [{"LOWER": "adobe"}, {"LOWER": "creative"}, {"LOWER": "cloud"}, {"LOWER": "software"}]}
+{"label": "SKILL|Adobe After Effects", "pattern": [{"LOWER": "adobe"}, {"LOWER": "after"}, {"LOWER": "effects"}]}
+{"label": "SKILL|Vue.js", "pattern": [{"LOWER": "vue.js"}]}
+{"label": "SKILL|Vue.js", "pattern": [{"LOWER": "vue"}]}
+{"label": "SKILL|Zoom", "pattern": [{"LOWER": "zoom"}]}
+{"label": "SKILL|Tableau", "pattern": [{"LOWER": "tableau"}]}
+{"label": "SKILL|Microsoft Teams", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "teams"}]}
+{"label": "SKILL|Apple macOS", "pattern": [{"LOWER": "apple"}, {"LOWER": "macos"}]}
+{"label": "SKILL|Apple macOS", "pattern": [{"LOWER": "macos"}]}
+{"label": "SKILL|Alteryx software", "pattern": [{"LOWER": "alteryx"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Office software", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "office"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Office software", "pattern": [{"LOWER": "ms"}, {"LOWER": "office"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Office software", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "office"}]}
+{"label": "SKILL|Microsoft Office software", "pattern": [{"LOWER": "ms"}, {"LOWER": "office"}]}
+{"label": "SKILL|Hypertext markup language HTML", "pattern": [{"LOWER": "hypertext"}, {"LOWER": "markup"}, {"LOWER": "language"}, {"LOWER": "html"}]}
+{"label": "SKILL|Hypertext markup language HTML", "pattern": [{"LOWER": "html"}]}
+{"label": "SKILL|Extensible markup language XML", "pattern": [{"LOWER": "extensible"}, {"LOWER": "markup"}, {"LOWER": "language"}, {"LOWER": "xml"}]}
+{"label": "SKILL|Extensible markup language XML", "pattern": [{"LOWER": "xml"}]}
+{"label": "SKILL|Amazon Redshift", "pattern": [{"LOWER": "amazon"}, {"LOWER": "redshift"}]}
+{"label": "SKILL|Amazon Redshift", "pattern": [{"LOWER": "redshift"}]}
+{"label": "SKILL|Microsoft Active Directory", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "active"}, {"LOWER": "directory"}]}
+{"label": "SKILL|Microsoft Active Directory", "pattern": [{"LOWER": "active"}, {"LOWER": "directory"}]}
+{"label": "SKILL|IBM SPSS Statistics", "pattern": [{"LOWER": "ibm"}, {"LOWER": "spss"}, {"LOWER": "statistics"}]}
+{"label": "SKILL|Node.js", "pattern": [{"LOWER": "node.js"}]}
+{"label": "SKILL|Node.js", "pattern": [{"LOWER": "node"}]}
+{"label": "SKILL|Kubernetes", "pattern": [{"LOWER": "kubernetes"}]}
+{"label": "SKILL|UNIX", "pattern": [{"LOWER": "unix"}]}
+{"label": "SKILL|Informatica software", "pattern": [{"LOWER": "informatica"}, {"LOWER": "software"}]}
+{"label": "SKILL|Shell script", "pattern": [{"LOWER": "shell"}, {"LOWER": "script"}]}
+{"label": "SKILL|Apache Spark", "pattern": [{"LOWER": "apache"}, {"LOWER": "spark"}]}
+{"label": "SKILL|Git", "pattern": [{"LOWER": "git"}]}
+{"label": "SKILL|Adobe InDesign", "pattern": [{"LOWER": "adobe"}, {"LOWER": "indesign"}]}
+{"label": "SKILL|HubSpot software", "pattern": [{"LOWER": "hubspot"}, {"LOWER": "software"}]}
+{"label": "SKILL|Procore software", "pattern": [{"LOWER": "procore"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft SharePoint", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "sharepoint"}]}
+{"label": "SKILL|Microsoft SharePoint", "pattern": [{"LOWER": "ms"}, {"LOWER": "sharepoint"}]}
+{"label": "SKILL|Microsoft SharePoint", "pattern": [{"LOWER": "sharepoint"}]}
+{"label": "SKILL|Spring Boot", "pattern": [{"LOWER": "spring"}, {"LOWER": "boot"}]}
+{"label": "SKILL|Intuit QuickBooks", "pattern": [{"LOWER": "intuit"}, {"LOWER": "quickbooks"}]}
+{"label": "SKILL|Perl", "pattern": [{"LOWER": "perl"}]}
+{"label": "SKILL|Splunk Enterprise", "pattern": [{"LOWER": "splunk"}, {"LOWER": "enterprise"}]}
+{"label": "SKILL|Yardi software", "pattern": [{"LOWER": "yardi"}, {"LOWER": "software"}]}
+{"label": "SKILL|Yardi software", "pattern": [{"LOWER": "yardi"}]}
+{"label": "SKILL|SAP software", "pattern": [{"LOWER": "sap"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Project", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "project"}]}
+{"label": "SKILL|Cascading style sheets CSS", "pattern": [{"LOWER": "cascading"}, {"LOWER": "style"}, {"LOWER": "sheets"}, {"LOWER": "css"}]}
+{"label": "SKILL|Cascading style sheets CSS", "pattern": [{"LOWER": "cascading"}, {"LOWER": "style"}, {"LOWER": "sheets"}]}
+{"label": "SKILL|Cascading style sheets CSS", "pattern": [{"LOWER": "css"}]}
+{"label": "SKILL|Structured query language SQL", "pattern": [{"LOWER": "structured"}, {"LOWER": "query"}, {"LOWER": "language"}, {"LOWER": "sql"}]}
+{"label": "SKILL|Structured query language SQL", "pattern": [{"LOWER": "structured"}, {"LOWER": "query"}, {"LOWER": "language"}]}
+{"label": "SKILL|Structured query language SQL", "pattern": [{"LOWER": "sql"}]}
+{"label": "SKILL|Eclipse IDE", "pattern": [{"LOWER": "eclipse"}, {"LOWER": "ide"}]}
+{"label": "SKILL|Eclipse IDE", "pattern": [{"LOWER": "eclipse"}]}
+{"label": "SKILL|Salesforce software", "pattern": [{"LOWER": "salesforce"}, {"LOWER": "software"}]}
+{"label": "SKILL|Salesforce software", "pattern": [{"LOWER": "salesforce"}]}
+{"label": "SKILL|TikTok", "pattern": [{"LOWER": "tiktok"}]}
+{"label": "SKILL|Linux", "pattern": [{"LOWER": "linux"}]}
+{"label": "SKILL|Adobe Photoshop", "pattern": [{"LOWER": "adobe"}, {"LOWER": "photoshop"}]}
+{"label": "SKILL|Adobe Photoshop", "pattern": [{"LOWER": "adobe"}]}
+{"label": "SKILL|PostgreSQL", "pattern": [{"LOWER": "postgresql"}]}
+{"label": "SKILL|PostgreSQL", "pattern": [{"LOWER": "postgres"}]}
+{"label": "SKILL|C#", "pattern": [{"LOWER": "c#"}]}
+{"label": "SKILL|Adobe Acrobat", "pattern": [{"LOWER": "adobe"}, {"LOWER": "acrobat"}]}
+{"label": "SKILL|MySQL", "pattern": [{"LOWER": "mysql"}]}
+{"label": "SKILL|Spring Framework", "pattern": [{"LOWER": "spring"}, {"LOWER": "framework"}]}
+{"label": "SKILL|Henry Schein Dentrix", "pattern": [{"LOWER": "henry"}, {"LOWER": "schein"}, {"LOWER": "dentrix"}]}
+{"label": "SKILL|PHP", "pattern": [{"LOWER": "php"}]}
+{"label": "SKILL|Bash", "pattern": [{"LOWER": "bash"}]}
+{"label": "SKILL|Apple iOS", "pattern": [{"LOWER": "apple"}, {"LOWER": "ios"}]}
+{"label": "SKILL|Microsoft Excel", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "excel"}]}
+{"label": "SKILL|Microsoft Excel", "pattern": [{"LOWER": "ms"}, {"LOWER": "excel"}]}
+{"label": "SKILL|Microsoft Excel", "pattern": [{"LOWER": "excel"}]}
+{"label": "SKILL|WordPress", "pattern": [{"LOWER": "wordpress"}]}
+{"label": "SKILL|Oracle Java", "pattern": [{"LOWER": "oracle"}, {"LOWER": "java"}]}
+{"label": "SKILL|Apache Hadoop", "pattern": [{"LOWER": "apache"}, {"LOWER": "hadoop"}]}
+{"label": "SKILL|Apache Hadoop", "pattern": [{"LOWER": "hadoop"}]}
+{"label": "SKILL|The MathWorks MATLAB", "pattern": [{"LOWER": "the"}, {"LOWER": "mathworks"}, {"LOWER": "matlab"}]}
+{"label": "SKILL|The MathWorks MATLAB", "pattern": [{"LOWER": "mathworks"}, {"LOWER": "matlab"}]}
+{"label": "SKILL|The MathWorks MATLAB", "pattern": [{"LOWER": "matlab"}]}
+{"label": "SKILL|Apache Kafka", "pattern": [{"LOWER": "apache"}, {"LOWER": "kafka"}]}
+{"label": "SKILL|Microsoft .NET Framework", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "dotnet"}, {"LOWER": "framework"}]}
+{"label": "SKILL|Microsoft .NET Framework", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "dotnet"}]}
+{"label": "SKILL|Microsoft .NET Framework", "pattern": [{"LOWER": "microsoft"}, {"LOWER": ".net"}, {"LOWER": "framework"}]}
+{"label": "SKILL|Microsoft .NET Framework", "pattern": [{"LOWER": "microsoft"}, {"LOWER": ".net"}]}
+{"label": "SKILL|Microsoft .NET Framework", "pattern": [{"LOWER": "ms"}, {"LOWER": "dotnet"}]}
+{"label": "SKILL|Microsoft .NET Framework", "pattern": [{"LOWER": "ms"}, {"LOWER": ".net"}]}
+{"label": "SKILL|TypeScript", "pattern": [{"LOWER": "typescript"}]}
+{"label": "SKILL|Selenium", "pattern": [{"LOWER": "selenium"}]}
+{"label": "SKILL|Apache Tomcat", "pattern": [{"LOWER": "apache"}, {"LOWER": "tomcat"}]}
+{"label": "SKILL|Apache Tomcat", "pattern": [{"LOWER": "tomcat"}]}
+{"label": "SKILL|Trimble SketchUp Pro", "pattern": [{"LOWER": "trimble"}, {"LOWER": "sketchup"}, {"LOWER": "pro"}]}
+{"label": "SKILL|Ruby", "pattern": [{"LOWER": "ruby"}]}
+{"label": "SKILL|Ansible software", "pattern": [{"LOWER": "ansible"}, {"LOWER": "software"}]}
+{"label": "SKILL|Workday software", "pattern": [{"LOWER": "workday"}, {"LOWER": "software"}]}
+{"label": "SKILL|Microsoft Visio", "pattern": [{"LOWER": "microsoft"}, {"LOWER": "visio"}]}
+
