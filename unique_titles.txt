@@ -1,82 +1,21 @@
 Accountants and Auditors
 Actuaries
 Administrative Services Managers
-Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors
 Advertising Sales Agents
 Advertising and Promotions Managers
-Aerospace Engineers
-Agents and Business Managers of Artists, Performers, and Athletes
-Agricultural Inspectors
-Agricultural Technicians
-Air Traffic Controllers
-Aircraft Mechanics and Service Technicians
-Airfield Operations Specialists
-Anesthesiologists
-Animal Control Workers
-Anthropologists and Archeologists
-Appraisers and Assessors of Real Estate
-Arbitrators, Mediators, and Conciliators
-Architects, Except Landscape and Naval
-Architectural and Civil Drafters
-Architectural and Engineering Managers
-Architecture Teachers, Postsecondary
-Archivists
-Art Directors
-Art Therapists
-Art, Drama, and Music Teachers, Postsecondary
-Astronomers
-Athletes and Sports Competitors
-Atmospheric and Space Scientists
-Audio and Video Technicians
-Audiologists
-Automotive Engineers
-Aviation Inspectors
-Avionics Technicians
 Bill and Account Collectors
 Billing and Posting Clerks
-Biochemists and Biophysicists
-Bioengineers and Biomedical Engineers
-Bioinformatics Scientists
-Biological Technicians
-Biologists
-Biostatisticians
 Blockchain Engineers
 Bookkeeping, Accounting, and Auditing Clerks
-Broadcast Announcers and Radio Disc Jockeys
-Broadcast Technicians
 Brokerage Clerks
-Brownfield Redevelopment Specialists and Site Managers
 Budget Analysts
 Business Continuity Planners
 Business Intelligence Analysts
-Buyers and Purchasing Agents, Farm Products
-Calibration Technologists and Technicians
-Camera Operators, Television, Video, and Film
-Captains, Mates, and Pilots of Water Vessels
-Cardiologists
-Career/Technical Education Teachers, Postsecondary
-Cargo and Freight Agents
-Cartographers and Photogrammetrists
-Chefs and Head Cooks
-Chemical Engineers
-Chemical Equipment Operators and Tenders
-Chemical Plant and System Operators
-Chemical Technicians
-Chemistry Teachers, Postsecondary
-Chemists
 Chief Executives
 Chief Sustainability Officers
-Child, Family, and School Social Workers
-Civil Engineering Technologists and Technicians
-Civil Engineers
-Claims Adjusters, Examiners, and Investigators
 Climate Change Policy Analysts
 Clinical Data Managers
-Clinical Nurse Specialists
-Clinical Research Coordinators
-Clinical and Counseling Psychologists
 Commercial and Industrial Designers
-Community Health Workers
 Compensation and Benefits Managers
 Compensation, Benefits, and Job Analysis Specialists
 Compliance Managers
@@ -93,19 +32,11 @@ Computer User Support Specialists
 Computer and Information Research Scientists
 Computer and Information Systems Managers
 Computer, Automated Teller, and Office Machine Repairers
-Concierges
-Conservation Scientists
 Construction Managers
-Construction and Building Inspectors
-Control and Valve Installers and Repairers, Except Mechanical Door
-Correspondence Clerks
 Cost Estimators
-Costume Attendants
-Court, Municipal, and License Clerks
 Credit Analysts
 Credit Authorizers, Checkers, and Clerks
 Credit Counselors
-Curators
 Customer Service Representatives
 Customs Brokers
 Data Entry Keyers
@@ -113,61 +44,19 @@ Data Scientists
 Data Warehousing Specialists
 Database Administrators
 Database Architects
-Dental Assistants
 Desktop Publishers
-Detectives and Criminal Investigators
-Dietetic Technicians
-Dietitians and Nutritionists
 Digital Forensics Analysts
-Directors, Religious Activities and Education
-Dispatchers, Except Police, Fire, and Ambulance
 Document Management Specialists
-Economists
-Editors
-Education Administrators, Kindergarten through Secondary
-Education Administrators, Postsecondary
-Education and Childcare Administrators, Preschool and Daycare
-Educational, Guidance, and Career Counselors and Advisors
-Electrical Engineers
-Electrical and Electronic Engineering Technologists and Technicians
-Electrical and Electronics Drafters
-Electrical and Electronics Installers and Repairers, Transportation Equipment
-Electrical and Electronics Repairers, Commercial and Industrial Equipment
-Electrical and Electronics Repairers, Powerhouse, Substation, and Relay
 Electronics Engineers, Except Computer
 Eligibility Interviewers, Government Programs
-Emergency Management Directors
-Emergency Medicine Physicians
-Energy Auditors
-Energy Engineers, Except Wind and Solar
-Entertainment and Recreation Managers, Except Gambling
 Environmental Compliance Inspectors
-Environmental Engineering Technologists and Technicians
-Environmental Engineers
-Environmental Restoration Planners
-Environmental Science and Protection Technicians, Including Health
-Environmental Scientists and Specialists, Including Health
-Epidemiologists
 Equal Opportunity Representatives and Officers
-Etchers and Engravers
 Executive Secretaries and Executive Administrative Assistants
-Exercise Physiologists
-Fabric and Apparel Patternmakers
-Facilities Managers
-Family Medicine Physicians
-Farm and Home Management Educators
-Farmers, Ranchers, and Other Agricultural Managers
-Fashion Designers
-File Clerks
 Film and Video Editors
-Financial Examiners
 Financial Managers
 Financial Quantitative Analysts
 Financial Risk Specialists
 Financial and Investment Analysts
-Fine Artists, Including Painters, Sculptors, and Illustrators
-Fire Inspectors and Investigators
-Fire-Prevention and Protection Engineers
 First-Line Supervisors of Construction Trades and Extraction Workers
 First-Line Supervisors of Correctional Officers
 First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services
@@ -185,77 +74,23 @@ First-Line Supervisors of Police and Detectives
 First-Line Supervisors of Production and Operating Workers
 First-Line Supervisors of Retail Sales Workers
 First-Line Supervisors of Security Workers
-Fishing and Hunting Workers
-Fitness and Wellness Coordinators
-Flight Attendants
-Food Science Technicians
-Food Scientists and Technologists
-Food Service Managers
-Forensic Science Technicians
-Forest and Conservation Workers
-Foresters
 Fraud Examiners, Investigators and Analysts
-Freight Forwarders
-Fuel Cell Engineers
 Fundraisers
 Fundraising Managers
-Funeral Attendants
-Funeral Home Managers
-Gambling Change Persons and Booth Cashiers
-General Internal Medicine Physicians
 General and Operations Managers
-Genetic Counselors
-Geneticists
-Geographers
-Geographic Information Systems Technologists and Technicians
-Geological Technicians, Except Hydrologic Technicians
-Geoscientists, Except Hydrologists and Geographers
 Graphic Designers
-Hazardous Materials Removal Workers
-Health Education Specialists
 Health Informatics Specialists
-Health Information Technologists and Medical Registrars
-Health and Safety Engineers, Except Mining Safety Engineers and Inspectors
-Healthcare Social Workers
-Hearing Aid Specialists
-Histology Technicians
-Historians
-Hospitalists
-Hotel, Motel, and Resort Desk Clerks
-Human Factors Engineers and Ergonomists
 Human Resources Assistants, Except Payroll and Timekeeping
 Human Resources Managers
 Human Resources Specialists
-Hydrologists
-Industrial Ecologists
-Industrial Engineering Technologists and Technicians
-Industrial Engineers
-Industrial Machinery Mechanics
 Industrial Production Managers
 Information Security Analysts
-Information Security Engineers
 Information Technology Project Managers
-Inspectors, Testers, Sorters, Samplers, and Weighers
-Instructional Coordinators
-Insurance Claims and Policy Processing Clerks
 Insurance Sales Agents
 Insurance Underwriters
 Intelligence Analysts
-Interior Designers
-Interpreters and Translators
 Interviewers, Except Eligibility and Loan
 Investment Fund Managers
-Judges, Magistrate Judges, and Magistrates
-Judicial Law Clerks
-Labor Relations Specialists
-Landscape Architects
-Lawyers
-Legal Secretaries and Administrative Assistants
-Legislators
-Librarians and Media Collections Specialists
-Library Assistants, Clerical
-Library Technicians
-Lighting Technicians
 Loan Interviewers and Clerks
 Loan Officers
 Lodging Managers
@@ -264,190 +99,66 @@ Logistics Analysts
 Logistics Engineers
 Loss Prevention Managers
 Mail Clerks and Mail Machine Operators, Except Postal Service
-Maintenance and Repair Workers, General
 Management Analysts
-Manufacturing Engineers
-Marine Engineers and Naval Architects
 Market Research Analysts and Marketing Specialists
 Marketing Managers
-Marriage and Family Therapists
-Materials Engineers
-Mathematicians
-Mechanical Drafters
-Mechanical Engineering Technologists and Technicians
-Mechanical Engineers
-Mechatronics Engineers
 Media Programming Directors
-Medical Assistants
-Medical Dosimetrists
-Medical Equipment Repairers
-Medical Records Specialists
-Medical Secretaries and Administrative Assistants
-Medical and Clinical Laboratory Technicians
-Medical and Health Services Managers
 Meeting, Convention, and Event Planners
-Mental Health and Substance Abuse Social Workers
-Merchandise Displayers and Window Trimmers
-Meter Readers, Utilities
-Microbiologists
-Midwives
-Mining and Geological Engineers, Including Mining Safety Engineers
-Mobile Heavy Equipment Mechanics, Except Engines
-Molecular and Cellular Biologists
-Morticians, Undertakers, and Funeral Arrangers
-Motorboat Mechanics and Service Technicians
-Natural Sciences Managers
 Network and Computer Systems Administrators
-Neurologists
-New Accounts Clerks
-Non-Destructive Testing Specialists
-Nuclear Engineers
-Nurse Anesthetists
-Nursing Instructors and Teachers, Postsecondary
-Obstetricians and Gynecologists
-Occupational Health and Safety Specialists
-Occupational Health and Safety Technicians
 Office Clerks, General
 Online Merchants
 Operations Research Analysts
 Order Clerks
-Orthopedic Surgeons, Except Pediatric
-Paralegals and Legal Assistants
-Park Naturalists
-Parking Enforcement Workers
 Parts Salespersons
-Patient Representatives
 Payroll and Timekeeping Clerks
-Pediatric Surgeons
-Pediatricians, General
-Penetration Testers
 Personal Financial Advisors
-Pesticide Handlers, Sprayers, and Applicators, Vegetation
-Petroleum Engineers
-Pharmacy Aides
-Phlebotomists
-Photographers
-Photographic Process Workers and Processing Machine Operators
-Photonics Engineers
-Photonics Technicians
-Physicists
-Political Science Teachers, Postsecondary
 Political Scientists
-Power Plant Operators
-Precision Agriculture Technicians
-Prepress Technicians and Workers
-Print Binding and Finishing Workers
-Private Detectives and Investigators
-Probation Officers and Correctional Treatment Specialists
 Procurement Clerks
-Producers and Directors
 Production, Planning, and Expediting Clerks
 Project Management Specialists
-Proofreaders and Copy Markers
 Property, Real Estate, and Community Association Managers
 Public Relations Managers
 Public Relations Specialists
-Public Safety Telecommunicators
 Purchasing Agents, Except Wholesale, Retail, and Farm Products
 Purchasing Managers
 Quality Control Analysts
 Quality Control Systems Managers
-Radiation Therapists
-Radio Frequency Identification Device Specialists
-Radio, Cellular, and Tower Equipment Installers and Repairers
-Radiologists
-Railroad Brake, Signal, and Switch Operators and Locomotive Firers
 Real Estate Brokers
 Real Estate Sales Agents
-Receptionists and Information Clerks
-Recreation Workers
 Recycling Coordinators
 Regulatory Affairs Managers
 Regulatory Affairs Specialists
-Rehabilitation Counselors
 Remote Sensing Scientists and Technologists
 Remote Sensing Technicians
-Reservation and Transportation Ticket Agents and Travel Clerks
-Residential Advisors
-Robotics Engineers
-Robotics Technicians
-Roustabouts, Oil and Gas
 Sales Engineers
 Sales Managers
 Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel
 Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products
 Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products
-School Psychologists
 Search Marketing Strategists
 Secretaries and Administrative Assistants, Except Legal, Medical, and Executive
 Securities, Commodities, and Financial Services Sales Agents
 Security Management Specialists
 Security Managers
-Security and Fire Alarm Systems Installers
-Semiconductor Processing Technicians
-Separating, Filtering, Clarifying, Precipitating, and Still Machine Setters, Operators, and Tenders
-Set and Exhibit Designers
-Shipping, Receiving, and Inventory Clerks
-Slaughterers and Meat Packers
 Social and Community Service Managers
 Social and Human Service Assistants
 Software Developers
 Software Quality Assurance Analysts and Testers
-Soil and Plant Scientists
-Solar Energy Systems Engineers
-Solar Sales Representatives and Assessors
-Special Education Teachers, Middle School
-Special Education Teachers, Secondary School
-Special Effects Artists and Animators
-Sports Medicine Physicians
-Stationary Engineers and Boiler Operators
 Statistical Assistants
 Statisticians
-Structural Metal Fabricators and Fitters
-Substance Abuse and Behavioral Disorder Counselors
 Supply Chain Managers
-Surveying and Mapping Technicians
-Surveyors
 Sustainability Specialists
 Switchboard Operators, Including Answering Service
 Talent Directors
 Tax Examiners and Collectors, and Revenue Agents
 Tax Preparers
-Teaching Assistants, Postsecondary
-Technical Writers
-Telecommunications Engineering Specialists
-Telecommunications Equipment Installers and Repairers, Except Line Installers
-Telemarketers
-Telephone Operators
-Tellers
-Tire Repairers and Changers
 Title Examiners, Abstractors, and Searchers
-Traffic Technicians
 Training and Development Managers
 Training and Development Specialists
-Transportation Engineers
-Transportation Inspectors
-Transportation Planners
-Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation
 Transportation, Storage, and Distribution Managers
-Travel Agents
 Treasurers and Controllers
-Urban and Regional Planners
-Urologists
 Validation Engineers
 Video Game Designers
-Water Resource Specialists
-Water and Wastewater Treatment Plant and System Operators
-Water/Wastewater Engineers
-Weatherization Installers and Technicians
 Web Administrators
 Web Developers
 Web and Digital Interface Designers
-Weighers, Measurers, Checkers, and Samplers, Recordkeeping
-Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders
-Wholesale and Retail Buyers, Except Farm Products
-Wind Energy Engineers
-Wind Turbine Service Technicians
-Word Processors and Typists
-Writers and Authors
-Zoologists and Wildlife Biologists
