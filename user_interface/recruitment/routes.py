@@ -189,7 +189,7 @@ def run_analysis():
         analysis_data=analysis_data,
         job_description=job_description,
         columns=columns,
-        num_applicants=num_applicants  # Pass num_applicants to template
+        num_applicants=num_applicants 
     )
 
 

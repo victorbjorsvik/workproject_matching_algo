@@ -614,8 +614,8 @@
 {"label": "SKILL|couchdb", "pattern": [{"LOWER": "couchdb"}]}
 {"label": "SKILL|couchdb", "pattern": [{"LOWER": "couch"}, {"LOWER": "db"}]}
 {"label": "SKILL|coveralls", "pattern": [{"LOWER": "coveralls"}]}
-{"label": "SKILL|cpp", "pattern": [{"LOWER": "cpp"}]}
-{"label": "SKILL|cpp", "pattern": [{"LOWER": "c++"}]}
+{"label": "SKILL|c++", "pattern": [{"LOWER": "cpp"}]}
+{"label": "SKILL|c++", "pattern": [{"LOWER": "c++"}]}
 {"label": "SKILL|cranfield-experiments", "pattern": [{"LOWER": "cranfield"}, {"LOWER": "experiments"}]}
 {"label": "SKILL|firebase-crashlytics", "pattern": [{"LOWER": "firebase"}, {"LOWER": "crashlytics"}]}
 {"label": "SKILL|firebase-crashlytics", "pattern": [{"LOWER": "crashlytics"}]}
@@ -1187,7 +1187,8 @@
 {"label": "SKILL|apache-hadoop", "pattern": [{"LOWER": "apache"}, {"LOWER": "hadoop"}]}
 {"label": "SKILL|apache-hadoop", "pattern": [{"LOWER": "hadoop"}]}
 {"label": "SKILL|haml", "pattern": [{"LOWER": "haml"}]}
-{"label": "SKILL|html", "pattern": [{"LOWER": "html"}, {"LOWER": "abstraction"}, {"LOWER": "markup"}, {"LOWER": "language"}]}
+{"label": "SKILL|html", "pattern": [{"LOWER": "hypertext"}, {"LOWER": "markup"}, {"LOWER": "language"}, {"LOWER": "html"}]}
+{"label": "SKILL|html", "pattern": [{"LOWER": "html"}]}
 {"label": "SKILL|handlebars.js", "pattern": [{"LOWER": "handlebars.js"}]}
 {"label": "SKILL|handlebars.js", "pattern": [{"LOWER": "hbs"}]}
 {"label": "SKILL|handlebars.js", "pattern": [{"LOWER": "handlebarsjs"}]}
