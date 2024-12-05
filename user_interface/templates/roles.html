@@ -1,0 +1,332 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Suggested Roles
+{% endblock %}
+
+{% block main %}
+<h1>Suggested Roles</h1>
+
+<!-- Wrap the main content in a content wrapper -->
+<div class="content-wrapper">
+    <!-- Candidates and Upload Section (Left) -->
+    <div class="flex-container">
+        <div class="left-section">
+            <!-- Upload Resumes Button -->
+            <div>
+                <h2>Upload Resume</h2>
+                <form action="{{ url_for('roles.upload_files') }}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" required>
+                    <input type="submit" value="Upload" class="action-button upload-button">
+                </form>
+                    {% if applicant %}
+                    <!-- Embed the PDF directly -->
+                    <iframe 
+                        src="{{ url_for('static', filename='uploads/roles/' + applicant) }}" 
+                        width="50%" 
+                        height="200px"
+                    >
+                    </iframe>
+                {% else %}
+                    <p>No resume uploaded yet.</p>
+                {% endif %}
+            </div>
+            <div>
+                <h2>Current Role</h2>
+                <form>
+                    <!-- <label for="cars">Choose a car:</label> -->
+                    <select id="cars" name="cars">
+                    <option value="volvo">Stripper</option>
+                    <option value="saab">Kloakkrenser</option>
+                    <option value="fiat">Kleptoman</option>
+                    <option value="audi">Sjaman</option>
+                    <option value="audi">Sjømann</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <!-- Job Description Section (Right) -->
+        <!-- <div class="right-section">
+            <h2>Input Job Description</h2>
+            <form method="post" action="{{ url_for('recruitment.submit_job_description') }}">
+                <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
+                <br>
+                <input type="submit" value="Save Job Description" class="action-button job-desc-button">
+            </form>
+        </div> -->
+    </div>
+
+   <!-- Buttons Section (Run Analysis + Clear Results) -->
+   <form method="post" action="/ext_recruit/run_analysis" id="analysis-form" class="analysis-form">
+    <div class="buttons-container">
+        <!-- Input Field and Run Analysis Button -->
+       
+            <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>
+                Run Analysis
+            </button>
+        </form>
+
+        <!-- Clear All Results Button -->
+        <form method="post" action="/ext_recruit/clear" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
+            <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>
+                Clear All Results
+            </button>
+        </form>
+    </div>
+
+
+    <!-- Analysis Results -->
+    <div class="analysis-results">
+        {% if analysis_data %}
+            <h2>Analysis Results</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        {% for column in columns %}
+                            <th>{{ column.replace('_', ' ').title() }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in analysis_data %}
+                        <tr>
+                            {% for column in columns %}
+                                <td>{{ row[column] }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No analysis data available.</p>
+        {% endif %}
+    </div>
+</div> <!-- End of content-wrapper -->
+
+<!-- Loading Spinner Overlay -->
+<div id="loading-overlay">
+    <div class="spinner"></div>
+    <p>Running analysis, please wait...</p>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* Reset default margins and paddings */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Ensure html and body take full height */
+    html, body {
+        height: 100%;
+    }
+
+    /* Content wrapper to push the footer to the bottom */
+    .content-wrapper {
+        min-height: calc(100vh - 100px); /* Adjust 100px to match your footer height */
+        padding: 20px;
+    }
+
+    /* Footer styles (assuming your footer is in layout.html) */
+    footer {
+        height: 40px; /* Adjust to your footer's actual height */
+    }
+
+    /* Flexbox layout for left and right sections */
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .left-section,
+    .right-section {
+        width: 48%;
+    }
+
+    .left-section {
+        margin-right: 20px;
+    }
+
+    /* Buttons Container for Run Analysis and Clear Results */
+    .buttons-container {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: row; /* Arrange items in a row */
+        align-items: center; /* Vertically align the buttons */
+        gap: 15px; /* Add spacing between the buttons */
+        margin-top: 20px; /* Add spacing above */
+        justify-content: flex-start; /* Align buttons to the left */
+    }
+
+        /* Input Group for Number of Applicants */
+    .input-group {
+        display: flex;
+        align-items: center; /* Vertically align label and input */
+        gap: 10px; /* Space between label and input */
+    }
+
+    .input-group label {
+        font-size: 14px; /* Ensure label text size matches input size */
+    }
+
+    .input-group input {
+        width: 60px; /* Adjust input width */
+        height: 35px; /* Match button height */
+        padding: 5px;
+        font-size: 14px;
+        text-align: center; /* Center align the number */
+    }
+
+    /* Loading Overlay Styles */
+    #loading-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        text-align: center;
+        padding-top: 200px;
+    }
+
+    /* Spinner Styles */
+    .spinner {
+        margin: 0 auto 20px auto;
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    /* Spinner Animation */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Button Styles */
+    /* Base styles for all action buttons */
+    .action-button {
+        flex: none;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 10px;
+        height: 40px; /* Consistent height */
+        max-width: 200px; /* Constrain width */
+        width: auto; /* Allow natural width */
+        
+    }
+
+    .action-button:hover {
+        opacity: 0.9;
+    }
+
+    .action-button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+    }
+
+    /* Specific Button Styles */
+    .clear-button {
+        background-color: red;
+    }
+
+    .clear-button:hover {
+        background-color: darkred;
+    }
+
+    .run-button {
+        background-color: blue;
+    }
+
+    .run-button:hover {
+        background-color: darkblue;
+    }
+
+    .upload-button {
+        background-color: green;
+    }
+
+    .upload-button:hover {
+        background-color: darkgreen;
+    }
+
+    .job-desc-button {
+        background-color: #8e44ad; /* Purple color */
+    }
+
+    .job-desc-button:hover {
+        background-color: #71368a;
+    }
+
+    /* Styles for the textarea */
+    textarea {
+        width: 100%;
+        max-width: 600px;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even){background-color: #f9f9f9;}
+
+    th {
+        background-color: #9aa19a;
+        color: white;
+    }
+
+    /* Responsive design for smaller screens */
+    @media screen and (max-width: 768px) {
+        .left-section,
+        .right-section {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .buttons-container {
+            flex-direction: column;
+        }
+
+        .action-button {
+            width: 100%;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Show the loading overlay when the analysis form is submitted
+    document.getElementById('analysis-form').addEventListener('submit', function() {
+        document.getElementById('loading-overlay').style.display = 'block';
+    });
+</script>
+{% endblock %}

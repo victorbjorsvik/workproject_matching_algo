@@ -15,7 +15,7 @@ recruitment_bp = Blueprint('recruitment', __name__, template_folder='../template
 @recruitment_bp.route('/ext_recruit', methods=['GET'])
 @login_required
 def ext_recruit():
-    upload_folder = current_app.config['UPLOAD_FOLDER']
+    upload_folder = current_app.config['UPLOAD_FOLDER_EXT']
     applicants = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
     job_description = session.get('job_description', '')
 
@@ -65,7 +65,7 @@ def upload_files():
     for file in files:
         if allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            upload_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            upload_path = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], filename)
             file.save(upload_path)
         else:
             flash(f'File type not allowed: {file.filename}')
@@ -90,7 +90,7 @@ def submit_job_description():
 @login_required
 def run_analysis():
     job_description = session.get('job_description')
-    upload_folder = current_app.config['UPLOAD_FOLDER']
+    upload_folder = current_app.config['UPLOAD_FOLDER_EXT']
     applicant_files = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
 
     if not applicant_files:
@@ -196,7 +196,7 @@ def run_analysis():
 @recruitment_bp.route('/ext_recruit/clear', methods=['POST'])
 @login_required
 def clear_results():
-    upload_folder = current_app.config['UPLOAD_FOLDER']
+    upload_folder = current_app.config['UPLOAD_FOLDER_EXT']
     db = get_db()
     cursor = db.cursor()
     try:

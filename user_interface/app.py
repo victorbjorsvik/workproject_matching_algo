@@ -16,8 +16,9 @@ from helpers import apology_login, apology_openai, login_required, get_db
 import main
 # from main import get_resumes, resume_extraction, job_info_extraction, calc_similarity
 
-# Import the blueprint from the recruitment package
+# Import blueprints for more extensie routes
 from recruitment import recruitment_bp
+from roles import roles_bp
 
 # Configure application
 app = Flask(__name__)
@@ -28,13 +29,19 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # File upload configuration
-UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# user_id = session.get('user_id')  REMEMBER TO FIND SOLUTION
+UPLOAD_FOLDER_EXT = os.path.join(os.getcwd(), 'static', 'uploads', 'ext') #, user_id)
+UPLOAD_FOLDER_ROLES = os.path.join(os.getcwd(),'static', 'uploads', 'roles') #, user_id)
+if not os.path.exists(UPLOAD_FOLDER_EXT):
+    os.makedirs(UPLOAD_FOLDER_EXT)
+if not os.path.exists(UPLOAD_FOLDER_ROLES):
+    os.makedirs(UPLOAD_FOLDER_ROLES)
+app.config['UPLOAD_FOLDER_EXT'] = UPLOAD_FOLDER_EXT
+app.config['UPLOAD_FOLDER_ROLES'] = UPLOAD_FOLDER_ROLES
 
 # Register the blueprint
 app.register_blueprint(recruitment_bp)
+app.register_blueprint(roles_bp)
 
 # Database teardown function
 @app.teardown_appcontext
