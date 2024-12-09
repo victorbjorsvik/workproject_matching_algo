@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 from extraction.ResumeInfoExtraction import ResumeInfoExtraction
 from extraction.JobInfoExtraction import JobInfoExtraction
 from source.schemas.resumeextracted import ResumeExtractedModel # Let's reintroduce later on
@@ -23,6 +24,7 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Paths to your pattern files
 skills_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo','patterns', 'skills.jsonl')
+skills_patterns_path_2 = os.path.join(ROOT_DIR, 'workproject_matching_algo','patterns', 'skills_branch.jsonl')
 
 
 def get_resumes(directory):
@@ -62,7 +64,7 @@ def get_resumes(directory):
 def resume_extraction(resumes):
     """ function to extract the relevant skills from a resume """
     names = resumes[["name"]]
-    resume_extraction = ResumeInfoExtraction(skills_patterns_path, names)
+    resume_extraction = ResumeInfoExtraction(skills_patterns_path_2, names)
     resumes_df = resume_extraction.extract_entities(resumes)
     return resumes_df
 
@@ -143,6 +145,102 @@ def calc_cross(applicant_df, job_df, N=3, parallel=False):
     # similarity_df['interview_status'] = similarity_df.index.apply(lambda x: 'Selected' if x <= N else 'Not Selected')
 
     return similarity_df
+
+
+def role_similarity(cv_df, job_df, hard_skills, scores_df, titles_df, growth_df, role=None, wage=0 , parallel=False):
+    """
+    Calculate cosine similarity between a single CV and multiple job descriptions.
+    Optionally filter based on a specific role and include role-specific scores in the output.
+    """
+    # Initialize the model
+    model = SentenceTransformer('all-mpnet-base-v2')
+    model.max_seq_length = 75
+    model.tokenizer.padding_side = "right"
+    model.eval()
+
+    def add_eos(input_examples):
+        """Helper function to add special tokens between each skill."""
+        input_examples = [input_example + model.tokenizer.eos_token for input_example in input_examples]
+        return input_examples
+
+    def missing_skills(skills, cv):
+        """Return a list of words from the job description (title and skills) that do not match any keywords in the CV."""
+        skill_words = set(skill.lower().strip() for skill in skills if isinstance(skill, str))
+        cv_set = set(cv.lower().strip() for cv in cv if isinstance(cv, str))
+        missing_words = skill_words - cv_set
+        return list(missing_words)
+
+    # Find the generic title (Role) corresponding to the input title (Reported Job Title)
+    generic_title = titles_df.loc[titles_df['Reported Job Title'] == role, 'Title'].iloc[0]
+    
+    # Filter scores_df using the generic title
+    filtered_scores_df = scores_df[scores_df['Target_Role'] == generic_title]
+    # Map the filtered scores to a dictionary for quick lookup
+    role_score_mapping = dict(zip(filtered_scores_df['Role'], filtered_scores_df['composite_tasks_dwas_ksas']))
+
+
+    # Extract and process the CV's skills
+    cv_df['Skills_Text'] = cv_df['Skills'].apply(add_eos)
+    cv_df['Skills_Text'] = cv_df['Skills_Text'].apply(
+        lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else ''
+    )
+    cv_embedding = model.encode(
+        cv_df['Skills_Text'].iloc[0],  # Assuming a single CV is provided
+        batch_size=1,
+        show_progress_bar=False
+    )
+
+    # Get job embeddings from DataFrame
+    job_embeddings = np.vstack(job_df['skills_embed'].values)
+
+    # Compute cosine similarity
+    similarity_scores = cosine_similarity([cv_embedding], job_embeddings).flatten()
+    job_df['similarity_score'] = similarity_scores
+
+    # Normalize similarity scores using z-score
+    mean_score = job_df['similarity_score'].mean()
+    std_score = job_df['similarity_score'].std()
+    if std_score > 0:
+        job_df['normalized_similarity_score'] = (job_df['similarity_score'] - mean_score) / std_score
+    else:
+        job_df['normalized_similarity_score'] = 0  # Assign 0 if std is zero (all scores are identical)
+
+    # Rank the jobs by normalized similarity score
+    job_df['rank'] = job_df['normalized_similarity_score'].rank(ascending=False)
+
+    # Add missing skills
+    job_df['missing_skills'] = job_df.apply(
+        lambda row: missing_skills(
+            hard_skills.loc[row.name, 'Skills'],  # Skills from df_skill_role_grouped
+            cv_df['Skills'].iloc[0]  # Skills from the first row of df_resumes
+        ),
+        axis=1
+    )
+
+    # Map the growth information using generic title
+    role_growth_mapping = dict(zip(growth_df['Occupation'], growth_df['Categories']))
+    job_df['role_growth'] = job_df['Title'].map(role_growth_mapping)
+
+    # Fill NaN values in 'role_growth' with 'Not In-Demand'
+    job_df['role_growth'].fillna('Not In-Demand', inplace=True)
+
+    # Check for missing salary information
+    job_df['annual_wage_variation'] = job_df.apply(
+        lambda row: "Info Not Available" if row['annual_wage'] == 0 else row['annual_wage'] - wage,
+        axis=1
+    )
+
+    job_df_2 = job_df.copy()
+    # Add the role-specific scores to a new column
+    job_df_2['role_scores'] = job_df_2['Title'].apply(lambda x: role_score_mapping.get(x, None))
+    # Rank the jobs by normalized similarity score
+    job_df_2['rank'] = job_df_2['role_scores'].rank(ascending=False)
+
+    # Return a DataFrame with the job titles, similarity scores, normalized scores, role-specific scores, and ranks
+    ranked_jobs_2 = job_df_2[['rank', 'Title', 'missing_skills', 'annual_wage_variation', 'role_growth']].sort_values(by='rank', ascending=True)
+    ranked_jobs = job_df[['rank', 'Title', 'missing_skills', 'annual_wage_variation', 'role_growth']].sort_values(by='rank', ascending=True)
+    return ranked_jobs, ranked_jobs_2
+
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini"):

@@ -33,43 +33,38 @@ Suggested Roles
             </div>
             <div>
                 <h2>Current Role</h2>
-                <form>
+                <form action="{{ url_for('roles.run_analysis') }}" method="post" id="analysis-form">
                     <!-- <label for="cars">Choose a car:</label> -->
-                    <select id="cars" name="cars">
-                    <option value="volvo">Stripper</option>
-                    <option value="saab">Kloakkrenser</option>
-                    <option value="fiat">Kleptoman</option>
-                    <option value="audi">Sjaman</option>
-                    <option value="audi">Sjømann</option>
+                    <select id="current_role" name="current_role" class="searchable-dropdown">
+                    {% for role in roles %}
+                        <option value="{{ role }}">{{ role }}</option>
+                    {% endfor %}
                     </select>
-                </form>
+                    <br><br>
+            </div>
+            <div>
+                <h2>Current Salary</h2>
+                    <input type="number" id="current_salary" name="current_salary" required>
             </div>
         </div>
 
-        <!-- Job Description Section (Right) -->
+        <!-- Results -->
         <!-- <div class="right-section">
-            <h2>Input Job Description</h2>
-            <form method="post" action="{{ url_for('recruitment.submit_job_description') }}">
-                <textarea name="job_description" rows="10" cols="50" placeholder="Enter the job description here..." required>{{ job_description or '' }}</textarea>
-                <br>
-                <input type="submit" value="Save Job Description" class="action-button job-desc-button">
-            </form>
+        
         </div> -->
     </div>
 
    <!-- Buttons Section (Run Analysis + Clear Results) -->
-   <form method="post" action="/ext_recruit/run_analysis" id="analysis-form" class="analysis-form">
     <div class="buttons-container">
         <!-- Input Field and Run Analysis Button -->
-       
-            <button type="submit" class="action-button run-button" {% if not applicants or not job_description %}disabled{% endif %}>
+            <button type="submit" class="action-button run-button" {% if not applicant %}disabled{% endif %}>
                 Run Analysis
             </button>
         </form>
 
         <!-- Clear All Results Button -->
-        <form method="post" action="/ext_recruit/clear" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
-            <button type="submit" class="action-button clear-button" {% if not applicants %}disabled{% endif %}>
+        <form method="post" action="/roles/clear" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
+            <button type="submit" class="action-button clear-button" {% if not analysis_done %}disabled{% endif %}>
                 Clear All Results
             </button>
         </form>
@@ -78,21 +73,53 @@ Suggested Roles
 
     <!-- Analysis Results -->
     <div class="analysis-results">
-        {% if analysis_data %}
-            <h2>Analysis Results</h2>
+        {% if foo %}
+            <h2>Analysis Results 1</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        {% for column in columns %}
+                        {% for column in foo_col %}
                             <th>{{ column.replace('_', ' ').title() }}</th>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
-                    {% for row in analysis_data %}
+                    {% for row in foo %}
                         <tr>
-                            {% for column in columns %}
-                                <td>{{ row[column] }}</td>
+                            {% for column in foo_col %}
+                                <td>
+                                    {% if column == "missing_skills" %}
+                                    {{ row[column] | join(', ') }}
+                                {% else %}
+                                    {{ row[column] }}
+                                {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h2>Analysis Results 2</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        {% for column in bar_col %}
+                            <th>{{ column.replace('_', ' ').title() }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in bar %}
+                        <tr>
+                            {% for column in bar_col %}
+                                <td>
+                                    {% if column == "missing_skills" %}
+                                        {{ row[column] | join(', ') }}
+                                    {% else %}
+                                        {{ row[column] }}
+                                    {% endif %}
+                                </td>
                             {% endfor %}
                         </tr>
                     {% endfor %}
@@ -324,6 +351,13 @@ Suggested Roles
 
 {% block scripts %}
 <script>
+    // Searchable dropdown from Select2
+    $(document).ready(function() {
+    $('.searchable-dropdown').select2({
+        placeholder: "Select a role", 
+        allowClear: true            
+    });
+    });
     // Show the loading overlay when the analysis form is submitted
     document.getElementById('analysis-form').addEventListener('submit', function() {
         document.getElementById('loading-overlay').style.display = 'block';

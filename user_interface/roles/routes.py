@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 import json
 import pandas as pd
 import main 
+from ast import literal_eval
 
 roles_bp = Blueprint('roles', __name__, template_folder='../templates')
 
@@ -29,9 +30,19 @@ def roles():
     else:
         applicant = None  # No resume uploaded yet
 
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("""
+        SELECT role
+        FROM unique_roles
+        ORDER BY role ASC
+    """)
+    roles = [role[0] for role in cursor.fetchall()]
+
     return render_template(
         "roles.html",
-        applicant=applicant
+        applicant=applicant,
+        roles=roles
     )
 
 
@@ -63,4 +74,58 @@ def upload_files():
         flash('Resume successfully uploaded')
     else:
         flash(f'File type not allowed: {file.filename}')
+    return redirect(url_for('roles.roles'))
+
+
+
+@roles_bp.route('/roles/run_analysis', methods=['POST'])
+@login_required
+def run_analysis():
+    # Get pre-loaded DataFrames
+    growth_df = current_app.config['GROWTH_DF']
+    df_skill_role_grouped = current_app.config['DF_SKILL_ROLE_GROUPED']
+    similarity_df = current_app.config['SIMILARITY_DF']
+    titles_df = current_app.config['TITLES_DF']
+    merged_df = current_app.config['MERGED_DF']
+
+    # Now you can proceed directly with analysis
+    role = request.form.get('current_role')
+    wage = float(request.form.get('current_salary'))
+    
+    df_resumes = main.get_resumes(current_app.config['UPLOAD_FOLDER_ROLES'])
+    df_resumes = main.resume_extraction(df_resumes)
+    foo, bar = main.role_similarity(df_resumes, merged_df, df_skill_role_grouped, similarity_df, titles_df, growth_df, role=role, wage=wage)
+
+    foo_col = foo.columns
+    bar_col = bar.columns
+    foo = foo.head(5).to_dict(orient='records')
+    bar = bar.head(5).to_dict(orient='records')
+
+    return render_template(
+        "roles.html",
+        applicant=f"user_{session.get('user_id')}_resume.pdf",
+        foo=foo,
+        foo_col=foo_col,
+        bar=bar,
+        bar_col=bar_col,
+        analysis_done=True
+    )
+
+@roles_bp.route('/roles/clear', methods=['POST'])
+@login_required
+def clear_results():
+    # Get pre-loaded DataFrames
+    upload_folder = current_app.config['UPLOAD_FOLDER_ROLES']
+    try:
+        # Delete all files in the uploads directory
+        for filename in os.listdir(upload_folder):
+            file_path = os.path.join(upload_folder, filename)
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        flash('All uploaded files and results have been cleared.')
+    except Exception as e:
+        flash(f'An error occurred while clearing files: {e}')
+    
+
+
     return redirect(url_for('roles.roles'))

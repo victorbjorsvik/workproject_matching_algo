@@ -1,5 +1,6 @@
 import os
 import sys
+from ast import literal_eval
 # Add the parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -14,7 +15,6 @@ from openai import OpenAIError
 
 from helpers import apology_login, apology_openai, login_required, get_db
 import main
-# from main import get_resumes, resume_extraction, job_info_extraction, calc_similarity
 
 # Import blueprints for more extensie routes
 from recruitment import recruitment_bp
@@ -29,15 +29,35 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # File upload configuration
-# user_id = session.get('user_id')  REMEMBER TO FIND SOLUTION
-UPLOAD_FOLDER_EXT = os.path.join(os.getcwd(), 'static', 'uploads', 'ext') #, user_id)
-UPLOAD_FOLDER_ROLES = os.path.join(os.getcwd(),'static', 'uploads', 'roles') #, user_id)
-if not os.path.exists(UPLOAD_FOLDER_EXT):
-    os.makedirs(UPLOAD_FOLDER_EXT)
-if not os.path.exists(UPLOAD_FOLDER_ROLES):
-    os.makedirs(UPLOAD_FOLDER_ROLES)
+UPLOAD_FOLDER_EXT = os.path.join(os.getcwd(), 'static', 'uploads', 'ext')
+UPLOAD_FOLDER_ROLES = os.path.join(os.getcwd(),'static', 'uploads', 'roles')
+os.makedirs(UPLOAD_FOLDER_EXT, exist_ok=True)
+os.makedirs(UPLOAD_FOLDER_ROLES, exist_ok=True)
 app.config['UPLOAD_FOLDER_EXT'] = UPLOAD_FOLDER_EXT
 app.config['UPLOAD_FOLDER_ROLES'] = UPLOAD_FOLDER_ROLES
+
+##############################
+# Pre-load and preprocess data
+##############################
+growth_df = pd.read_csv("data_from_girls/growth_df.csv")
+df_skill_role_grouped = pd.read_csv("data_from_girls/hard_skills.csv")
+similarity_df = pd.read_csv("data_from_girls/similarity_df.csv")
+titles_df = pd.read_csv("data_from_girls/titles_df.csv")
+merged_df = pd.read_csv("data_from_girls/merged_2.csv")
+
+# Preprocess data once
+merged_df["hourly_wage"] = merged_df["hourly_wage"].astype(float, errors="ignore")
+merged_df["Skills"] = merged_df["Skills"].apply(literal_eval)
+merged_df["skills_embed"] = merged_df["skills_embed"].apply(literal_eval)
+df_skill_role_grouped["Skills"] = df_skill_role_grouped["Skills"].apply(literal_eval)
+
+# Store data in app.config for easy access
+app.config['GROWTH_DF'] = growth_df
+app.config['DF_SKILL_ROLE_GROUPED'] = df_skill_role_grouped
+app.config['SIMILARITY_DF'] = similarity_df
+app.config['TITLES_DF'] = titles_df
+app.config['MERGED_DF'] = merged_df
+############################
 
 # Register the blueprint
 app.register_blueprint(recruitment_bp)

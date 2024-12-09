@@ -1,0 +1,405 @@
+Title,O*NET-SOC Code,Skills,num_skills
+Accountants and Auditors,13-2011,"['Intuit QuickBooks', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",5
+Actuaries,15-2011,"['Microsoft Excel', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Microsoft Visual Basic for Applications VBA', 'Python', 'R', 'SAS', 'SQL', 'Tableau']",9
+Administrative Services Managers,11-3012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",25-3011,['Microsoft Excel'],1
+Advertising Sales Agents,41-3011,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Canva', 'Google Analytics', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Salesforce software']",11
+Advertising and Promotions Managers,11-2011,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Aerospace Engineers,17-2011,"['C', 'C++', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'The MathWorks MATLAB']",6
+"Agents and Business Managers of Artists, Performers, and Athletes",13-1011,['Microsoft Excel'],1
+Agricultural Inspectors,45-2011,"['Microsoft Excel', 'Microsoft Outlook']",2
+Agricultural Technicians,19-4012,['Microsoft Excel'],1
+Air Traffic Controllers,53-2021,['Microsoft Excel'],1
+Airfield Operations Specialists,53-2022,['Microsoft Excel'],1
+Anesthesiologists,29-1211,['Epic Systems'],1
+Anthropologists and Archeologists,19-3091,"['ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Word']",3
+Appraisers and Assessors of Real Estate,13-2023,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Arbitrators, Mediators, and Conciliators",23-1022,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Architects, Except Landscape and Naval",17-1011,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Autodesk AutoCAD', 'Autodesk Revit', 'Microsoft Excel', 'Trimble SketchUp Pro']",8
+Architectural and Civil Drafters,17-3011,"['Adobe Photoshop', 'Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Autodesk Revit', 'Bentley MicroStation', 'Microsoft Excel', 'Microsoft Outlook', 'Trimble SketchUp Pro']",8
+Architectural and Engineering Managers,11-9041,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft PowerPoint']",3
+"Architecture Teachers, Postsecondary",25-1031,"['Autodesk AutoCAD', 'Autodesk Revit']",2
+Archivists,25-4011,"['Adobe Photoshop', 'Microsoft Excel']",2
+Art Directors,27-1011,"['Adobe After Effects', 'Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Figma', 'Microsoft Excel', 'Microsoft PowerPoint']",8
+Art Therapists,29-1129,['Zoom'],1
+"Art, Drama, and Music Teachers, Postsecondary",25-1121,['Adobe Photoshop'],1
+Astronomers,19-2011,['Python'],1
+Atmospheric and Space Scientists,19-2021,['Python'],1
+Audio and Video Technicians,27-4011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Teams', 'Zoom']",5
+Audiologists,29-1181,['Microsoft Excel'],1
+Automotive Engineers,17-2141,"['Autodesk AutoCAD', 'C++', 'Dassault Systemes SolidWorks', 'Microsoft Excel', 'Microsoft PowerPoint', 'Perl', 'Python', 'The MathWorks MATLAB']",8
+Aviation Inspectors,53-6051,"['Microsoft Excel', 'Microsoft Word']",2
+Avionics Technicians,49-2091,['Microsoft Excel'],1
+Bill and Account Collectors,43-3011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Billing and Posting Clerks,43-3021,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Biochemists and Biophysicists,19-1021,['Microsoft Excel'],1
+Bioengineers and Biomedical Engineers,17-2031,"['Microsoft Excel', 'Python', 'R']",3
+Bioinformatics Scientists,19-1029,"['Amazon Web Services AWS software', 'Bash', 'C', 'C++', 'GitHub', 'Linux', 'Microsoft Excel', 'Microsoft PowerPoint', 'Oracle Java', 'Perl', 'Python', 'R', 'Shell script', 'SQL', 'UNIX']",15
+Biological Technicians,19-4021,['Microsoft Excel'],1
+Biologists,19-1029,"['Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'R']",4
+Biostatisticians,15-2041,"['IBM SPSS Statistics', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'R', 'SAP software', 'SAS', 'SQL']",8
+Blockchain Engineers,15-1299,"['Amazon Web Services AWS software', 'Docker', 'Git', 'Go', 'JavaScript', 'Kubernetes', 'Microsoft Azure software', 'MySQL', 'Node.js', 'Oracle Java', 'Python', 'React', 'SQL', 'TypeScript']",14
+"Bookkeeping, Accounting, and Auditing Clerks",43-3031,"['Intuit QuickBooks', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",4
+Broadcast Technicians,27-4012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Brokerage Clerks,43-4011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Brownfield Redevelopment Specialists and Site Managers,11-9199,"['Microsoft Excel', 'Microsoft Outlook']",2
+Budget Analysts,13-2031,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Business Continuity Planners,13-1199,"['Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Visio']",4
+Business Intelligence Analysts,15-2051,"['Amazon Web Services AWS software', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Python', 'R', 'SAP software', 'SAS', 'SQL', 'Tableau']",11
+"Buyers and Purchasing Agents, Farm Products",13-1021,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Calibration Technologists and Technicians,17-3028,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'The MathWorks MATLAB']",5
+"Camera Operators, Television, Video, and Film",27-4031,"['Adobe After Effects', 'Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop']",4
+"Captains, Mates, and Pilots of Water Vessels",53-5021,"['Microsoft Excel', 'Microsoft Outlook']",2
+Cardiologists,29-1212,['Epic Systems'],1
+"Career/Technical Education Teachers, Postsecondary",25-1194,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Cargo and Freight Agents,43-5011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Cartographers and Photogrammetrists,17-1021,"['ESRI ArcGIS software', 'Python']",2
+Chefs and Head Cooks,35-1011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Chemical Engineers,17-2041,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft PowerPoint']",3
+Chemical Equipment Operators and Tenders,51-9011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",4
+Chemical Plant and System Operators,51-8091,['Microsoft Excel'],1
+Chemical Technicians,19-4031,"['Microsoft Excel', 'Microsoft Outlook']",2
+Chemists,19-2031,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Chief Executives,11-1011,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Child, Family, and School Social Workers",21-1021,"['Microsoft Excel', 'Microsoft Outlook']",2
+Civil Engineering Technologists and Technicians,17-3022,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Bentley MicroStation', 'Microsoft Excel']",4
+Civil Engineers,17-2051,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Autodesk Revit', 'Bentley MicroStation', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",7
+"Claims Adjusters, Examiners, and Investigators",13-1031,"['Microsoft Excel', 'Microsoft Outlook']",2
+Climate Change Policy Analysts,19-2041,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Clinical Data Managers,15-2051,"['Epic Systems', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Visio', 'SQL']",6
+Clinical Nurse Specialists,29-1141,['Microsoft Excel'],1
+Clinical Research Coordinators,11-9121,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Clinical and Counseling Psychologists,19-3033,"['Microsoft Teams', 'Zoom']",2
+Commercial and Industrial Designers,27-1021,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'Autodesk AutoCAD', 'Dassault Systemes SolidWorks', 'Figma', 'Microsoft Excel', 'Microsoft PowerPoint']",8
+Community Health Workers,21-1094,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Compensation and Benefits Managers,11-3111,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Compensation, Benefits, and Job Analysis Specialists",13-1141,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Compliance Managers,11-9199,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Compliance Officers,13-1041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Computer Hardware Engineers,17-2061,"['C', 'C++', 'Linux', 'Perl', 'Python', 'The MathWorks MATLAB']",6
+Computer Network Architects,15-1241,"['Amazon Web Services AWS software', 'Ansible software', 'Border Gateway Protocol BGP', 'Linux', 'Microsoft Active Directory', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft Visio', 'Python', 'SQL']",10
+Computer Network Support Specialists,15-1231,"['Border Gateway Protocol BGP', 'Microsoft Active Directory', 'Microsoft Excel', 'Microsoft Windows Server', 'ServiceNow']",5
+Computer Numerically Controlled Tool Programmers,51-9162,"['Autodesk AutoCAD', 'Dassault Systemes SolidWorks', 'Microsoft Excel']",3
+Computer Programmers,15-1251,"['C#', 'C++', 'Cascading style sheets CSS', 'Extensible markup language XML', 'Git', 'Hypertext markup language HTML', 'JavaScript', 'Linux', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft SQL Server', 'Oracle Java', 'Python', 'R', 'SAS', 'SQL']",16
+"Computer Science Teachers, Postsecondary",25-1021,"['C++', 'Linux', 'Oracle Java', 'Python']",4
+Computer Systems Analysts,15-1211,"['Atlassian JIRA', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Visio', 'Python', 'SAP software', 'ServiceNow', 'SQL']",9
+Computer Systems Engineers/Architects,15-1299,"['Amazon Web Services AWS software', 'Ansible software', 'Atlassian JIRA', 'Bash', 'C', 'C++', 'Docker', 'Git', 'Go', 'IBM Terraform', 'JavaScript', 'Jenkins CI', 'Kubernetes', 'Linux', 'Microsoft Active Directory', 'Microsoft Azure software', 'Microsoft PowerShell', 'Oracle Java', 'Python', 'SQL']",20
+Computer User Support Specialists,15-1232,"['Apple iOS', 'Apple macOS', 'Linux', 'Microsoft Active Directory', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Windows', 'ServiceNow', 'SQL']",9
+Computer and Information Research Scientists,15-1221,"['Amazon Web Services AWS software', 'C', 'C++', 'Docker', 'Git', 'Linux', 'Microsoft Azure software', 'Oracle Java', 'Python', 'R', 'SQL', 'TensorFlow', 'The MathWorks MATLAB']",13
+Computer and Information Systems Managers,11-3021,"['Amazon Web Services AWS software', 'Microsoft Azure software', 'Microsoft Excel', 'SAP software', 'SQL']",5
+Concierges,39-6012,"['Microsoft Excel', 'Microsoft Outlook']",2
+Conservation Scientists,19-1031,"['ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Word']",3
+Construction Managers,11-9021,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Project', 'Procore software']",4
+Construction and Building Inspectors,47-4011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+"Control and Valve Installers and Repairers, Except Mechanical Door",49-9012,"['Microsoft Excel', 'Microsoft Outlook']",2
+Correspondence Clerks,43-4021,"['Epic Systems', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",4
+Cost Estimators,13-1051,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Court, Municipal, and License Clerks",43-4031,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Credit Analysts,13-2041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Credit Authorizers, Checkers, and Clerks",43-4041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Credit Counselors,13-2071,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Curators,25-4012,['Microsoft Excel'],1
+Customer Service Representatives,43-4051,"['Microsoft Excel', 'Microsoft Outlook']",2
+Customs Brokers,13-1041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Data Entry Keyers,43-9021,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Data Scientists,15-2051,"['Amazon Web Services AWS software', 'Apache Hadoop', 'Apache Spark', 'C', 'C++', 'Docker', 'Git', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft Power BI', 'Oracle Java', 'Python', 'R', 'SAS', 'Scala', 'SQL', 'Tableau', 'TensorFlow', 'The MathWorks MATLAB']",19
+Data Warehousing Specialists,15-1243,"['Microsoft Access', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Python', 'SAP software', 'SQL', 'Tableau']",9
+Database Administrators,15-1242,"['Amazon Redshift', 'Amazon Simple Storage Service S3', 'Amazon Web Services AWS software', 'Apache Hadoop', 'Apache Kafka', 'Apache Spark', 'Git', 'Informatica software', 'Linux', 'Microsoft Access', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft Power BI', 'Microsoft SQL Server', 'Microsoft SQL Server Integration Services SSIS', 'MySQL', 'NoSQL', 'Oracle Database', 'Oracle Java', 'Oracle PL/SQL', 'PostgreSQL', 'Python', 'Salesforce software', 'Scala', 'SQL', 'Tableau', 'Transact-SQL', 'UNIX']",28
+Database Architects,15-1243,"['Amazon Web Services AWS software', 'Apache Spark', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Oracle Java', 'Python', 'SQL', 'Tableau']",10
+Dental Assistants,31-9091,['Henry Schein Dentrix'],1
+Desktop Publishers,43-9031,"['Adobe Acrobat', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Microsoft PowerPoint', 'Microsoft Word']",6
+Detectives and Criminal Investigators,33-3021,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Digital Forensics Analysts,15-1299,"['Linux', 'Microsoft PowerShell', 'Python', 'Splunk Enterprise', 'SQL']",5
+"Directors, Religious Activities and Education",21-2021,['Microsoft Excel'],1
+"Dispatchers, Except Police, Fire, and Ambulance",43-5032,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Document Management Specialists,15-1299,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Word']",5
+Economists,19-3011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Python', 'R', 'SAS', 'SQL', 'Tableau']",8
+Editors,27-3041,"['Adobe Photoshop', 'Hypertext markup language HTML', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",6
+"Education Administrators, Kindergarten through Secondary",11-9032,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Education Administrators, Postsecondary",11-9033,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+"Educational, Guidance, and Career Counselors and Advisors",21-1012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Electrical Engineers,17-2071,"['Autodesk AutoCAD', 'Autodesk Revit', 'C++', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'The MathWorks MATLAB']",7
+Electrical and Electronic Engineering Technologists and Technicians,17-3023,"['Microsoft Excel', 'Microsoft Outlook']",2
+Electrical and Electronics Drafters,17-3012,"['Autodesk AutoCAD', 'Autodesk Revit', 'Bentley MicroStation', 'Microsoft Excel', 'Microsoft Outlook']",5
+"Electrical and Electronics Installers and Repairers, Transportation Equipment",49-2093,['Microsoft Excel'],1
+"Electrical and Electronics Repairers, Powerhouse, Substation, and Relay",49-2095,"['Microsoft Excel', 'Microsoft Outlook']",2
+"Electronics Engineers, Except Computer",17-2072,"['C', 'C++', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'The MathWorks MATLAB']",6
+"Eligibility Interviewers, Government Programs",43-4061,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Emergency Management Directors,11-9161,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Emergency Medicine Physicians,29-1214,['Epic Systems'],1
+Energy Auditors,47-4011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Python', 'R', 'SQL']",7
+"Energy Engineers, Except Wind and Solar",17-2199,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Python', 'The MathWorks MATLAB']",6
+"Entertainment and Recreation Managers, Except Gambling",11-9072,['Microsoft Excel'],1
+Environmental Compliance Inspectors,13-1041,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Environmental Engineering Technologists and Technicians,17-3025,"['Microsoft Excel', 'Microsoft Outlook']",2
+Environmental Engineers,17-2081,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft PowerPoint']",3
+Environmental Restoration Planners,19-2041,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Environmental Science and Protection Technicians, Including Health",19-4042,['Microsoft Excel'],1
+"Environmental Scientists and Specialists, Including Health",19-2041,"['ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Epidemiologists,19-1041,"['Microsoft Excel', 'Microsoft PowerPoint', 'R', 'SAS']",4
+Equal Opportunity Representatives and Officers,13-1041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Etchers and Engravers,51-9194,['Adobe Illustrator'],1
+Executive Secretaries and Executive Administrative Assistants,43-6011,"['Google Workspace software', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",5
+Exercise Physiologists,29-1128,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Fabric and Apparel Patternmakers,51-6092,"['Adobe Illustrator', 'Adobe Photoshop', 'Autodesk AutoCAD']",3
+Facilities Managers,11-3013,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Family Medicine Physicians,29-1215,['Epic Systems'],1
+"Farmers, Ranchers, and Other Agricultural Managers",11-9013,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Fashion Designers,27-1022,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",7
+File Clerks,43-4071,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Film and Video Editors,27-4032,"['Adobe After Effects', 'Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'TikTok']",5
+Financial Examiners,13-2061,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Financial Managers,11-3031,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",4
+Financial Quantitative Analysts,13-2099,"['C++', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Visual Basic for Applications VBA', 'Oracle Java', 'Python', 'R', 'SAS', 'SQL', 'The MathWorks MATLAB']",10
+Financial Risk Specialists,13-2054,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Python', 'SQL', 'Tableau']",6
+Financial and Investment Analysts,13-2051,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'SAP software', 'SQL', 'Tableau']",7
+"Fine Artists, Including Painters, Sculptors, and Illustrators",27-1013,"['Adobe Illustrator', 'Adobe Photoshop']",2
+Fire Inspectors and Investigators,33-2021,"['Microsoft Excel', 'Microsoft Outlook']",2
+Fire-Prevention and Protection Engineers,17-2111,"['Autodesk AutoCAD', 'Autodesk Revit', 'Bentley MicroStation', 'Microsoft Excel']",4
+"First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services",39-1014,['Microsoft Excel'],1
+First-Line Supervisors of Firefighting and Prevention Workers,33-1021,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+First-Line Supervisors of Gambling Services Workers,39-1013,"['Microsoft Excel', 'Microsoft Outlook']",2
+"First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand",53-1042,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'SAP software']",5
+First-Line Supervisors of Housekeeping and Janitorial Workers,37-1011,"['Microsoft Excel', 'Microsoft Outlook']",2
+"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",37-1012,"['Microsoft Excel', 'Microsoft Outlook']",2
+First-Line Supervisors of Material-Moving Machine and Vehicle Operators,53-1043,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",4
+"First-Line Supervisors of Mechanics, Installers, and Repairers",49-1011,"['Microsoft Excel', 'Microsoft Outlook']",2
+First-Line Supervisors of Non-Retail Sales Workers,41-1012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Salesforce software']",4
+First-Line Supervisors of Office and Administrative Support Workers,43-1011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+First-Line Supervisors of Passenger Attendants,53-1044,['Microsoft Excel'],1
+First-Line Supervisors of Production and Operating Workers,51-1011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+First-Line Supervisors of Security Workers,33-1091,['Microsoft Excel'],1
+Fishing and Hunting Workers,45-3031,['Microsoft Excel'],1
+Fitness and Wellness Coordinators,11-9179,"['Microsoft Excel', 'Microsoft Outlook']",2
+Flight Attendants,53-2031,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Food Science Technicians,19-4013,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Food Scientists and Technologists,19-1012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Forensic Science Technicians,19-4092,['Microsoft Excel'],1
+Forest and Conservation Workers,45-4011,['Microsoft Excel'],1
+Foresters,19-1032,"['ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Word']",3
+"Fraud Examiners, Investigators and Analysts",13-2099,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Python', 'SAS', 'SQL']",7
+Freight Forwarders,43-5011,"['Microsoft Excel', 'Microsoft Outlook']",2
+Fuel Cell Engineers,17-2141,['The MathWorks MATLAB'],1
+Fundraisers,13-1131,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Salesforce software']",5
+Fundraising Managers,11-2033,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Salesforce software']",5
+Funeral Home Managers,11-9171,['Microsoft Excel'],1
+Gambling Change Persons and Booth Cashiers,41-2012,"['Microsoft Excel', 'Microsoft Word']",2
+General Internal Medicine Physicians,29-1216,['Epic Systems'],1
+General and Operations Managers,11-1021,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Genetic Counselors,29-9092,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Geneticists,19-1029,"['Python', 'R']",2
+Geographers,19-3092,"['ESRI ArcGIS software', 'Python', 'SQL']",3
+Geographic Information Systems Technologists and Technicians,15-1299,"['Autodesk AutoCAD', 'ESRI ArcGIS software', 'JavaScript', 'Microsoft Access', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft SQL Server', 'Python', 'SQL']",10
+"Geological Technicians, Except Hydrologic Technicians",19-4043,"['Microsoft Excel', 'Microsoft Outlook']",2
+"Geoscientists, Except Hydrologists and Geographers",19-2042,"['Autodesk AutoCAD', 'ESRI ArcGIS software', 'Git', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Word', 'Python']",7
+Graphic Designers,27-1024,"['Adobe After Effects', 'Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Cascading style sheets CSS', 'Figma', 'Hypertext markup language HTML', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",11
+Health Education Specialists,21-1091,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Health Informatics Specialists,15-1211,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'SAS', 'SQL', 'Tableau']",7
+Health Information Technologists and Medical Registrars,29-9021,"['Epic Systems', 'Microsoft Excel', 'Microsoft Outlook']",3
+"Health and Safety Engineers, Except Mining Safety Engineers and Inspectors",17-2111,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Healthcare Social Workers,21-1022,"['Microsoft Teams', 'Zoom']",2
+Hearing Aid Specialists,29-2092,['Microsoft Excel'],1
+Histology Technicians,29-2012,"['Microsoft Excel', 'Microsoft Outlook']",2
+Historians,19-3093,"['Adobe Acrobat', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft PowerPoint']",4
+Hospitalists,29-1229,['Epic Systems'],1
+Human Factors Engineers and Ergonomists,17-2112,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+"Human Resources Assistants, Except Payroll and Timekeeping",43-4161,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Human Resources Managers,11-3121,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Human Resources Specialists,13-1071,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Hydrologists,19-2043,"['ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'R']",5
+Industrial Ecologists,19-2041,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Industrial Engineering Technologists and Technicians,17-3026,['Microsoft Excel'],1
+Industrial Engineers,17-2112,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft PowerPoint', 'SAP software', 'SQL']",5
+Industrial Machinery Mechanics,49-9041,['Microsoft Excel'],1
+Industrial Production Managers,11-3051,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Information Security Analysts,15-1212,"['Amazon Web Services AWS software', 'Linux', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'Splunk Enterprise']",7
+Information Security Engineers,15-1299,"['Amazon Web Services AWS software', 'Linux', 'Microsoft Active Directory', 'Microsoft Azure software', 'Microsoft PowerShell', 'Oracle Java', 'Python', 'Splunk Enterprise', 'UNIX']",9
+Information Technology Project Managers,15-1299,"['Atlassian JIRA', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft PowerPoint', 'SAP software', 'ServiceNow', 'SQL']",7
+"Inspectors, Testers, Sorters, Samplers, and Weighers",51-9061,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Instructional Coordinators,25-9031,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Insurance Claims and Policy Processing Clerks,43-9041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Insurance Underwriters,13-2053,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Intelligence Analysts,33-3021,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Interior Designers,27-1025,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Autodesk AutoCAD', 'Autodesk Revit', 'Microsoft Excel', 'Microsoft PowerPoint', 'Trimble SketchUp Pro']",9
+"Interviewers, Except Eligibility and Loan",43-4111,['Zoom'],1
+Investment Fund Managers,11-3031,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Judges, Magistrate Judges, and Magistrates",23-1023,"['Microsoft Excel', 'Microsoft Outlook']",2
+Judicial Law Clerks,23-1012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Labor Relations Specialists,13-1075,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Landscape Architects,17-1012,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Autodesk Revit', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Trimble SketchUp Pro']",12
+Legal Secretaries and Administrative Assistants,43-6012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Librarians and Media Collections Specialists,25-4022,['Microsoft Excel'],1
+"Library Assistants, Clerical",43-4121,['Microsoft Excel'],1
+Library Technicians,25-4031,['Microsoft Excel'],1
+Lighting Technicians,27-4015,"['Microsoft Excel', 'Microsoft Outlook']",2
+Loan Interviewers and Clerks,43-4131,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Loan Officers,13-2072,"['Microsoft Excel', 'Microsoft Outlook']",2
+Lodging Managers,11-9081,"['Microsoft Excel', 'Microsoft Outlook']",2
+Logisticians,13-1081,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'SAP software']",5
+Logistics Analysts,13-1081,"['Microsoft Access', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'SAP software', 'SQL', 'Tableau']",8
+Logistics Engineers,13-1081,"['Microsoft Access', 'Microsoft Excel', 'Microsoft Power BI', 'Microsoft PowerPoint', 'SAP software', 'SQL']",6
+Loss Prevention Managers,11-9199,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Mail Clerks and Mail Machine Operators, Except Postal Service",43-9051,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Management Analysts,13-1111,"['Atlassian JIRA', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Microsoft Visio', 'Python', 'SQL', 'Tableau']",9
+Manufacturing Engineers,17-2112,"['Autodesk AutoCAD', 'Dassault Systemes SolidWorks', 'Microsoft Excel', 'Microsoft PowerPoint']",4
+Marine Engineers and Naval Architects,17-2121,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft PowerPoint']",3
+Market Research Analysts and Marketing Specialists,13-1161,"['Google Analytics', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Salesforce software']",5
+Marketing Managers,11-2021,"['Microsoft Excel', 'Microsoft PowerPoint', 'Salesforce software']",3
+Marriage and Family Therapists,21-1013,"['Microsoft Teams', 'Zoom']",2
+Materials Engineers,17-2131,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Mathematicians,15-2021,"['C#', 'C++', 'Python', 'The MathWorks MATLAB']",4
+Mechanical Drafters,17-3013,"['Autodesk AutoCAD', 'Autodesk Revit', 'Bentley MicroStation', 'Dassault Systemes SolidWorks', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",8
+Mechanical Engineering Technologists and Technicians,17-3027,"['Dassault Systemes SolidWorks', 'Microsoft Excel', 'Microsoft Outlook']",3
+Mechanical Engineers,17-2141,"['Autodesk AutoCAD', 'Autodesk Revit', 'Dassault Systemes SolidWorks', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Python']",7
+Mechatronics Engineers,17-2199,"['Autodesk AutoCAD', 'C', 'C++', 'Dassault Systemes SolidWorks', 'Linux', 'Microsoft Excel', 'Microsoft PowerPoint', 'Oracle Java', 'Python', 'The MathWorks MATLAB']",10
+Media Programming Directors,27-2012,"['Adobe Creative Cloud software', 'Adobe Photoshop', 'Google Analytics', 'Microsoft Excel', 'Microsoft PowerPoint']",5
+Medical Dosimetrists,29-2036,['Eclipse IDE'],1
+Medical Records Specialists,29-2072,"['Epic Systems', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",4
+Medical Secretaries and Administrative Assistants,43-6013,['Microsoft Excel'],1
+Medical and Clinical Laboratory Technicians,29-2012,['Microsoft Excel'],1
+Medical and Health Services Managers,11-9111,"['Microsoft Excel', 'Microsoft Outlook']",2
+"Meeting, Convention, and Event Planners",13-1121,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Mental Health and Substance Abuse Social Workers,21-1023,['Microsoft Excel'],1
+Merchandise Displayers and Window Trimmers,27-1026,['Microsoft Excel'],1
+"Meter Readers, Utilities",43-5041,['Microsoft Excel'],1
+Microbiologists,19-1022,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Mining and Geological Engineers, Including Mining Safety Engineers",17-2151,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Microsoft Excel', 'Microsoft PowerPoint']",4
+Molecular and Cellular Biologists,19-1029,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Morticians, Undertakers, and Funeral Arrangers",39-4031,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Natural Sciences Managers,11-9121,"['Microsoft Excel', 'Microsoft PowerPoint', 'R']",3
+Network and Computer Systems Administrators,15-1244,"['Amazon Web Services AWS software', 'Ansible software', 'Bash', 'Linux', 'Microsoft Active Directory', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft PowerShell', 'Microsoft SharePoint', 'Microsoft Windows', 'Microsoft Windows Server', 'Python', 'Red Hat Enterprise Linux', 'ServiceNow', 'SQL', 'UNIX']",16
+Neurologists,29-1217,['Epic Systems'],1
+New Accounts Clerks,43-4141,['Microsoft Excel'],1
+Non-Destructive Testing Specialists,17-3029,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Nuclear Engineers,17-2161,"['Microsoft Excel', 'Microsoft PowerPoint', 'Python']",3
+Nurse Anesthetists,29-1151,['Epic Systems'],1
+"Nursing Instructors and Teachers, Postsecondary",25-1072,['Microsoft PowerPoint'],1
+Obstetricians and Gynecologists,29-1218,['Epic Systems'],1
+Occupational Health and Safety Specialists,19-5011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Occupational Health and Safety Technicians,19-5012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Office Clerks, General",43-9061,"['Intuit QuickBooks', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",5
+Online Merchants,13-1199,"['Google Analytics', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",4
+Operations Research Analysts,15-2031,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Python', 'Salesforce software', 'SQL', 'Tableau']",8
+Order Clerks,43-4151,['Microsoft Excel'],1
+"Orthopedic Surgeons, Except Pediatric",29-1242,['Epic Systems'],1
+Paralegals and Legal Assistants,23-2011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Parking Enforcement Workers,33-3041,['Microsoft Excel'],1
+Parts Salespersons,41-2022,['Microsoft Excel'],1
+Patient Representatives,29-2099,"['Epic Systems', 'Microsoft Excel', 'Microsoft Outlook']",3
+Payroll and Timekeeping Clerks,43-3051,"['Kronos Workforce Timekeeper', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Workday software']",6
+Pediatric Surgeons,29-1243,['Epic Systems'],1
+"Pediatricians, General",29-1221,['Epic Systems'],1
+Penetration Testers,15-1299,"['Amazon Web Services AWS software', 'Bash', 'C', 'C#', 'C++', 'JavaScript', 'Linux', 'Microsoft Azure software', 'Microsoft PowerShell', 'Oracle Java', 'Perl', 'Python', 'Ruby', 'ServiceNow', 'UNIX']",15
+Personal Financial Advisors,13-2052,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+"Pesticide Handlers, Sprayers, and Applicators, Vegetation",37-3012,['Google Android'],1
+Petroleum Engineers,17-2171,"['Autodesk AutoCAD', 'Microsoft Excel', 'Microsoft PowerPoint']",3
+Photographers,27-4021,['Adobe Photoshop'],1
+Photographic Process Workers and Processing Machine Operators,51-9151,"['Adobe Photoshop', 'Microsoft Excel', 'Microsoft Outlook']",3
+Photonics Engineers,17-2199,"['C', 'C++', 'Dassault Systemes SolidWorks', 'Microsoft Excel', 'Python', 'The MathWorks MATLAB']",6
+Photonics Technicians,17-3029,['Microsoft Excel'],1
+Physicists,19-2012,"['Eclipse IDE', 'Python', 'The MathWorks MATLAB']",3
+Political Scientists,19-3094,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Power Plant Operators,51-8013,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Precision Agriculture Technicians,19-4012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Windows']",4
+Prepress Technicians and Workers,51-5111,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Microsoft Excel']",5
+Private Detectives and Investigators,33-9021,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Probation Officers and Correctional Treatment Specialists,21-1092,"['Microsoft Excel', 'Microsoft Word']",2
+Procurement Clerks,43-3061,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'SAP software']",5
+Producers and Directors,27-2012,"['Adobe After Effects', 'Adobe Creative Cloud software', 'Adobe Photoshop', 'Microsoft Excel']",4
+"Production, Planning, and Expediting Clerks",43-5061,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Project Management Specialists,13-1082,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Project', 'Microsoft Word']",5
+Proofreaders and Copy Markers,43-9081,"['HubSpot software', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Word', 'WordPress']",5
+"Property, Real Estate, and Community Association Managers",11-9141,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'Yardi software']",5
+Public Relations Managers,11-2032,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Public Relations Specialists,27-3031,"['Adobe Creative Cloud software', 'Adobe Photoshop', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",6
+"Purchasing Agents, Except Wholesale, Retail, and Farm Products",13-1023,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Word', 'SAP software']",6
+Purchasing Managers,11-3061,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",4
+Quality Control Analysts,19-4099,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'SAP software']",5
+Quality Control Systems Managers,11-3051,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Radiation Therapists,29-1124,['Epic Systems'],1
+Radio Frequency Identification Device Specialists,17-2072,"['C', 'C++', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'The MathWorks MATLAB']",6
+"Radio, Cellular, and Tower Equipment Installers and Repairers",49-2021,"['Microsoft Excel', 'Microsoft Outlook']",2
+Radiologists,29-1224,['Epic Systems'],1
+"Railroad Brake, Signal, and Switch Operators and Locomotive Firers",53-4022,"['Microsoft Excel', 'Microsoft Outlook']",2
+Real Estate Brokers,41-9021,"['Microsoft Excel', 'Microsoft Outlook', 'Yardi software']",3
+Real Estate Sales Agents,41-9022,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word', 'Yardi software']",4
+Receptionists and Information Clerks,43-4171,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Recycling Coordinators,53-1042,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Regulatory Affairs Managers,11-9199,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Regulatory Affairs Specialists,13-1041,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Rehabilitation Counselors,21-1015,['Microsoft Excel'],1
+Remote Sensing Scientists and Technologists,19-2099,"['C++', 'Python', 'The MathWorks MATLAB']",3
+Remote Sensing Technicians,19-4099,"['Bentley MicroStation', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word', 'Python']",6
+Reservation and Transportation Ticket Agents and Travel Clerks,43-4181,"['Microsoft Excel', 'Microsoft Outlook']",2
+Robotics Engineers,17-2199,"['Autodesk AutoCAD', 'C', 'C++', 'Dassault Systemes SolidWorks', 'Git', 'Linux', 'Python', 'SQL', 'The MathWorks MATLAB']",9
+Robotics Technicians,17-3024,"['C++', 'Linux', 'Microsoft Excel', 'Python']",4
+Sales Engineers,41-9031,"['Amazon Web Services AWS software', 'Linux', 'Microsoft Azure software', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Python', 'Salesforce software']",8
+Sales Managers,11-2022,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Salesforce software']",4
+"Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel",41-3091,"['Microsoft Excel', 'Microsoft Outlook', 'Salesforce software']",3
+"Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",41-4012,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Salesforce software']",4
+"Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products",41-4011,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Salesforce software']",4
+School Psychologists,19-3034,['Zoom'],1
+Search Marketing Strategists,13-1161,"['Cascading style sheets CSS', 'Google Analytics', 'Hypertext markup language HTML', 'JavaScript', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'WordPress']",8
+"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",43-6014,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+"Securities, Commodities, and Financial Services Sales Agents",41-3031,"['Microsoft Excel', 'Microsoft Outlook']",2
+Security Management Specialists,13-1199,"['Amazon Web Services AWS software', 'JavaScript', 'Linux', 'Microsoft Active Directory', 'Microsoft Azure software', 'Microsoft PowerShell', 'Oracle Java', 'SQL']",8
+Security Managers,11-3013,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+Security and Fire Alarm Systems Installers,49-2098,"['Microsoft Excel', 'Microsoft Outlook']",2
+Semiconductor Processing Technicians,51-9141,"['Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Word', 'Python', 'SAP software']",5
+Set and Exhibit Designers,27-1027,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'Autodesk AutoCAD', 'Microsoft Excel', 'Trimble SketchUp Pro']",6
+"Shipping, Receiving, and Inventory Clerks",43-5071,"['Microsoft Excel', 'Microsoft Outlook']",2
+Social and Community Service Managers,11-9151,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Social and Human Service Assistants,21-1093,"['Microsoft Excel', 'Microsoft Outlook']",2
+Software Developers,15-1252,"['Amazon Web Services AWS software', 'Atlassian JIRA', 'C', 'C#', 'C++', 'Cascading style sheets CSS', 'Docker', 'Extensible markup language XML', 'Git', 'GitHub', 'Google Angular', 'Hypertext markup language HTML', 'JavaScript', 'JavaScript Object Notation JSON', 'Jenkins CI', 'Kubernetes', 'Linux', 'Microsoft .NET Framework', 'Microsoft Azure software', 'Node.js', 'NoSQL', 'Oracle Java', 'Python', 'React', 'Spring Boot', 'Spring Framework', 'SQL', 'TypeScript']",28
+Software Quality Assurance Analysts and Testers,15-1253,"['Amazon Web Services AWS software', 'Atlassian JIRA', 'C#', 'C++', 'Git', 'JavaScript', 'Jenkins CI', 'Linux', 'Microsoft Azure software', 'Microsoft Excel', 'Oracle Java', 'Python', 'Selenium', 'SQL']",14
+Soil and Plant Scientists,19-1013,"['ESRI ArcGIS software', 'Microsoft Excel']",2
+Solar Energy Systems Engineers,17-2199,"['Autodesk AutoCAD', 'Google Workspace software', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'Salesforce software']",6
+Solar Sales Representatives and Assessors,41-4011,['Salesforce software'],1
+"Special Education Teachers, Middle School",25-2057,['Microsoft Excel'],1
+"Special Education Teachers, Secondary School",25-2058,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Special Effects Artists and Animators,27-1014,"['Adobe After Effects', 'Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Figma', 'Hypertext markup language HTML', 'Microsoft Excel', 'Microsoft PowerPoint']",9
+Sports Medicine Physicians,29-1229,['Epic Systems'],1
+Stationary Engineers and Boiler Operators,51-8021,['SAP software'],1
+Statistical Assistants,43-9111,"['C#', 'Oracle Java', 'Python', 'R', 'SAS']",5
+Statisticians,15-2041,"['IBM SPSS Statistics', 'Microsoft Access', 'Microsoft Excel', 'Microsoft PowerPoint', 'Python', 'R', 'SAS', 'SQL', 'Tableau']",9
+Supply Chain Managers,11-3071,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",4
+Surveying and Mapping Technicians,17-3031,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Bentley MicroStation', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Outlook']",6
+Surveyors,17-1022,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Bentley MicroStation']",3
+Sustainability Specialists,13-1199,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Microsoft Word']",5
+"Switchboard Operators, Including Answering Service",43-2011,"['Microsoft Excel', 'Microsoft Outlook']",2
+Talent Directors,27-2012,"['Microsoft Excel', 'Microsoft PowerPoint']",2
+"Tax Examiners and Collectors, and Revenue Agents",13-2081,"['Alteryx software', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'SAP software']",6
+Tax Preparers,13-2082,"['Microsoft Excel', 'Microsoft Outlook']",2
+"Teaching Assistants, Postsecondary",25-9044,['Microsoft Excel'],1
+Technical Writers,27-3042,"['Atlassian JIRA', 'Extensible markup language XML', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Visio', 'Microsoft Word']",8
+Telecommunications Engineering Specialists,15-1241,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+"Telecommunications Equipment Installers and Repairers, Except Line Installers",49-2022,['Microsoft Excel'],1
+Tire Repairers and Changers,49-3093,"['Microsoft Excel', 'Microsoft Outlook']",2
+"Title Examiners, Abstractors, and Searchers",23-2093,"['Microsoft Excel', 'Microsoft Outlook']",2
+Traffic Technicians,53-6041,['Microsoft Excel'],1
+Training and Development Managers,11-3131,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Training and Development Specialists,13-1151,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word']",4
+Transportation Engineers,17-2051,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Bentley MicroStation', 'Microsoft Excel', 'Microsoft PowerPoint']",5
+Transportation Inspectors,53-6051,['Google Android'],1
+Transportation Planners,19-3099,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+"Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation",53-6051,"['Microsoft Excel', 'Microsoft Outlook']",2
+"Transportation, Storage, and Distribution Managers",11-3071,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Travel Agents,41-3041,"['Microsoft Excel', 'Microsoft Outlook', 'Zoom']",3
+Treasurers and Controllers,11-3031,"['Intuit QuickBooks', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'SAP software']",5
+Urban and Regional Planners,19-3051,"['Adobe Creative Cloud software', 'Autodesk AutoCAD', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",6
+Urologists,29-1229,['Epic Systems'],1
+Validation Engineers,17-2112,"['Microsoft Excel', 'Microsoft PowerPoint', 'Python']",3
+Video Game Designers,15-1255,"['Adobe Photoshop', 'Atlassian JIRA', 'C', 'C#', 'C++', 'Git', 'JavaScript', 'Oracle Java', 'Python']",9
+Water Resource Specialists,11-9121,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint']",3
+Water and Wastewater Treatment Plant and System Operators,51-8031,"['Microsoft Excel', 'Microsoft Outlook']",2
+Water/Wastewater Engineers,17-2051,"['Autodesk AutoCAD', 'Autodesk AutoCAD Civil 3D', 'Bentley MicroStation', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft PowerPoint']",6
+Web Administrators,15-1299,"['Adobe Photoshop', 'Amazon Web Services AWS software', 'Apache Tomcat', 'Cascading style sheets CSS', 'Drupal', 'Extensible markup language XML', 'Google Analytics', 'Hypertext markup language HTML', 'IBM WebSphere MQ', 'JavaScript', 'Linux', 'Microsoft Excel', 'Microsoft SharePoint', 'Oracle Java', 'PHP', 'Python', 'SQL', 'UNIX', 'WordPress']",19
+Web Developers,15-1254,"['Amazon Web Services AWS software', 'Apache Kafka', 'Atlassian JIRA', 'Bootstrap', 'C#', 'Cascading style sheets CSS', 'Docker', 'Extensible markup language XML', 'Git', 'GitHub', 'Go', 'Google Angular', 'Hypertext markup language HTML', 'JavaScript', 'JavaScript Object Notation JSON', 'Jenkins CI', 'jQuery', 'Kubernetes', 'Linux', 'Microsoft Azure software', 'MongoDB', 'MySQL', 'Node.js', 'NoSQL', 'Oracle Java', 'PHP', 'PostgreSQL', 'Python', 'React', 'Spring Boot', 'Spring Framework', 'SQL', 'TypeScript', 'Vue.js', 'WordPress']",35
+Web and Digital Interface Designers,15-1255,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'Atlassian JIRA', 'Cascading style sheets CSS', 'Figma', 'Git', 'Google Angular', 'Hypertext markup language HTML', 'JavaScript', 'Oracle Java', 'React']",12
+"Weighers, Measurers, Checkers, and Samplers, Recordkeeping",43-5111,['Microsoft Outlook'],1
+"Wholesale and Retail Buyers, Except Farm Products",13-1022,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Word', 'SAP software']",5
+Wind Energy Engineers,17-2199,"['C++', 'Microsoft Excel', 'Python', 'The MathWorks MATLAB']",4
+Wind Turbine Service Technicians,49-9081,['SAP software'],1
+Word Processors and Typists,43-9022,"['Microsoft Excel', 'Microsoft Outlook', 'Microsoft Word']",3
+Writers and Authors,27-3043,"['Adobe Photoshop', 'Microsoft Excel', 'Microsoft PowerPoint', 'TikTok']",4
+Zoologists and Wildlife Biologists,19-1023,"['ESRI ArcGIS software', 'Microsoft Excel']",2

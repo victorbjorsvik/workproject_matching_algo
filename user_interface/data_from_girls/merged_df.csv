@@ -1,0 +1,405 @@
+O*NET-SOC Code,Title,Skills,hourly_wage,annual_wage
+13-2011,Accountants and Auditors,"['Microsoft PowerPoint', 'accounting', 'Microsoft Excel', 'operations research', 'SAP software', 'Microsoft Outlook', 'Intuit QuickBooks']",43.65,90780
+15-2011,Actuaries,"['SQL', 'Microsoft Visual Basic for Applications VBA', 'R', 'Tableau', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'Python', 'Microsoft Power BI']",63.7,132500
+11-3012,Administrative Services Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'information management', 'operations research', 'Microsoft Outlook']",58.27,121200
+25-3011,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors","['operations research', 'Microsoft Excel']",31.46,65430
+41-3011,Advertising Sales Agents,"['Adobe Creative Cloud software', 'Adobe InDesign', 'Google Analytics', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'Microsoft Word', 'Canva', 'advertising', 'operations research', 'Microsoft Outlook', 'Salesforce software']",36.45,75820
+11-2011,Advertising and Promotions Managers,"['Microsoft PowerPoint', 'advertising', 'operations research', 'Microsoft Excel']",73.38,152620
+17-2011,Aerospace Engineers,"['C', 'design', 'Microsoft PowerPoint', 'Microsoft Excel', 'testing', 'The MathWorks MATLAB', 'C++', 'Python', 'engineering']",64.58,134330
+13-1011,"Agents and Business Managers of Artists, Performers, and Athletes","['business', 'operations research', 'Microsoft Excel']",63.85,132810
+45-2011,Agricultural Inspectors,"['Microsoft Excel', 'Microsoft Outlook']",25.08,52170
+19-4012,Agricultural Technicians,"['operations research', 'Microsoft Excel']",22.5,46810
+53-2021,Air Traffic Controllers,"['operations research', 'Microsoft Excel']",65.77,136790
+53-2022,Airfield Operations Specialists,"['monitoring', 'Microsoft Excel']",29.88,62140
+29-1211,Anesthesiologists,"['operations research', 'Epic Systems']",163.21,339470
+19-3091,Anthropologists and Archeologists,"['Microsoft Word', 'operations research', 'Microsoft Excel', 'ESRI ArcGIS software']",33.55,69780
+13-2023,Appraisers and Assessors of Real Estate,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",0,0
+23-1022,"Arbitrators, Mediators, and Conciliators","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",45.85,95370
+17-1011,"Architects, Except Landscape and Naval","['Adobe Creative Cloud software', 'design', 'Autodesk AutoCAD', 'Adobe InDesign', 'Autodesk Revit', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'Trimble SketchUp Pro']",48.27,100400
+17-3011,Architectural and Civil Drafters,"['Autodesk AutoCAD Civil 3D', 'Autodesk AutoCAD', 'Autodesk Revit', 'Adobe Photoshop', 'Microsoft Excel', 'Bentley MicroStation', 'civil engineering', 'operations research', 'Trimble SketchUp Pro', 'Microsoft Outlook', 'engineering']",31.25,65000
+11-9041,Architectural and Engineering Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Autodesk AutoCAD', 'operations research', 'engineering']",82.83,172290
+25-1031,"Architecture Teachers, Postsecondary","['design', 'Autodesk AutoCAD', 'Autodesk Revit']",*,114900
+25-4011,Archivists,"['Adobe Photoshop', 'Microsoft Excel']",31.59,65700
+27-1011,Art Directors,"['Adobe Creative Cloud software', 'Adobe After Effects', 'design', 'Adobe InDesign', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'broadcasting', 'Microsoft Excel', 'Figma', 'operations research']",60.54,125920
+29-1129,Art Therapists,"['Zoom', 'operations research']",36.38,75660
+25-1121,"Art, Drama, and Music Teachers, Postsecondary","['design', 'Adobe Photoshop', 'operations research']",*,100840
+19-2011,Astronomers,"['operations research', 'Python']",61.99,128940
+19-2021,Atmospheric and Space Scientists,['Python'],48.81,101530
+27-4011,Audio and Video Technicians,"['Microsoft PowerPoint', 'Zoom', 'Microsoft Excel', 'Microsoft Teams', 'operations research', 'Microsoft Outlook']",28.49,59260
+29-1181,Audiologists,"['training model', 'Microsoft Excel']",44.53,92620
+17-2141,Automotive Engineers,"['design', 'Autodesk AutoCAD', 'Perl', 'Microsoft PowerPoint', 'component', 'testing', 'Microsoft Excel', 'The MathWorks MATLAB', 'C++', 'Python', 'Dassault Systemes SolidWorks', 'operations research']",50.59,105220
+53-6051,Aviation Inspectors,"['Microsoft Word', 'Microsoft Excel', 'communications']",40.35,83920
+49-2091,Avionics Technicians,"['operations research', 'Microsoft Excel']",37.06,77080
+43-3011,Bill and Account Collectors,"['Microsoft Word', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",22.12,46020
+43-3021,Billing and Posting Clerks,"['Microsoft PowerPoint', 'accounting', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",22.66,47120
+19-1021,Biochemists and Biophysicists,"['operations research', 'Microsoft Excel']",57.84,120310
+17-2031,Bioengineers and Biomedical Engineers,"['computer science', 'Microsoft Excel', 'Python', 'R', 'design', 'engineering']",51.3,106700
+19-1029,Bioinformatics Scientists,"['C', 'R', 'operations research', 'Microsoft Excel', 'database', 'C++', 'Python', 'UNIX', 'SQL', 'Linux', 'Bash', 'Shell script', 'design', 'Perl', 'Amazon Web Services AWS software', 'Microsoft PowerPoint', 'Oracle Java', 'GitHub', 'algorithm']",47.62,99060
+19-4021,Biological Technicians,['Microsoft Excel'],27.18,56540
+19-1029,Biologists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'R', 'operations research']",47.62,99060
+15-2041,Biostatisticians,"['SQL', 'R', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'IBM SPSS Statistics', 'Python', 'SAP software']",52.5,109190
+15-1299,Blockchain Engineers,"['blockchain', 'cryptocurrency', 'MySQL', 'Kubernetes', 'JavaScript', 'Git', 'testing', 'Python', 'security', 'TypeScript', 'SQL', 'Microsoft Azure software', 'design', 'Go', 'Node.js', 'deployment', 'Amazon Web Services AWS software', 'Oracle Java', 'React', 'Docker', 'operations research']",54.05,112430
+43-3031,"Bookkeeping, Accounting, and Auditing Clerks","['business', 'accounting', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook', 'Intuit QuickBooks']",23.84,49580
+27-4012,Broadcast Technicians,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",34.43,71600
+43-4011,Brokerage Clerks,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",30.35,63130
+11-9199,Brownfield Redevelopment Specialists and Site Managers,"['Microsoft Excel', 'Microsoft Outlook']",70.35,146320
+13-2031,Budget Analysts,"['Microsoft PowerPoint', 'accounting', 'Microsoft Excel', 'Microsoft Outlook']",43.69,90880
+13-1199,Business Continuity Planners,"['business', 'Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Excel', 'Microsoft Visio', 'documentation', 'operations research']",42.85,89130
+15-2051,Business Intelligence Analysts,"['SQL', 'Microsoft Azure software', 'R', 'Tableau', 'Amazon Web Services AWS software', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'Python', 'Microsoft Power BI', 'SAP software', 'devise']",57.23,119040
+13-1021,"Buyers and Purchasing Agents, Farm Products","['Microsoft PowerPoint', 'tree structure', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",0,0
+17-3028,Calibration Technologists and Technicians,"['Microsoft PowerPoint', 'The MathWorks MATLAB', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'engineering']",32.39,67360
+27-4031,"Camera Operators, Television, Video, and Film","['Adobe Creative Cloud software', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe After Effects', 'operations research']",34.56,71890
+53-5021,"Captains, Mates, and Pilots of Water Vessels","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",47.03,97820
+29-1212,Cardiologists,"['operations research', 'Epic Systems']",203.49,423250
+25-1194,"Career/Technical Education Teachers, Postsecondary","['business', 'Microsoft PowerPoint', 'Microsoft Excel', 'training model', 'operations research']",32.84,68300
+43-5011,Cargo and Freight Agents,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'training model', 'Microsoft Outlook']",25.22,52460
+17-1021,Cartographers and Photogrammetrists,"['data structure', 'algorithm', 'ESRI ArcGIS software', 'Python', 'design', 'operations research']",37.89,78810
+35-1011,Chefs and Head Cooks,"['Microsoft Word', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",30.12,62640
+17-2041,Chemical Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'design', 'Autodesk AutoCAD', 'devise', 'engineering']",59.09,122910
+51-9011,Chemical Equipment Operators and Tenders,"['Microsoft PowerPoint', 'Microsoft Excel', 'operations research', 'SAP software', 'Microsoft Outlook']",27.57,57350
+51-8091,Chemical Plant and System Operators,"['operations research', 'Microsoft Excel']",38.2,79450
+19-4031,Chemical Technicians,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",29.29,60920
+19-2031,Chemists,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",45.94,95560
+11-1011,Chief Executives,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",124.47,258900
+21-1021,"Child, Family, and School Social Workers","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",28.46,59190
+17-3022,Civil Engineering Technologists and Technicians,"['Microsoft Excel', 'Bentley MicroStation', 'Autodesk AutoCAD Civil 3D', 'civil engineering', 'Autodesk AutoCAD', 'operations research', 'engineering']",30.66,63770
+17-2051,Civil Engineers,"['Autodesk AutoCAD Civil 3D', 'Autodesk AutoCAD', 'Autodesk Revit', 'Microsoft PowerPoint', 'Microsoft Excel', 'Bentley MicroStation', 'Microsoft Outlook', 'engineering']",48.64,101160
+13-1031,"Claims Adjusters, Examiners, and Investigators","['payment services', 'Microsoft Excel', 'Microsoft Outlook']",36.43,75770
+19-2041,Climate Change Policy Analysts,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",41.69,86710
+15-2051,Clinical Data Managers,"['Microsoft PowerPoint', 'Microsoft SharePoint', 'SQL', 'Microsoft Excel', 'database', 'Microsoft Visio', 'Epic Systems']",57.23,119040
+29-1141,Clinical Nurse Specialists,"['operations research', 'Microsoft Excel']",45.42,94480
+11-9121,Clinical Research Coordinators,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",81.31,169120
+19-3033,Clinical and Counseling Psychologists,"['Microsoft Teams', 'design', 'operations research', 'Zoom']",51.25,106600
+27-1021,Commercial and Industrial Designers,"['Adobe Creative Cloud software', 'design', 'Autodesk AutoCAD', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'Dassault Systemes SolidWorks', 'marketing', 'Figma']",39.36,81870
+21-1094,Community Health Workers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",25.3,52610
+11-3111,Compensation and Benefits Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",72.57,150940
+13-1141,"Compensation, Benefits, and Job Analysis Specialists","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Outlook']",38.76,80620
+11-9199,Compliance Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",70.35,146320
+13-1041,Compliance Officers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",38.55,80190
+17-2061,Computer Hardware Engineers,"['Linux', 'C', 'design', 'Perl', 'component', 'The MathWorks MATLAB', 'C++', 'Python', 'operations research']",71.04,147770
+15-1241,Computer Network Architects,"['computer security', 'software', 'Border Gateway Protocol BGP', 'local area network', 'communications', 'Ansible software', 'Microsoft Excel', 'Python', 'SQL', 'Linux', 'Microsoft Visio', 'Microsoft Azure software', 'design', 'Microsoft Active Directory', 'Amazon Web Services AWS software', 'wide area network']",64.39,133930
+15-1231,Computer Network Support Specialists,"['Microsoft Active Directory', 'Microsoft Windows Server', 'Border Gateway Protocol BGP', 'wide area network', 'local area network', 'communications', 'ServiceNow', 'Microsoft Excel']",37.81,78640
+51-9162,Computer Numerically Controlled Tool Programmers,"['Autodesk AutoCAD', 'operations research', 'Microsoft Excel', 'Dassault Systemes SolidWorks']",32.52,67650
+15-1251,Computer Programmers,"['code', 'R', 'Microsoft SQL Server', 'JavaScript', 'SAS', 'software', 'Git', 'Microsoft Excel', 'C#', 'C++', 'Python', 'Hypertext markup language HTML', 'Extensible markup language XML', 'SQL', 'Linux', 'Cascading style sheets CSS', 'Microsoft PowerPoint', 'Oracle Java', 'operations research']",51.8,107750
+25-1021,"Computer Science Teachers, Postsecondary","['Linux', 'computer science', 'Oracle Java', 'C++', 'Python', 'design', 'operations research']",*,106380
+15-1211,Computer Systems Analysts,"['business', 'Microsoft SharePoint', 'software', 'data processing', 'Microsoft Excel', 'Python', 'schedule', 'Atlassian JIRA', 'SAP software', 'systems management', 'SQL', 'Microsoft Visio', 'Microsoft PowerPoint', 'ServiceNow', 'operations research', 'engineering']",53.27,110800
+15-1299,Computer Systems Engineers/Architects,"['C', 'Kubernetes', 'IBM Terraform', 'JavaScript', 'Git', 'Ansible software', 'C++', 'Python', 'Atlassian JIRA', 'Microsoft PowerShell', 'systems management', 'SQL', 'Linux', 'Bash', 'Microsoft Azure software', 'design', 'Go', 'Microsoft Active Directory', 'Jenkins CI', 'Amazon Web Services AWS software', 'Oracle Java', 'Docker', 'operations research']",54.05,112430
+15-1232,Computer User Support Specialists,"['operating system', 'Apple macOS', 'SQL', 'Linux', 'Microsoft Active Directory', 'computer hardware', 'software', 'Apple iOS', 'Microsoft Excel', 'ServiceNow', 'Microsoft Windows', 'operations research', 'Microsoft Outlook']",30.6,63640
+15-1221,Computer and Information Research Scientists,"['C', 'R', 'computer hardware', 'software', 'Git', 'C++', 'Python', 'SQL', 'Linux', 'Microsoft Azure software', 'Amazon Web Services AWS software', 'The MathWorks MATLAB', 'TensorFlow', 'Oracle Java', 'Docker', 'operations research']",75.56,157160
+11-3021,Computer and Information Systems Managers,"['SQL', 'Microsoft Azure software', 'computer programming', 'Amazon Web Services AWS software', 'data processing', 'Microsoft Excel', 'operations research', 'SAP software']",86.88,180720
+39-6012,Concierges,"['business', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",19.34,40230
+19-1031,Conservation Scientists,"['rotation', 'Microsoft Excel', 'Microsoft Word', 'ESRI ArcGIS software', 'operations research']",35.17,73160
+11-9021,Construction Managers,"['Microsoft Project', 'Microsoft Excel', 'Procore software', 'operations research', 'Microsoft Outlook']",56.23,116960
+47-4011,Construction and Building Inspectors,"['Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'engineering']",35.04,72880
+49-9012,"Control and Valve Installers and Repairers, Except Mechanical Door","['Microsoft Excel', 'Microsoft Outlook']",34.79,72360
+43-4021,Correspondence Clerks,"['compose', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'Epic Systems']",22.57,46940
+13-1051,Cost Estimators,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",38.23,79520
+43-4031,"Court, Municipal, and License Clerks","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",23.44,48760
+13-2041,Credit Analysts,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",45.56,94750
+43-4041,"Credit Authorizers, Checkers, and Clerks","['business', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",24.22,50380
+13-2071,Credit Counselors,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",25.69,53440
+25-4012,Curators,"['operations research', 'Microsoft Excel']",34.07,70870
+43-4051,Customer Service Representatives,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",20.92,43520
+13-1041,Customs Brokers,"['Microsoft PowerPoint', 'payment services', 'Microsoft Excel', 'documentation', 'Microsoft Outlook']",38.55,80190
+43-9021,Data Entry Keyers,"['Microsoft Word', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",19.29,40130
+15-2051,Data Scientists,"['data modeling', 'C', 'R', 'natural language processing', 'Tableau', 'SAS', 'software', 'Git', 'Microsoft Excel', 'visualization', 'C++', 'programming languages', 'Scala', 'data mining', 'Python', 'machine learning', 'Microsoft Power BI', 'SQL', 'Apache Hadoop', 'Microsoft Azure software', 'Apache Spark', 'dynamic data', 'Amazon Web Services AWS software', 'The MathWorks MATLAB', 'TensorFlow', 'Oracle Java', 'analytics', 'Docker', 'operations research']",57.23,119040
+15-1243,Data Warehousing Specialists,"['Microsoft Access', 'SQL', 'Microsoft Outlook', 'design', 'Tableau', 'Microsoft PowerPoint', 'Microsoft Excel', 'database', 'Python', 'operations research', 'SAP software', 'Microsoft Power BI']",65.88,137030
+15-1242,Database Administrators,"['Microsoft Access', 'NoSQL', 'PostgreSQL', 'MySQL', 'Apache Kafka', 'Microsoft SQL Server', 'Tableau', 'Git', 'Microsoft Excel', 'Amazon Simple Storage Service S3', 'database', 'Python', 'Scala', 'Transact-SQL', 'Microsoft Power BI', 'UNIX', 'Salesforce software', 'security', 'SQL', 'Linux', 'Oracle PL/SQL', 'Apache Hadoop', 'Microsoft Azure software', 'Microsoft SQL Server Integration Services SSIS', 'Informatica software', 'Apache Spark', 'Amazon Web Services AWS software', 'Amazon Redshift', 'scalability', 'Oracle Java', 'Oracle Database']",50.39,104810
+15-1243,Database Architects,"['data modeling', 'Tableau', 'data warehouse', 'relational database', 'Microsoft Excel', 'database', 'Microsoft Power BI', 'Python', 'security', 'SQL', 'Microsoft Azure software', 'design', 'Apache Spark', 'Amazon Web Services AWS software', 'Microsoft PowerPoint', 'Oracle Java', 'operations research']",65.88,137030
+31-9091,Dental Assistants,"['Henry Schein Dentrix', 'code']",22.77,47350
+43-9031,Desktop Publishers,"['Adobe InDesign', 'Microsoft PowerPoint', 'Adobe Illustrator', 'software', 'Adobe Photoshop', 'Adobe Acrobat', 'Microsoft Word', 'typescript']",27.73,57680
+33-3021,Detectives and Criminal Investigators,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",46.12,95930
+15-1299,Digital Forensics Analysts,"['SQL', 'Splunk Enterprise', 'Linux', 'Python', 'Microsoft PowerShell', 'operations research', 'computer security']",54.05,112430
+21-2021,"Directors, Religious Activities and Education","['design', 'operations research', 'Microsoft Excel']",29.68,61740
+43-5032,"Dispatchers, Except Police, Fire, and Ambulance","['business', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'schedule']",24.44,50830
+15-1299,Document Management Specialists,"['Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",54.05,112430
+19-3011,Economists,"['SQL', 'R', 'Tableau', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'Python', 'operations research', 'Microsoft Outlook']",63.78,132650
+27-3041,Editors,"['Microsoft PowerPoint', 'Adobe Photoshop', 'Microsoft Excel', 'Microsoft Word', 'Hypertext markup language HTML', 'operations research', 'Microsoft Outlook']",40.92,85110
+11-9032,"Education Administrators, Kindergarten through Secondary","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",*,111020
+11-9033,"Education Administrators, Postsecondary","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",58.66,122010
+21-1012,"Educational, Guidance, and Career Counselors and Advisors","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Outlook']",32.21,66990
+17-2071,Electrical Engineers,"['design', 'Autodesk AutoCAD', 'Autodesk Revit', 'Microsoft PowerPoint', 'component', 'Microsoft Excel', 'The MathWorks MATLAB', 'C++', 'Python', 'operations research']",56.58,117680
+17-3023,Electrical and Electronic Engineering Technologists and Technicians,"['component', 'Microsoft Excel', 'design', 'Microsoft Outlook', 'engineering']",35.79,74440
+17-3012,Electrical and Electronics Drafters,"['Autodesk Revit', 'Microsoft Excel', 'Bentley MicroStation', 'Autodesk AutoCAD', 'operations research', 'Microsoft Outlook']",35.15,73110
+49-2093,"Electrical and Electronics Installers and Repairers, Transportation Equipment","['security', 'Microsoft Excel', 'communications', 'sonar', 'operations research']",36.72,76380
+49-2095,"Electrical and Electronics Repairers, Powerhouse, Substation, and Relay","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",44.63,92840
+17-2072,"Electronics Engineers, Except Computer","['C', 'telecommunications', 'design', 'Microsoft PowerPoint', 'component', 'Microsoft Excel', 'The MathWorks MATLAB', 'C++', 'Python', 'operations research']",59.71,124190
+43-4061,"Eligibility Interviewers, Government Programs","['security', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",24.92,51840
+11-9161,Emergency Management Directors,"['Microsoft PowerPoint', 'training model', 'operations research', 'Microsoft Excel']",45.05,93690
+29-1214,Emergency Medicine Physicians,"['operations research', 'Epic Systems']",147.42,306640
+47-4011,Energy Auditors,"['SQL', 'R', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Python', 'operations research', 'Microsoft Outlook']",35.04,72880
+17-2199,"Energy Engineers, Except Wind and Solar","['design', 'Autodesk AutoCAD', 'Microsoft PowerPoint', 'Microsoft Excel', 'The MathWorks MATLAB', 'Python', 'operations research', 'Microsoft Outlook']",56.9,118350
+11-9072,"Entertainment and Recreation Managers, Except Gambling","['operations research', 'Microsoft Excel']",40.42,84080
+13-1041,Environmental Compliance Inspectors,"['Microsoft PowerPoint', 'Microsoft Excel']",38.55,80190
+17-3025,Environmental Engineering Technologists and Technicians,"['environmental engineering', 'Microsoft Excel', 'operations research', 'Microsoft Outlook', 'engineering']",28.26,58780
+17-2081,Environmental Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'design', 'Autodesk AutoCAD', 'operations research', 'engineering']",50.89,105840
+19-2041,Environmental Restoration Planners,"['Microsoft PowerPoint', 'monitoring', 'operations research', 'Microsoft Excel']",41.69,86710
+19-4042,"Environmental Science and Protection Technicians, Including Health","['operations research', 'testing', 'Microsoft Excel']",27.63,57470
+19-2041,"Environmental Scientists and Specialists, Including Health","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'ESRI ArcGIS software', 'operations research']",41.69,86710
+19-1041,Epidemiologists,"['Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'R', 'operations research']",43.48,90430
+13-1041,Equal Opportunity Representatives and Officers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",38.55,80190
+51-9194,Etchers and Engravers,"['Adobe Illustrator', 'operations research']",20.57,42780
+43-6011,Executive Secretaries and Executive Administrative Assistants,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Google Workspace software', 'training model', 'Microsoft Outlook']",35.42,73680
+29-1128,Exercise Physiologists,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",27.43,57050
+51-6092,Fabric and Apparel Patternmakers,"['Adobe Illustrator', 'Adobe Photoshop', 'fabric', 'Autodesk AutoCAD', 'operations research']",32.09,66750
+11-3013,Facilities Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",53.42,111110
+29-1215,Family Medicine Physicians,"['operations research', 'Epic Systems']",115.77,240790
+11-9013,"Farmers, Ranchers, and Other Agricultural Managers","['Microsoft PowerPoint', 'Microsoft Excel', 'marketing', 'training model', 'operations research', 'Microsoft Outlook']",43.35,90160
+27-1022,Fashion Designers,"['Adobe Creative Cloud software', 'design', 'Adobe InDesign', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'operations research', 'Microsoft Outlook']",46.65,97030
+43-4071,File Clerks,"['Microsoft Word', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",19.58,40730
+27-4032,Film and Video Editors,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'TikTok', 'Adobe After Effects', 'operations research']",40.13,83470
+13-2061,Financial Examiners,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",47.18,98140
+11-3031,Financial Managers,"['Microsoft PowerPoint', 'accounting', 'Microsoft Excel', 'operations research', 'SAP software', 'Microsoft Outlook']",84.05,174820
+13-2099,Financial Quantitative Analysts,"['SQL', 'Microsoft Visual Basic for Applications VBA', 'R', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'The MathWorks MATLAB', 'Oracle Java', 'statistical model', 'C++', 'Python', 'operations research']",43.1,89650
+13-2054,Financial Risk Specialists,"['Microsoft PowerPoint', 'SQL', 'Microsoft Excel', 'Python', 'Microsoft Outlook', 'operations research', 'Tableau']",57.19,118950
+13-2051,Financial and Investment Analysts,"['SQL', 'Tableau', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Power BI', 'operations research', 'SAP software', 'Microsoft Outlook']",54.3,112950
+27-1013,"Fine Artists, Including Painters, Sculptors, and Illustrators","['Adobe Illustrator', 'Adobe Photoshop']",34.34,71420
+33-2021,Fire Inspectors and Investigators,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",39.67,82510
+17-2111,Fire-Prevention and Protection Engineers,"['component', 'Autodesk Revit', 'Microsoft Excel', 'Bentley MicroStation', 'design', 'Autodesk AutoCAD', 'operations research']",52.28,108740
+39-1014,"First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services",['Microsoft Excel'],24.35,50650
+33-1021,First-Line Supervisors of Firefighting and Prevention Workers,"['Microsoft PowerPoint', 'Microsoft Excel']",43.63,90740
+39-1013,First-Line Supervisors of Gambling Services Workers,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",29.86,62110
+53-1042,"First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'SAP software', 'Microsoft Outlook']",0,0
+37-1011,First-Line Supervisors of Housekeeping and Janitorial Workers,"['Microsoft Excel', 'Microsoft Outlook']",24.03,49980
+37-1012,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",28.33,58920
+53-1043,First-Line Supervisors of Material-Moving Machine and Vehicle Operators,"['Microsoft PowerPoint', 'Microsoft Excel', 'SAP software', 'Microsoft Outlook']",0,0
+49-1011,"First-Line Supervisors of Mechanics, Installers, and Repairers","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",37.99,79020
+41-1012,First-Line Supervisors of Non-Retail Sales Workers,"['Microsoft PowerPoint', 'accounting', 'Microsoft Excel', 'Microsoft Outlook', 'Salesforce software']",47.61,99020
+43-1011,First-Line Supervisors of Office and Administrative Support Workers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Outlook']",32.99,68620
+53-1044,First-Line Supervisors of Passenger Attendants,"['Microsoft Excel', 'passenger']",0,0
+51-1011,First-Line Supervisors of Production and Operating Workers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",34.48,71730
+33-1091,First-Line Supervisors of Security Workers,"['security', 'Microsoft Excel']",28.64,59580
+45-3031,Fishing and Hunting Workers,"['operations research', 'Microsoft Excel']",0,0
+11-9179,Fitness and Wellness Coordinators,"['training model', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",30.28,62980
+53-2031,Flight Attendants,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Outlook']",*,70980
+19-4013,Food Science Technicians,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",25.96,54000
+19-1012,Food Scientists and Technologists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Outlook', 'engineering']",42.48,88350
+19-4092,Forensic Science Technicians,"['operations research', 'Microsoft Excel']",34.4,71540
+45-4011,Forest and Conservation Workers,"['tree structure', 'operations research', 'Microsoft Excel']",17.72,36860
+19-1032,Foresters,"['tree structure', 'Microsoft Excel', 'Microsoft Word', 'ESRI ArcGIS software', 'devise']",33.98,70680
+13-2099,"Fraud Examiners, Investigators and Analysts","['SQL', 'fraud detection', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'Microsoft Word', 'Python', 'Microsoft Outlook']",43.1,89650
+43-5011,Freight Forwarders,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",25.22,52460
+17-2141,Fuel Cell Engineers,"['design', 'operations research', 'The MathWorks MATLAB', 'component']",50.59,105220
+13-1131,Fundraisers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'design', 'operations research', 'Microsoft Outlook', 'Salesforce software']",34.02,70760
+11-2033,Fundraising Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'Salesforce software']",64.24,133620
+11-9171,Funeral Home Managers,"['operations research', 'Microsoft Excel']",40.77,84800
+41-2012,Gambling Change Persons and Booth Cashiers,"['Microsoft Word', 'operations research', 'Microsoft Excel']",17.32,36030
+29-1216,General Internal Medicine Physicians,['Epic Systems'],118.01,245450
+11-1021,General and Operations Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",62.18,129330
+29-9092,Genetic Counselors,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",47.18,98130
+19-1029,Geneticists,"['operations research', 'Python', 'R']",47.62,99060
+19-3092,Geographers,"['SQL', 'ESRI ArcGIS software', 'Python']",44.45,92460
+15-1299,Geographic Information Systems Technologists and Technicians,"['Microsoft Access', 'SQL', 'ESRI ArcGIS software', 'Microsoft SQL Server', 'Autodesk AutoCAD', 'JavaScript', 'Microsoft PowerPoint', 'Microsoft Excel', 'database', 'Python', 'operations research', 'Microsoft Outlook']",54.05,112430
+19-4043,"Geological Technicians, Except Hydrologic Technicians","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",31.05,64590
+19-2042,"Geoscientists, Except Hydrologists and Geographers","['ESRI ArcGIS software', 'Autodesk AutoCAD', 'Microsoft PowerPoint', 'Git', 'Microsoft Excel', 'Microsoft Word', 'Python', 'operations research']",50,104000
+27-1024,Graphic Designers,"['Adobe Creative Cloud software', 'Adobe After Effects', 'Cascading style sheets CSS', 'design', 'Adobe InDesign', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Figma', 'Microsoft Excel', 'Hypertext markup language HTML', 'operations research', 'Microsoft Outlook']",31.11,64700
+21-1091,Health Education Specialists,"['Microsoft PowerPoint', 'monitoring', 'Microsoft Excel', 'operations research', 'Microsoft Outlook']",33.55,69790
+15-1211,Health Informatics Specialists,"['SQL', 'design', 'Tableau', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",53.27,110800
+29-9021,Health Information Technologists and Medical Registrars,"['Microsoft Excel', 'database', 'design', 'Microsoft Outlook', 'Epic Systems']",33.78,70260
+17-2111,"Health and Safety Engineers, Except Mining Safety Engineers and Inspectors","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",52.28,108740
+21-1022,Healthcare Social Workers,"['Microsoft Teams', 'Zoom', 'terminal', 'operations research']",32.42,67430
+29-2092,Hearing Aid Specialists,"['design', 'Microsoft Excel']",29.59,61550
+29-2012,Histology Technicians,"['Microsoft Excel', 'Microsoft Outlook']",0,0
+19-3093,Historians,"['Microsoft PowerPoint', 'Adobe Acrobat', 'Microsoft Excel', 'ESRI ArcGIS software']",36.6,76120
+29-1229,Hospitalists,"['operations research', 'Epic Systems']",119.54,248640
+17-2112,Human Factors Engineers and Ergonomists,"['Microsoft PowerPoint', 'design', 'Microsoft Excel', 'Microsoft Outlook']",49.59,103150
+43-4161,"Human Resources Assistants, Except Payroll and Timekeeping","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",23.46,48800
+11-3121,Human Resources Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",74.39,154740
+13-1071,Human Resources Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",36.57,76060
+19-2043,Hydrologists,"['Microsoft PowerPoint', 'Microsoft Excel', 'ESRI ArcGIS software', 'R', 'Python']",46.35,96410
+19-2041,Industrial Ecologists,"['Microsoft PowerPoint', 'modelling', 'Microsoft Excel']",41.69,86710
+17-3026,Industrial Engineering Technologists and Technicians,"['operations research', 'Microsoft Excel', 'engineering']",32.04,66640
+17-2112,Industrial Engineers,"['Microsoft PowerPoint', 'SQL', 'Microsoft Excel', 'design', 'Autodesk AutoCAD', 'SAP software']",49.59,103150
+49-9041,Industrial Machinery Mechanics,"['operations research', 'Microsoft Excel']",30.62,63690
+11-3051,Industrial Production Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",60.53,125900
+15-1212,Information Security Analysts,"['security', 'Linux', 'Microsoft Azure software', 'computer network', 'computer security', 'Amazon Web Services AWS software', 'Microsoft PowerPoint', 'Splunk Enterprise', 'Microsoft Excel', 'Python', 'operations research']",59.97,124740
+15-1299,Information Security Engineers,"['security', 'Linux', 'Microsoft Azure software', 'design', 'Microsoft Active Directory', 'computer network', 'computer security', 'Amazon Web Services AWS software', 'Splunk Enterprise', 'forensic engineering', 'Oracle Java', 'Python', 'UNIX', 'Microsoft PowerShell']",54.05,112430
+15-1299,Information Technology Project Managers,"['business', 'SQL', 'Microsoft Azure software', 'Microsoft PowerPoint', 'Microsoft Excel', 'ServiceNow', 'Atlassian JIRA', 'SAP software']",54.05,112430
+51-9061,"Inspectors, Testers, Sorters, Samplers, and Weighers","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",23.68,49260
+25-9031,Instructional Coordinators,"['Microsoft PowerPoint', 'training model', 'Microsoft Excel']",37.12,77200
+43-9041,Insurance Claims and Policy Processing Clerks,"['Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",23.81,49530
+13-2053,Insurance Underwriters,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",41.16,85610
+33-3021,Intelligence Analysts,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'database']",46.12,95930
+27-1025,Interior Designers,"['Adobe Creative Cloud software', 'design', 'Autodesk AutoCAD', 'Adobe InDesign', 'Autodesk Revit', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'operations research', 'Trimble SketchUp Pro']",32.95,68530
+43-4111,"Interviewers, Except Eligibility and Loan","['Zoom', 'operations research']",20.55,42750
+11-3031,Investment Fund Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",84.05,174820
+23-1023,"Judges, Magistrate Judges, and Magistrates","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",66.83,139000
+23-1012,Judicial Law Clerks,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",31.19,64880
+13-1075,Labor Relations Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",45.49,94620
+17-1012,Landscape Architects,"['Adobe Creative Cloud software', 'ESRI ArcGIS software', 'Autodesk AutoCAD Civil 3D', 'design', 'Autodesk AutoCAD', 'Adobe InDesign', 'Autodesk Revit', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'Trimble SketchUp Pro', 'Microsoft Outlook']",40.38,83990
+43-6012,Legal Secretaries and Administrative Assistants,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",27.08,56330
+25-4022,Librarians and Media Collections Specialists,"['operations research', 'Microsoft Excel', 'database', 'cataloging']",32.97,68570
+43-4121,"Library Assistants, Clerical","['operations research', 'Microsoft Excel']",17.29,35970
+25-4031,Library Technicians,"['operations research', 'Microsoft Excel', 'database']",20.46,42570
+27-4015,Lighting Technicians,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",35.22,73250
+43-4131,Loan Interviewers and Clerks,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",23.4,48660
+13-2072,Loan Officers,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",40.62,84490
+11-9081,Lodging Managers,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",36.92,76790
+13-1081,Logisticians,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'SAP software', 'Microsoft Outlook']",40.69,84640
+13-1081,Logistics Analysts,"['Microsoft Access', 'SQL', 'Tableau', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Power BI', 'operations research', 'SAP software', 'Microsoft Outlook']",40.69,84640
+13-1081,Logistics Engineers,"['Microsoft Access', 'SQL', 'design', 'Microsoft PowerPoint', 'Microsoft Excel', 'information management', 'Microsoft Power BI', 'operations research', 'SAP software']",40.69,84640
+11-9199,Loss Prevention Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",70.35,146320
+43-9051,"Mail Clerks and Mail Machine Operators, Except Postal Service","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",18.45,38370
+13-1111,Management Analysts,"['SQL', 'Microsoft Visio', 'design', 'Tableau', 'Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'Microsoft Power BI', 'Atlassian JIRA', 'Microsoft Outlook']",55.54,115530
+17-2112,Manufacturing Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Dassault Systemes SolidWorks', 'design', 'Autodesk AutoCAD', 'operations research']",49.59,103150
+17-2121,Marine Engineers and Naval Architects,"['Microsoft PowerPoint', 'design', 'Autodesk AutoCAD', 'Microsoft Excel']",51.98,108110
+13-1161,Market Research Analysts and Marketing Specialists,"['Google Analytics', 'Microsoft PowerPoint', 'search engine', 'Microsoft Excel', 'marketing', 'advertising', 'operations research', 'Microsoft Outlook', 'Salesforce software']",40,83190
+11-2021,Marketing Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'marketing', 'operations research', 'Salesforce software']",80,166410
+21-1013,Marriage and Family Therapists,"['Microsoft Teams', 'Zoom', 'operations research']",33.04,68730
+17-2131,Materials Engineers,"['Microsoft PowerPoint', 'polymer', 'Microsoft Excel', 'design', 'operations research', 'graphite']",53.09,110430
+15-2021,Mathematicians,"['The MathWorks MATLAB', 'Python', 'C#', 'C++', 'operations research']",57.58,119770
+17-3013,Mechanical Drafters,"['Autodesk AutoCAD', 'Autodesk Revit', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Bentley MicroStation', 'Dassault Systemes SolidWorks', 'Microsoft Outlook', 'engineering']",33.62,69920
+17-3027,Mechanical Engineering Technologists and Technicians,"['Microsoft Excel', 'operations research', 'Dassault Systemes SolidWorks', 'mechanical engineering', 'Microsoft Outlook', 'engineering']",32.69,67990
+17-2141,Mechanical Engineers,"['Autodesk AutoCAD', 'Autodesk Revit', 'Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'Dassault Systemes SolidWorks', 'Microsoft Outlook', 'engineering']",50.59,105220
+17-2199,Mechatronics Engineers,"['Linux', 'C', 'design', 'Autodesk AutoCAD', 'Microsoft PowerPoint', 'Microsoft Excel', 'The MathWorks MATLAB', 'C++', 'Oracle Java', 'Python', 'Dassault Systemes SolidWorks', 'operations research']",56.9,118350
+27-2012,Media Programming Directors,"['Microsoft PowerPoint', 'Adobe Creative Cloud software', 'Adobe Photoshop', 'Microsoft Excel', 'Google Analytics', 'operations research']",51.52,107170
+29-2036,Medical Dosimetrists,['Eclipse IDE'],63.39,131850
+29-2072,Medical Records Specialists,"['Microsoft Excel', 'Microsoft Word', 'code', 'Microsoft Outlook', 'Epic Systems']",25.81,53690
+43-6013,Medical Secretaries and Administrative Assistants,"['operations research', 'Microsoft Excel']",20.85,43380
+29-2012,Medical and Clinical Laboratory Technicians,['Microsoft Excel'],0,0
+11-9111,Medical and Health Services Managers,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",64.64,134440
+13-1121,"Meeting, Convention, and Event Planners","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",29.94,62280
+21-1023,Mental Health and Substance Abuse Social Workers,"['operations research', 'Microsoft Excel']",30.71,63870
+27-1026,Merchandise Displayers and Window Trimmers,"['Microsoft Excel', 'windows']",18.77,39040
+43-5041,"Meter Readers, Utilities","['operations research', 'Microsoft Excel']",25.77,53610
+19-1022,Microbiologists,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",44.89,93380
+17-2151,"Mining and Geological Engineers, Including Mining Safety Engineers","['Microsoft PowerPoint', 'Microsoft Excel', 'Autodesk AutoCAD Civil 3D', 'design', 'Autodesk AutoCAD', 'operations research']",50.7,105460
+19-1029,Molecular and Cellular Biologists,"['Microsoft PowerPoint', 'Microsoft Excel']",47.62,99060
+39-4031,"Morticians, Undertakers, and Funeral Arrangers","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",27.9,58020
+11-9121,Natural Sciences Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'R']",81.31,169120
+15-1244,Network and Computer Systems Administrators,"['operating system', 'Microsoft SharePoint', 'Microsoft Windows Server', 'software', 'local area network', 'communications', 'Ansible software', 'Microsoft Excel', 'Microsoft Windows', 'Python', 'UNIX', 'Microsoft PowerShell', 'monitoring', 'SQL', 'Linux', 'Bash', 'Microsoft Azure software', 'Microsoft Active Directory', 'Amazon Web Services AWS software', 'server', 'wide area network', 'ServiceNow', 'Red Hat Enterprise Linux']",48.36,100580
+29-1217,Neurologists,['Epic Systems'],130.51,271470
+43-4141,New Accounts Clerks,['Microsoft Excel'],21.48,44670
+17-3029,Non-Destructive Testing Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",36.2,75290
+17-2161,Nuclear Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'operations research', 'release', 'nuclear engineering']",61.03,126950
+29-1151,Nurse Anesthetists,"['operations research', 'Epic Systems']",102.98,214200
+25-1072,"Nursing Instructors and Teachers, Postsecondary",['Microsoft PowerPoint'],*,86530
+29-1218,Obstetricians and Gynecologists,"['operations research', 'Epic Systems']",133.97,278660
+19-5011,Occupational Health and Safety Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'design', 'operations research', 'Microsoft Outlook']",41.14,85570
+19-5012,Occupational Health and Safety Technicians,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",30.89,64250
+43-9061,"Office Clerks, General","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'Intuit QuickBooks']",20.94,43560
+13-1199,Online Merchants,"['business', 'Microsoft PowerPoint', 'Microsoft Excel', 'marketing', 'Google Analytics', 'Microsoft Outlook']",42.85,89130
+15-2031,Operations Research Analysts,"['SQL', 'Tableau', 'Microsoft PowerPoint', 'software', 'Microsoft Excel', 'Python', 'Microsoft Power BI', 'operations research', 'Microsoft Outlook', 'Salesforce software']",45.96,95600
+43-4151,Order Clerks,"['advertising', 'operations research', 'Microsoft Excel']",20.93,43530
+29-1242,"Orthopedic Surgeons, Except Pediatric",['Epic Systems'],181.85,378250
+23-2011,Paralegals and Legal Assistants,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",31.95,66460
+33-3041,Parking Enforcement Workers,"['operations research', 'Microsoft Excel']",24.25,50430
+41-2022,Parts Salespersons,"['operations research', 'Microsoft Excel']",19.75,41080
+29-2099,Patient Representatives,"['Microsoft Excel', 'Microsoft Outlook', 'Epic Systems']",26.07,54220
+43-3051,Payroll and Timekeeping Clerks,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook', 'Workday software', 'operations research', 'Kronos Workforce Timekeeper']",26.29,54690
+29-1243,Pediatric Surgeons,['Epic Systems'],216.02,449320
+29-1221,"Pediatricians, General","['operations research', 'Epic Systems']",98.97,205860
+15-1299,Penetration Testers,"['C', 'JavaScript', 'C#', 'C++', 'Python', 'UNIX', 'Microsoft PowerShell', 'security', 'Linux', 'Bash', 'Microsoft Azure software', 'Ruby', 'Perl', 'Amazon Web Services AWS software', 'ServiceNow', 'Oracle Java']",54.05,112430
+13-2052,Personal Financial Advisors,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Outlook']",72.44,150670
+37-3012,"Pesticide Handlers, Sprayers, and Applicators, Vegetation","['Google Android', 'training model', 'tree structure', 'operations research']",21.38,44480
+17-2171,Petroleum Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Autodesk AutoCAD', 'operations research', 'devise']",71.44,148590
+27-4021,Photographers,"['Adobe Photoshop', 'software', 'operations research']",25.67,53380
+51-9151,Photographic Process Workers and Processing Machine Operators,"['Adobe Photoshop', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",20.14,41900
+17-2199,Photonics Engineers,"['C', 'design', 'Microsoft Excel', 'The MathWorks MATLAB', 'C++', 'Python', 'Dassault Systemes SolidWorks', 'operations research']",56.9,118350
+17-3029,Photonics Technicians,"['operations research', 'Microsoft Excel']",36.2,75290
+19-2012,Physicists,"['Eclipse IDE', 'The MathWorks MATLAB', 'devise', 'Python']",76.09,158270
+19-3094,Political Scientists,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",63.47,132020
+51-8013,Power Plant Operators,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",44.17,91880
+19-4012,Precision Agriculture Technicians,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Windows', 'operations research', 'Microsoft Outlook']",22.5,46810
+51-5111,Prepress Technicians and Workers,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'Adobe InDesign']",22.38,46540
+33-9021,Private Detectives and Investigators,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",28.98,60270
+21-1092,Probation Officers and Correctional Treatment Specialists,"['Microsoft Word', 'release', 'operations research', 'Microsoft Excel']",32.64,67880
+43-3061,Procurement Clerks,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'SAP software', 'Microsoft Outlook']",23.05,47940
+27-2012,Producers and Directors,"['Adobe Creative Cloud software', 'Adobe Photoshop', 'Microsoft Excel', 'Adobe After Effects', 'design', 'operations research']",51.52,107170
+43-5061,"Production, Planning, and Expediting Clerks","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'schedule']",27.7,57610
+13-1082,Project Management Specialists,"['Microsoft PowerPoint', 'Microsoft Project', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'schedule']",50.44,104920
+43-9081,Proofreaders and Copy Markers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'HubSpot software', 'operations research', 'WordPress']",24.57,51100
+11-9141,"Property, Real Estate, and Community Association Managers","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'Yardi software']",37.69,78400
+11-2032,Public Relations Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",76.65,159420
+27-3031,Public Relations Specialists,"['Adobe Creative Cloud software', 'release', 'Microsoft PowerPoint', 'Adobe Photoshop', 'Microsoft Excel', 'communications', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",37.37,77720
+13-1023,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","['Microsoft PowerPoint', 'Microsoft SharePoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'SAP software', 'Microsoft Outlook']",0,0
+11-3061,Purchasing Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'operations research', 'SAP software', 'Microsoft Outlook']",70.53,146710
+19-4099,Quality Control Analysts,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'SAP software', 'Microsoft Outlook']",30.12,62640
+11-3051,Quality Control Systems Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",60.53,125900
+29-1124,Radiation Therapists,['Epic Systems'],50.2,104420
+17-2072,Radio Frequency Identification Device Specialists,"['C', 'design', 'Microsoft PowerPoint', 'Microsoft Excel', 'The MathWorks MATLAB', 'C++', 'Python', 'operations research']",59.71,124190
+49-2021,"Radio, Cellular, and Tower Equipment Installers and Repairers","['broadcasting', 'communications', 'Microsoft Excel', 'telecommunications', 'operations research', 'Microsoft Outlook']",30.94,64360
+29-1224,Radiologists,"['medical imaging', 'Epic Systems']",170.17,353960
+53-4022,"Railroad Brake, Signal, and Switch Operators and Locomotive Firers","['relay', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",30.21,62840
+41-9021,Real Estate Brokers,"['operations research', 'Microsoft Excel', 'Microsoft Outlook', 'Yardi software']",41.41,86130
+41-9022,Real Estate Sales Agents,"['Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook', 'Yardi software']",33.46,69610
+43-4171,Receptionists and Information Clerks,"['Microsoft Excel', 'Microsoft Word', 'Microsoft Outlook']",17.59,36590
+53-1042,Recycling Coordinators,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",0,0
+11-9199,Regulatory Affairs Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",70.35,146320
+13-1041,Regulatory Affairs Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",38.55,80190
+21-1015,Rehabilitation Counselors,"['design', 'training model', 'operations research', 'Microsoft Excel']",23.28,48430
+19-2099,Remote Sensing Scientists and Technologists,"['security', 'The MathWorks MATLAB', 'C++', 'Python', 'operations research']",57.24,119050
+19-4099,Remote Sensing Technicians,"['security', 'ESRI ArcGIS software', 'Microsoft Excel', 'Microsoft Word', 'Bentley MicroStation', 'Python', 'operations research', 'Microsoft Outlook']",30.12,62640
+43-4181,Reservation and Transportation Ticket Agents and Travel Clerks,"['operations research', 'Microsoft Excel', 'concourse', 'Microsoft Outlook']",22.51,46820
+17-2199,Robotics Engineers,"['SQL', 'Linux', 'C', 'design', 'Autodesk AutoCAD', 'Git', 'The MathWorks MATLAB', 'C++', 'Python', 'Dassault Systemes SolidWorks', 'operations research']",56.9,118350
+17-3024,Robotics Technicians,"['Linux', 'Microsoft Excel', 'C++', 'Python', 'operations research']",34.82,72430
+41-9031,Sales Engineers,"['business', 'Salesforce software', 'Linux', 'Microsoft Azure software', 'Amazon Web Services AWS software', 'Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'operations research', 'Microsoft Outlook', 'engineering']",62.77,130550
+11-2022,Sales Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'training model', 'operations research', 'Microsoft Outlook', 'Salesforce software']",75.77,157610
+41-3091,"Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel","['operations research', 'Microsoft Excel', 'Microsoft Outlook', 'Salesforce software']",38.98,81080
+41-4012,"Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products","['Microsoft PowerPoint', 'Microsoft Excel', 'operations research', 'Microsoft Outlook', 'Salesforce software']",38.7,80490
+41-4011,"Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products","['Microsoft PowerPoint', 'Salesforce software', 'Microsoft Excel', 'operations research', 'Microsoft Outlook', 'engineering']",54.58,113520
+19-3034,School Psychologists,"['design', 'operations research', 'Zoom']",44.22,91990
+13-1161,Search Marketing Strategists,"['Cascading style sheets CSS', 'Google Analytics', 'JavaScript', 'WordPress', 'Microsoft PowerPoint', 'search engine', 'Microsoft Excel', 'Python', 'marketing', 'Hypertext markup language HTML', 'operations research']",40,83190
+43-6014,"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'Microsoft Outlook']",21.87,45490
+41-3031,"Securities, Commodities, and Financial Services Sales Agents","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",52.75,109710
+13-1199,Security Management Specialists,"['security', 'SQL', 'Linux', 'Microsoft Azure software', 'design', 'Microsoft Active Directory', 'JavaScript', 'Amazon Web Services AWS software', 'Oracle Java', 'Microsoft PowerShell', 'operations research']",42.85,89130
+11-3013,Security Managers,"['security', 'Microsoft PowerPoint', 'Microsoft Excel']",53.42,111110
+49-2098,Security and Fire Alarm Systems Installers,"['security', 'Microsoft Excel', 'Microsoft Outlook']",27.59,57400
+51-9141,Semiconductor Processing Technicians,"['crystal', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Python', 'segment', 'operations research', 'SAP software']",23.54,48970
+27-1027,Set and Exhibit Designers,"['Adobe Creative Cloud software', 'Adobe Illustrator', 'Adobe Photoshop', 'Microsoft Excel', 'design', 'Autodesk AutoCAD', 'Trimble SketchUp Pro']",32.29,67170
+43-5071,"Shipping, Receiving, and Inventory Clerks","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",20.54,42730
+11-9151,Social and Community Service Managers,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",40.1,83400
+21-1093,Social and Human Service Assistants,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",21.27,44240
+15-1252,Software Developers,"['Spring Framework', 'computer hardware', 'JavaScript', 'C++', 'Python', 'Hypertext markup language HTML', 'Extensible markup language XML', 'TypeScript', 'Cascading style sheets CSS', 'design', 'Node.js', 'Jenkins CI', 'Amazon Web Services AWS software', 'GitHub', 'Spring Boot', 'Docker', 'JavaScript Object Notation JSON', 'engineering', 'NoSQL', 'C', 'Microsoft .NET Framework', 'Kubernetes', 'software', 'Git', 'database', 'C#', 'Atlassian JIRA', 'Google Angular', 'SQL', 'Linux', 'Microsoft Azure software', 'computer science', 'Oracle Java', 'React', 'operations research']",66.4,138110
+15-1253,Software Quality Assurance Analysts and Testers,"['JavaScript', 'tracking system', 'software', 'Git', 'Microsoft Excel', 'database', 'C#', 'C++', 'Python', 'Atlassian JIRA', 'Selenium', 'SQL', 'Linux', 'Microsoft Azure software', 'design', 'Jenkins CI', 'Amazon Web Services AWS software', 'Oracle Java', 'operations research']",52.15,108460
+19-1013,Soil and Plant Scientists,"['tree structure', 'operations research', 'Microsoft Excel', 'ESRI ArcGIS software']",37.06,77080
+17-2199,Solar Energy Systems Engineers,"['Salesforce software', 'design', 'Autodesk AutoCAD', 'Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'Google Workspace software', 'operations research', 'engineering']",56.9,118350
+41-4011,Solar Sales Representatives and Assessors,"['operations research', 'Salesforce software']",54.58,113520
+25-2057,"Special Education Teachers, Middle School","['operations research', 'Microsoft Excel']",*,73630
+25-2058,"Special Education Teachers, Secondary School","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",*,74670
+27-1014,Special Effects Artists and Animators,"['Adobe Creative Cloud software', 'Adobe After Effects', 'Adobe InDesign', 'Microsoft PowerPoint', 'Adobe Illustrator', 'Adobe Photoshop', 'Figma', 'Microsoft Excel', 'Hypertext markup language HTML', 'operations research']",52.71,109630
+29-1229,Sports Medicine Physicians,"['training model', 'Epic Systems']",119.54,248640
+51-8021,Stationary Engineers and Boiler Operators,"['utilities', 'operations research', 'SAP software']",35.18,73170
+43-9111,Statistical Assistants,"['SAS', 'Oracle Java', 'R', 'C#', 'Python']",25.92,53900
+15-2041,Statisticians,"['business', 'Microsoft Access', 'SQL', 'R', 'Tableau', 'Microsoft PowerPoint', 'SAS', 'Microsoft Excel', 'IBM SPSS Statistics', 'Python', 'operations research']",52.5,109190
+11-3071,Supply Chain Managers,"['Microsoft PowerPoint', 'forecasting', 'Microsoft Excel', 'operations research', 'SAP software', 'Microsoft Outlook']",53.79,111870
+17-3031,Surveying and Mapping Technicians,"['ESRI ArcGIS software', 'aerial photography', 'Autodesk AutoCAD Civil 3D', 'Autodesk AutoCAD', 'Microsoft Excel', 'Bentley MicroStation', 'operations research', 'Microsoft Outlook']",26,54090
+17-1022,Surveyors,"['Bentley MicroStation', 'Autodesk AutoCAD Civil 3D', 'Autodesk AutoCAD', 'operations research', 'engineering']",35.58,74000
+13-1199,Sustainability Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Microsoft Power BI', 'Microsoft Outlook']",42.85,89130
+43-2011,"Switchboard Operators, Including Answering Service","['business', 'relay', 'Microsoft Excel', 'operations research', 'Microsoft Outlook']",19.24,40020
+27-2012,Talent Directors,"['Microsoft PowerPoint', 'operations research', 'Microsoft Excel']",51.52,107170
+13-2081,"Tax Examiners and Collectors, and Revenue Agents","['business', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Power BI', 'operations research', 'SAP software', 'Microsoft Outlook', 'Alteryx software']",31.43,65370
+13-2082,Tax Preparers,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",27.96,58160
+25-9044,"Teaching Assistants, Postsecondary","['operations research', 'Microsoft Excel']",*,47030
+27-3042,Technical Writers,"['Microsoft SharePoint', 'Microsoft Visio', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'Atlassian JIRA', 'operations research', 'Extensible markup language XML', 'Microsoft Outlook']",41.64,86620
+15-1241,Telecommunications Engineering Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'communications', 'wireless', 'design', 'operations research', 'Microsoft Outlook']",64.39,133930
+49-2022,"Telecommunications Equipment Installers and Repairers, Except Line Installers","['operations research', 'communications', 'Microsoft Excel']",30.77,64010
+49-3093,Tire Repairers and Changers,"['Microsoft Excel', 'Microsoft Outlook']",17.92,37280
+23-2093,"Title Examiners, Abstractors, and Searchers","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",28.58,59440
+53-6041,Traffic Technicians,"['traffic engineering', 'Microsoft Excel']",27.25,56680
+11-3131,Training and Development Managers,"['Microsoft PowerPoint', 'Microsoft Excel', 'training model', 'operations research', 'Microsoft Outlook']",66.56,138450
+13-1151,Training and Development Specialists,"['Microsoft PowerPoint', 'training model', 'Microsoft Excel', 'Microsoft Word', 'design', 'operations research', 'Microsoft Outlook']",34.6,71980
+17-2051,Transportation Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Bentley MicroStation', 'Autodesk AutoCAD Civil 3D', 'Autodesk AutoCAD', 'operations research', 'engineering']",48.64,101160
+53-6051,Transportation Inspectors,"['Google Android', 'operations research']",40.35,83920
+19-3099,Transportation Planners,"['Microsoft PowerPoint', 'Microsoft Excel', 'modelling', 'operations research', 'Microsoft Outlook']",49.14,102210
+53-6051,"Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation","['operations research', 'Microsoft Excel', 'Microsoft Outlook']",40.35,83920
+11-3071,"Transportation, Storage, and Distribution Managers","['Microsoft PowerPoint', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",53.79,111870
+41-3041,Travel Agents,"['Zoom', 'Microsoft Excel', 'Microsoft Outlook']",24.06,50040
+11-3031,Treasurers and Controllers,"['Microsoft PowerPoint', 'Microsoft Excel', 'operations research', 'SAP software', 'Microsoft Outlook', 'Intuit QuickBooks']",84.05,174820
+19-3051,Urban and Regional Planners,"['Microsoft PowerPoint', 'Adobe Creative Cloud software', 'Microsoft Excel', 'ESRI ArcGIS software', 'Autodesk AutoCAD', 'Microsoft Outlook']",41.32,85940
+29-1229,Urologists,['Epic Systems'],119.54,248640
+17-2112,Validation Engineers,"['Microsoft PowerPoint', 'Microsoft Excel', 'Python', 'design', 'operations research']",49.59,103150
+15-1255,Video Game Designers,"['C', 'design', 'JavaScript', 'play', 'Adobe Photoshop', 'Git', 'C#', 'C++', 'Oracle Java', 'documentation', 'Python', 'Atlassian JIRA']",52.32,108820
+11-9121,Water Resource Specialists,"['Microsoft PowerPoint', 'Microsoft Excel', 'design', 'operations research', 'Microsoft Outlook']",81.31,169120
+51-8031,Water and Wastewater Treatment Plant and System Operators,"['operations research', 'Microsoft Excel', 'Microsoft Outlook']",27.91,58050
+17-2051,Water/Wastewater Engineers,"['ESRI ArcGIS software', 'Autodesk AutoCAD Civil 3D', 'design', 'Autodesk AutoCAD', 'Microsoft PowerPoint', 'data management', 'Microsoft Excel', 'Bentley MicroStation', 'documentation', 'operations research']",48.64,101160
+15-1299,Web Administrators,"['Microsoft SharePoint', 'IBM WebSphere MQ', 'JavaScript', 'Drupal', 'Microsoft Excel', 'testing', 'Python', 'Hypertext markup language HTML', 'PHP', 'Extensible markup language XML', 'UNIX', 'web development', 'SQL', 'Linux', 'Apache Tomcat', 'Cascading style sheets CSS', 'design', 'deployment', 'WordPress', 'Amazon Web Services AWS software', 'Adobe Photoshop', 'Oracle Java', 'Google Analytics']",54.05,112430
+15-1254,Web Developers,"['Spring Framework', 'code', 'MySQL', 'Apache Kafka', 'JavaScript', 'MongoDB', 'Python', 'Hypertext markup language HTML', 'PHP', 'Extensible markup language XML', 'TypeScript', 'web development', 'Cascading style sheets CSS', 'Go', 'Node.js', 'Jenkins CI', 'WordPress', 'Amazon Web Services AWS software', 'server', 'scalability', 'GitHub', 'Spring Boot', 'Docker', 'JavaScript Object Notation JSON', 'NoSQL', 'PostgreSQL', 'jQuery', 'Kubernetes', 'Bootstrap', 'Git', 'database', 'C#', 'Vue.js', 'Atlassian JIRA', 'Google Angular', 'SQL', 'Linux', 'Microsoft Azure software', 'Oracle Java', 'React']",45.95,95570
+15-1255,Web and Digital Interface Designers,"['Adobe Creative Cloud software', 'code', 'JavaScript', 'Adobe Illustrator', 'software', 'Git', 'Hypertext markup language HTML', 'Figma', 'Atlassian JIRA', 'Google Angular', 'Cascading style sheets CSS', 'design', 'search engine', 'Adobe Photoshop', 'Oracle Java', 'React', 'operations research']",52.32,108820
+43-5111,"Weighers, Measurers, Checkers, and Samplers, Recordkeeping","['operations research', 'Microsoft Outlook']",21.27,44240
+13-1022,"Wholesale and Retail Buyers, Except Farm Products","['Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Word', 'operations research', 'SAP software', 'Microsoft Outlook']",0,0
+17-2199,Wind Energy Engineers,"['The MathWorks MATLAB', 'Microsoft Excel', 'C++', 'Python', 'design', 'operations research']",56.9,118350
+49-9081,Wind Turbine Service Technicians,"['operations research', 'SAP software']",31.43,65380
+43-9022,Word Processors and Typists,"['Microsoft Word', 'operations research', 'Microsoft Excel', 'Microsoft Outlook']",22.68,47170
+27-3043,Writers and Authors,"['Microsoft PowerPoint', 'Adobe Photoshop', 'TikTok', 'Microsoft Excel', 'advertising']",42.11,87590
+19-1023,Zoologists and Wildlife Biologists,"['Microsoft Excel', 'ESRI ArcGIS software']",36.41,75740
