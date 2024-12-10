@@ -76,7 +76,7 @@ def job_info_extraction(jobs):
     return job_df
 
 
-def calc_similarity(applicant_df, job_df, N=3, parallel=False):
+def calc_similarity_baseline(applicant_df, job_df, N=3, parallel=False):
     """Calculate cosine similarity based on MPNET embeddings of combined skills."""
 
     # Initialize the model once outside the loop for efficiency
@@ -114,7 +114,7 @@ def calc_similarity(applicant_df, job_df, N=3, parallel=False):
     similarity_df['rank'] = similarity_df.groupby('job_id')['similarity_score'].rank(ascending=False)
     similarity_df['interview_status'] = similarity_df['rank'].apply(lambda x: 'Selected' if x <= N else 'Not Selected')
 
-    return similarity_df
+    return similarity_df.sort_values("rank")
 
 
 def calc_cross(applicant_df, job_df, N=3, parallel=False):
@@ -145,6 +145,62 @@ def calc_cross(applicant_df, job_df, N=3, parallel=False):
     # similarity_df['interview_status'] = similarity_df.index.apply(lambda x: 'Selected' if x <= N else 'Not Selected')
 
     return similarity_df
+
+def calc_similarity(applicant_df, job_df, N=3, parallel=False):
+    """Calculate cosine similarity based on BERT embeddings of skills (skill-by-skill)."""
+
+    def semantic_similarity_all_MiniLM_L6_v2(job, resume):
+        """Calculate similarity with all-MiniLM-L6-v2."""
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        model.eval()
+        score = 0
+        sen = job + resume
+        sen_embeddings = model.encode(sen,
+                                      batch_size=4,
+                                      device='cpu',
+                                      show_progress_bar=False,
+                                      num_workers=os.cpu_count() // 2 if parallel else 0
+                                      )
+        for i in range(len(job)):
+            if job[i] in resume:
+                score += 1
+            else:
+                max_cosine_sim = max(cosine_similarity([sen_embeddings[i]], sen_embeddings[len(job):])[0])
+                if max_cosine_sim >= 0.4:
+                    score += max_cosine_sim
+        score = score / len(job)
+        return round(score, 3)
+
+    # Prepare a DataFrame to store results
+    matching_dataframe = []
+
+    # Loop through each job in the job_df
+    for job_index in range(len(job_df)):
+        job_skills = job_df['Skills'].iloc[job_index]  # Use iloc for positional indexing
+
+        # Loop through each applicant in the applicant_df
+        for applicant_id in range(len(applicant_df)):
+            applicant_skills = applicant_df['Skills'].iloc[applicant_id]  # Use iloc for positional indexing
+            applicant_name = applicant_df['name'].iloc[applicant_id]  # Ensure correct column access
+
+            # Compute similarity score
+            score = semantic_similarity_all_MiniLM_L6_v2(job_skills, applicant_skills)
+
+            # Append result to the DataFrame
+            matching_dataframe.append({
+                "name": applicant_name,
+                "job_id": job_index,
+                "similarity_score": score
+            })
+
+    # Create a DataFrame from results
+    matching_dataframe = pd.DataFrame(matching_dataframe)
+
+    # Add rank based on similarity score
+    matching_dataframe['rank'] = matching_dataframe['similarity_score'].rank(ascending=False)
+    matching_dataframe['interview_status'] = matching_dataframe['rank'].apply(lambda x: 'Selected' if x <= N else 'Not Selected')
+    
+    return matching_dataframe.sort_values("rank")
 
 
 def role_similarity(cv_df, job_df, hard_skills, scores_df, titles_df, growth_df, role=None, wage=0 , parallel=False):

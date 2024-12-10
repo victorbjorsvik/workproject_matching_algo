@@ -6,10 +6,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, current_app
 from helpers import allowed_file, get_db, login_required
 from werkzeug.utils import secure_filename
-import json
 import pandas as pd
-import main 
-from ast import literal_eval
+import main
 
 roles_bp = Blueprint('roles', __name__, template_folder='../templates')
 
@@ -126,6 +124,5 @@ def clear_results():
     except Exception as e:
         flash(f'An error occurred while clearing files: {e}')
     
-
 
     return redirect(url_for('roles.roles'))

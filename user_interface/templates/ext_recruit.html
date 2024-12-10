@@ -83,7 +83,13 @@ External Recruiting
                     {% for row in analysis_data %}
                         <tr>
                             {% for column in columns %}
-                                <td>{{ row[column] }}</td>
+                                <td>
+                                    {% if column == "similarity_score" %}
+                                        {{ "{:.4f}".format(row[column]) }}
+                                    {% else %}
+                                        {{ row[column] }}
+                                    {% endif %}
+                                </td>
                             {% endfor %}
                         </tr>
                     {% endfor %}
