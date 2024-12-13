@@ -16,6 +16,7 @@ import logging
 import torch
 import torch.nn.functional as F
 
+# Handle annoying warnings
 logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
@@ -33,6 +34,7 @@ def get_resumes(directory):
     def extract_pdf(path):
         """ Helper function to extract the text from the PDFs using the PyMuPDF library"""
         try:
+            # Use PyMuPDF to parse and extract text from resumes
             with fitz.open(path) as doc:
                 text = ''.join(page.get_text() for page in doc)
             return text
@@ -79,7 +81,7 @@ def job_info_extraction(jobs):
 def calc_similarity_baseline(applicant_df, job_df, N=3, parallel=False):
     """Calculate cosine similarity based on MPNET embeddings of combined skills."""
 
-    # Initialize the model once outside the loop for efficiency
+    # Initialize the model
     model = SentenceTransformer('all-mpnet-base-v2')
     model.max_seq_length = 75
     model.tokenizer.padding_side="right"
@@ -90,18 +92,17 @@ def calc_similarity_baseline(applicant_df, job_df, N=3, parallel=False):
         input_examples = [input_example + model.tokenizer.eos_token for input_example in input_examples]
         return input_examples
 
-        # Precompute job embeddings
-    job_df['Skills_Text'] = job_df['Skills'].apply(add_eos)
-    job_df['Skills_Text'] = job_df['Skills_Text'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
-    job_embeddings = model.encode(
-        job_df['Skills_Text'].tolist())
+    # Precompute job embeddings
+    job_df['Skills_Text'] = job_df['Skills'].apply(add_eos) # add special tokens
+    job_df['Skills_Text'] = job_df['Skills_Text'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '') # concatenate into one string
+    job_embeddings = model.encode(job_df['Skills_Text'].tolist()) # encode job descriptions
     # Precompute applicant embeddings
-    applicant_df['Skills_Text'] = applicant_df['Skills'].apply(add_eos)
-    applicant_df['Skills_Text'] = applicant_df['Skills_Text'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '')
+    applicant_df['Skills_Text'] = applicant_df['Skills'].apply(add_eos) # add special tokens
+    applicant_df['Skills_Text'] = applicant_df['Skills_Text'].apply(lambda x: ' '.join(sorted(set(x))) if isinstance(x, list) else '') # concatenate into one string
     applicant_embeddings = model.encode(
         applicant_df['Skills_Text'].tolist(),
         batch_size=32,
-        num_workers=os.cpu_count() // 2 if parallel else 0,
+        num_workers=os.cpu_count() // 2 if parallel else 0, # parallelize
         show_progress_bar=False
     )
 
@@ -314,6 +315,53 @@ def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini
     html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
 
     return html_output
+
+
+@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
+def generate_coding_exercise(api_key, job_description, model="gpt-4"):
+    """
+    Generate a tailored coding exercise based on a job description using OpenAI's API.
+
+    :param job_description: str, the job description to base the exercise on
+    :return: str, the coding exercise prompt
+    """
+    prompt = f"""
+    Based on the following job description, create a self-contained practical coding exercise for a coding interview. The exercise should:
+    - Be solvable using Python.
+    - Be tailored to the job description's requirements and responsibilities.
+    - Include clear instructions for the candidate.
+    - Require no external dataset and be solvable based on the prompt alone.
+    - Follow this structure:
+
+    1. **Scenario**: Provide a realistic scenario relevant to the job.
+    2. **Instructions**: Step-by-step guidance on what the candidate needs to do.
+    3. **Expected Deliverables**: Clearly define what is expected from the candidate.
+    4. **Sample Code Structure**: Offer a template or skeleton code for the candidate to follow.
+    5. **Assessment Criteria**: Outline how the solution will be evaluated.
+
+    Job Description:
+    {job_description}
+
+    Generate the exercise now.
+    """
+
+    # Call OpenAI's API to generate the response
+    client = OpenAI(api_key=api_key)
+    completion = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant that generates coding exercises for job interviews."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.7,
+        max_tokens=1000
+    )
+
+    markdown_output = completion.choices[0].message.content
+    html_output = markdown.markdown(markdown_output)
+
+    return html_output
+
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"):

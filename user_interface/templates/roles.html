@@ -73,20 +73,20 @@ Suggested Roles
 
     <!-- Analysis Results -->
     <div class="analysis-results">
-        {% if foo %}
+        {% if resume_based %}
             <h2>Recommended Roles - Resume:</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        {% for column in foo_col %}
+                        {% for column in resume_based_col %}
                             <th>{{ column.replace('_', ' ').title() }}</th>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
-                    {% for row in foo %}
+                    {% for row in resume_based %}
                         <tr>
-                            {% for column in foo_col %}
+                            {% for column in resume_based_col %}
                                 <td>
                                     {% if column == "missing_skills" %}
                                     {{ row[column] | join(', ') }}
@@ -104,15 +104,15 @@ Suggested Roles
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        {% for column in bar_col %}
+                        {% for column in role_based_col %}
                             <th>{{ column.replace('_', ' ').title() }}</th>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
-                    {% for row in bar %}
+                    {% for row in role_based %}
                         <tr>
-                            {% for column in bar_col %}
+                            {% for column in role_based_col %}
                                 <td>
                                     {% if column == "missing_skills" %}
                                         {{ row[column] | join(', ') }}

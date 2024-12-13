@@ -6,8 +6,19 @@ Tailored Questions
 
 {% block main %}
 <p class="hello-user">Tailored Interview Questions</p>
+
+<!-- If winners exist, show required skills at the top -->
+{% if winners and required_skills %}
+<h3>Required Skills:</h3>
+<div class="skills-box">
+    {{ required_skills[0][0] }}
+</div>
+{% endif %}
+
+<!-- If winners exist, show the table next -->
 {% if winners %}
-<div>
+<div class="winners-table-container">
+    <h3>Winners</h3>
     <table>
         <thead>
             <tr>
@@ -17,6 +28,7 @@ Tailored Questions
                 <th>Skills</th>
             </tr>
         </thead>
+        <tbody>
         {% for winner in winners %}
         <tr>
             <td>{{ winner[1] }}</td>
@@ -25,19 +37,14 @@ Tailored Questions
             <td>{{ winner[3] }}</td>
         </tr>
         {% endfor %}
-    </ul>
+        </tbody>
+    </table>
 </div>
 {% else %}
 <p>No analysis data available.</p>
 {% endif %}
-<form method="post" action="{{ url_for('tailored_interviews') }}" id="analysis-form" class="analysis-form">
-    <div class="form-group">
-        <label for="password"></label>
-        <input id="password" name="password" placeholder="OpenAI API Key" type="password">
-    </div>
-    <input type="hidden" name="action" value="run_analysis">
-    <button type="submit" class="action-button run-button" {% if not winners or not required_skills %}disabled{% endif %}>Get Tailored Questions</button>
-</form>
+
+
 
 <!-- Loading Spinner Overlay -->
 <div id="loading-overlay">
@@ -45,31 +52,130 @@ Tailored Questions
     <p>Making Tailored Interview Questions, please wait...</p>
 </div>
 
-    
-    {% if required_skills %}
-    <h3>
-        Required Skills:
-    </h3>
-    <div>
-        {{ required_skills[0][0] }}
+{% if not winners and required_skills %}
+<!-- If no winners, but required skills exist, still show them at the top -->
+<h3>Required Skills:</h3>
+<div class="skills-box">
+    {{ required_skills[0][0] }}
+</div>
+{% endif %}
+
+<!-- Side-by-side containers for Interview Questions and Coding Exercise -->
+<div class="content-row">
+    <div class="content-box">
+        <h3>Interview Questions</h3>
+        {% if response %}
+            <div class="questions-content">
+                {{ response | safe }}
+            </div>
+        {% else %}
+            <p>Run Analysis to get Interview Questions.</p>
+        {% endif %}
+        <!-- Form for getting tailored questions -->
+        
+        <form method="post" action="{{ url_for('tailored_interviews') }}" id="analysis-form" class="analysis-form">
+            {% if not response %}
+            <div class="form-group">
+                <label for="password"></label>
+                <input id="password" name="password" placeholder="OpenAI API Key" type="password">
+            </div>
+            <input type="hidden" name="action" value="run_analysis">
+            <button type="submit" class="action-button run-button" {% if not winners or not required_skills %}disabled{% endif %}>Get Tailored Questions</button>
+            {% endif %}
+        </form>
+        
     </div>
-    {% endif %}
 
-
-    {% if response %}
-    <div>
-        {{ response | safe }}
+    <div class="content-box">
+        <h3>Coding Exercise</h3>
+        <div id="coding-exercise-container">
+            <!-- Initially empty, will be filled by JS after fetch -->
+        </div>
+        <button id="fetch-exercise-btn" class="action-button run-button"
+            {% if not response %}disabled{% endif %}>Get Coding Exercise</button>
     </div>
-    {% else %}
-    <p>Run Analysis</p>
-    {% endif %}
-
-
+    </div>
+</div>
 
 {% endblock %}
 
 {% block styles %}
 <style>
+    /* Overall layout improvements */
+    .hello-user {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    /* Skills box styling */
+    .skills-box {
+        background: #e3e3e5; 
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Winners table container */
+    .winners-table-container {
+        margin-bottom: 20px;
+    }
+
+    /* Table styling (already present in your code) */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    table th, table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+    }
+
+    table th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    table td {
+        word-wrap: break-word;
+        max-width: 300px;
+    }
+
+    /* Two-column layout for Interview Questions and Coding Exercise */
+    .content-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .content-box {
+        flex: 1;
+        min-width: 300px;
+        background: #e3e3e5; /* Apple grey background */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .questions-content, #coding-exercise-container {
+        margin-bottom: 20px;
+    }
+
     /* Loading Overlay Styles */
     #loading-overlay {
         display: none; /* Hidden by default */
@@ -86,7 +192,7 @@ Tailored Questions
 
     /* Spinner Styles */
     .spinner {
-        margin: 0 auto 20px auto;
+        margin: 0 auto 20px;
         border: 16px solid #f3f3f3; /* Light grey */
         border-top: 16px solid #3498db; /* Blue */
         border-radius: 50%;
@@ -102,7 +208,6 @@ Tailored Questions
     }
 
     /* Button Styles */
-    /* Base styles for all action buttons */
     .action-button {
         color: white;
         padding: 10px 20px;
@@ -130,53 +235,56 @@ Tailored Questions
         background-color: darkblue;
     }
 
-        /* Table Styling */
-        table {
-        width: 100%; /* Full width */
-        border-collapse: collapse; /* Remove space between cells */
-        margin: 20px 0; /* Add some space around the table */
-        font-size: 16px; /* Font size for better readability */
-        text-align: left; /* Left-align text */
-    }
-
-    table th, table td {
-        border: 1px solid #ddd; /* Add borders */
-        padding: 12px; /* Add padding inside cells */
-    }
-
-    table th {
-        background-color: #4CAF50; /* Header background color */
-        color: white; /* Header text color */
-        font-weight: bold; /* Bold header text */
-    }
-
-    table tr:nth-child(even) {
-        background-color: #f9f9f9; /* Light grey for even rows */
-    }
-
-    table tr:hover {
-        background-color: #f1f1f1; /* Highlight row on hover */
-    }
-
-    table td {
-        word-wrap: break-word; /* Wrap long content */
-        max-width: 300px; /* Restrict column width */
-    }
-
-    /* Add some spacing to the outer div for better presentation */
+    /* Add some spacing to outer divs for better presentation */
     div {
-        margin: 20px;
+        margin-bottom: 20px;
     }
-
 </style>
-
 {% endblock %}
 
 {% block scripts %}
 <script>
     // Show the loading overlay when the analysis form is submitted
-    document.getElementById('analysis-form').addEventListener('submit', function() {
-        document.getElementById('loading-overlay').style.display = 'block';
-    });
+    const analysisForm = document.getElementById('analysis-form');
+    if (analysisForm) {
+        analysisForm.addEventListener('submit', function() {
+            document.getElementById('loading-overlay').style.display = 'block';
+        });
+    }
+
+    // Fetch Coding Exercise
+    const fetchExerciseBtn = document.getElementById('fetch-exercise-btn');
+    if (fetchExerciseBtn) {
+        fetchExerciseBtn.addEventListener('click', function() {
+            const container = document.getElementById('coding-exercise-container');
+            container.innerHTML = "<p>Loading coding exercise...</p>";
+
+            const formData = new FormData();
+            const passwordInput = document.getElementById('password');
+            if (passwordInput) {
+                formData.append('password', passwordInput.value);
+            }
+
+            fetch("{{ url_for('coding_exercise') }}", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    container.innerHTML = `<p>Error: ${data.error}</p>`;
+                } else {
+                    // Use marked.parse() to convert Markdown
+                    const html = marked.parse(data.coding_exercise);
+                    container.innerHTML = html;
+                    hljs.highlightAll();
+                    fetchExerciseBtn.remove();
+                }
+            })
+            .catch(error => {
+                container.innerHTML = `<p>An error occurred: ${error}</p>`;
+            });
+        });
+    }
 </script>
 {% endblock %}

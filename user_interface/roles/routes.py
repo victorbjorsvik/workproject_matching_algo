@@ -92,20 +92,20 @@ def run_analysis():
     
     df_resumes = main.get_resumes(current_app.config['UPLOAD_FOLDER_ROLES'])
     df_resumes = main.resume_extraction(df_resumes)
-    foo, bar = main.role_similarity(df_resumes, merged_df, df_skill_role_grouped, similarity_df, titles_df, growth_df, role=role, wage=wage)
+    resume_based, role_based = main.role_similarity(df_resumes, merged_df, df_skill_role_grouped, similarity_df, titles_df, growth_df, role=role, wage=wage)
 
-    foo_col = foo.columns
-    bar_col = bar.columns
-    foo = foo.head(5).to_dict(orient='records')
-    bar = bar.head(5).to_dict(orient='records')
+    resume_based_col = resume_based.columns
+    role_based_col = role_based.columns
+    resume_based = resume_based.head(5).to_dict(orient='records')
+    role_based = role_based.head(5).to_dict(orient='records')
 
     return render_template(
         "roles.html",
         applicant=f"user_{session.get('user_id')}_resume.pdf",
-        foo=foo,
-        foo_col=foo_col,
-        bar=bar,
-        bar_col=bar_col,
+        resume_based=resume_based,
+        resume_based_col=resume_based_col,
+        role_based=role_based,
+        role_based_col=role_based_col,
         analysis_done=True
     )
 
