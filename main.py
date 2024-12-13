@@ -358,9 +358,7 @@ def generate_coding_exercise(api_key, job_description, model="gpt-4"):
     )
 
     markdown_output = completion.choices[0].message.content
-    html_output = markdown.markdown(markdown_output)
-
-    return html_output
+    return markdown_output
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
