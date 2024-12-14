@@ -8,8 +8,6 @@ body {
 
 }
 
-
-
 /* Header styles */
 header {
     background-color: #3e3e3e;
@@ -134,6 +132,7 @@ input[type="password"] {
 }
 
 /* Navigation styles */
+
 .navigation {
     display: flex;
     align-items: center;
@@ -158,6 +157,11 @@ input[type="password"] {
     background-color: #ddd;
 }
 
+.active {
+    border-bottom: 1px solid #9b9797;
+    font-weight: bold;
+    /* or any other highlight you prefer */
+}
 /* Main styles */
 main {
     padding: 20px;

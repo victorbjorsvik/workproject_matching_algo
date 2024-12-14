@@ -300,21 +300,56 @@ def role_similarity(cv_df, job_df, hard_skills, scores_df, titles_df, growth_df,
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
-def tailored_questions(api_key,  applicants, required_skills, model="gpt-4o-mini"):
-    """ function to create tailored interview questions with openai api """
+def tailored_questions(api_key, applicants, required_skills, model="gpt-4o-mini"):
+    """
+    Function to create tailored interview questions using OpenAI's API.
+
+    :param api_key: str, the OpenAI API key for authentication.
+    :param applicants: str, a list of candidates' names and their skills.
+    :param required_skills: str, the skills required for the job.
+    :param model: str, the OpenAI model to use (default: "gpt-4o-mini").
+    :return: str, HTML content of the tailored interview questions.
+    """
+    prompt = f"""
+    We have a list of candidates and wish to generate tailored interview questions based on their skills and the skills required for the job. Note that all candidates should receive the same set of questions to ensure fairness and avoid bias.
+
+    Please generate a list of **5 self-contained interview questions** that:
+    - Assess the overlap between the candidates' skills and the required job skills.
+    - Are relevant to the job's responsibilities and the provided skillsets.
+    - Cover both technical skills and problem-solving abilities, where applicable.
+    - Are phrased clearly and concisely.
+
+    Here is the information:
+    - **Candidates and their skills**: {applicants}
+    - **Required job skills**: {required_skills}
+
+    The output should follow this structure:
+    1. **Question 1**: [Write the first question.]
+    2. **Question 2**: [Write the second question.]
+    3. **Question 3**: [Write the third question.]
+    4. **Question 4**: [Write the fourth question.]
+    5. **Question 5**: [Write the fifth question.]
+
+    Each question should challenge the candidates to demonstrate their proficiency in the relevant areas while being answerable based on their stated skills.
+    """
+
+    # Call OpenAI's API to generate the response
     client = OpenAI(api_key=api_key)
     completion = client.chat.completions.create(
-    model=model,
-    messages=[
-        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates we want to interview for a job and we want to tailor interview questions to their skills. Note: to avoid bias we want the applicants to recieive the same questions"}, # <-- This is the system message that provides context to the model
-        {"role": "user", "content": f"Hello! Based on the following candidates: {applicants}, could you make a list of 5 interview questions for all of them based on their total pool of skills and how it relates to the skills required of the job - here: {required_skills} "}  # <-- This is the user message for which the model will generate a response
-    ]
+        model=model,
+        messages=[
+            {"role": "system", "content": "You are a helpful recruiting assistant. Your job is to generate fair, skill-based interview questions tailored to a set of candidates' skills and the job's requirements."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.7,
+        max_tokens=1000
     )
 
     markdown_output = completion.choices[0].message.content
     html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
 
     return html_output
+
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
@@ -362,22 +397,70 @@ def generate_coding_exercise(api_key, job_description, model="gpt-4"):
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
-def bespoke_apologies(api_key,  applicants, required_skills, model="gpt-4o-mini"):
-    """ function to create bespoke apology letters with openai api """
+def bespoke_apologies(api_key, applicants, required_skills, model="gpt-4o-mini"):
+    """
+    Function to create bespoke apology letters using OpenAI's API.
+
+    :param api_key: str, the OpenAI API key for authentication.
+    :param applicants: str, a list of candidates' names and their skills.
+    :param required_skills: str, the skills required for the job.
+    :param model: str, the OpenAI model to use (default: "gpt-4o-mini").
+    :return: str, HTML content of the bespoke apology letters.
+    """
+    prompt = f"""
+    We have a list of candidates for a job, but unfortunately, none of them made it to the first round of interviews. 
+    Please generate a **bespoke apology letter** for each candidate that:
+
+    - Addresses the candidate by name.
+    - Explains respectfully that their skills were not a perfect match for the job's requirements.
+    - Offers encouragement and constructive feedback.
+    - Provides specific resources or advice to help them improve their skills for future opportunities.
+
+    Here is the information:
+    - **Candidates and their skills**: {applicants}
+    - **Required job skills**: {required_skills}
+
+    Each apology letter should:
+    - Start with a polite and empathetic opening.
+    - Acknowledge the candidate's effort in applying for the role.
+    - Highlight their strengths, if applicable.
+    - Suggest practical resources (e.g., courses, books, online materials) tailored to the skills they are lacking.
+      Provide links to relevant online courses and list them like 1., 2. and 3. on seperate lines.
+    - End on an encouraging note, wishing them success in their career.
+
+    Output the letters in a structured format:
+    - **Candidate Name**: [Write the bespoke apology letter here.]
+
+    Generate the bespoke apologies now.
+    """
+
+    # Call OpenAI's API to generate the response
     client = OpenAI(api_key=api_key)
     completion = client.chat.completions.create(
-    model=model,
-    messages=[
-        {"role": "system", "content": "You are a helpful recruiting assistant. We have a list of candidates for a job, but unfortunately none of them made it to the first round of interviews."}, # <-- This is the system message that provides context to the model
-        {"role": "user", "content": f"""Hello! Based on the following candidates: {applicants}, could you make a bespoke aplogy letter to each of them and explain that their skills were not a 
-        prefect match with the required skills here:{required_skills}. For each of the applicants, please also provide them with some resources to improve the skills in which they are lacking so they have better chances in the next round of recruiting """}  # <-- This is the user message for which the model will generate a response
-    ]
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a helpful and empathetic recruiting assistant. "
+                    "Your task is to create polite, constructive, and encouraging apology letters "
+                    "for candidates who did not proceed to the first round of interviews."
+                )
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        temperature=0.7,
+        max_tokens=1000
     )
 
     markdown_output = completion.choices[0].message.content
     html_output = markdown.markdown(markdown_output)  # Convert markdown to HTML
 
     return html_output
+
 
 
 ######################################################################################

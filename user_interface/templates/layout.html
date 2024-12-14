@@ -19,7 +19,7 @@
   {% block styles %}
   {% endblock %}
   
-  <title>JobMatcher.ai {% block title %}{% endblock %}</title>
+  <title>Skillmatch.ai {% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <div class="logo-container">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/NovaSBE_Logo.svg/2560px-NovaSBE_Logo.svg.png"
               alt="Nova Sbe Logo" class="logo">
-          <h1>NOVA SBE JobMatcher.ai</h1>
+          <h1>NOVA SBE Skillmatch.ai</h1>
         </div>
       </a>
       <div class="logout">
@@ -40,7 +40,10 @@
     </div>
   </header>
   <nav class="navigation">
-    <a href="{{ url_for('recruitment.ext_recruit') }}" class="nav-button">
+    {% set current_path = request.path %}
+
+    <a href="{{ url_for('recruitment.ext_recruit') }}" 
+       class="nav-button {% if current_path.startswith('/ext_recruit') %}active{% endif %}">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
         viewBox="0 0 16 16">
         <path
@@ -48,7 +51,20 @@
       </svg> External Rectruiting
     </a>
 
-    <a href="/bespoke_apology" class="nav-button">
+    <a href="/tailored_interviews"
+    class="nav-button {% if current_path.startswith('/tailored_interviews') %}active{% endif %}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history"
+      viewBox="0 0 16 16">
+        <path
+          d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z" />
+        <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z" />
+        <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5
+        <path d=" M7 9V3.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V9h-2z" />
+    </svg> Tailored Interview Questions
+   </a>
+
+    <a href="/bespoke_apology" 
+       class="nav-button {% if current_path.startswith('/bespoke_apology') %}active{% endif %}">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
         viewBox="0 0 16 16">
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -57,22 +73,14 @@
       </svg> Bespoke Apologies
     </a>
 
-    <a href="/tailored_interviews" class="nav-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history"
-        viewBox="0 0 16 16">
-        <path
-          d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z" />
-        <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z" />
-        <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5
-        <path d=" M7 9V3.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V9h-2z" />
-      </svg> Tailored Interview Questions
-    </a>
-    <a href="{{ url_for('roles.roles') }}" class="nav-button">
+    <a href="{{ url_for('roles.roles') }}" 
+       class="nav-button {% if current_path.startswith('/roles') %}active{% endif %}">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
         <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
       </svg>
       Similar Roles
-    </a>    
+    </a>
+
   </nav>
 
 
@@ -83,7 +91,7 @@
   </main>
  
   <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: left;">
-    <p id="easter-egg-footer">&copy; 2024 NOVA SBE JobMatcher.ai</p>
+    <p id="easter-egg-footer">&copy; 2024 NOVA SBE Skillmatch.ai</p>
   </footer>
 
   <!-- Marked and Highlight.js scripts -->

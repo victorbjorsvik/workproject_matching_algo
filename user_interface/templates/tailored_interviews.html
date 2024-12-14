@@ -18,7 +18,6 @@ Tailored Questions
 <!-- If winners exist, show the table next -->
 {% if winners %}
 <div class="winners-table-container">
-    <h3>Winners</h3>
     <table>
         <thead>
             <tr>
@@ -40,25 +39,13 @@ Tailored Questions
         </tbody>
     </table>
 </div>
-{% else %}
-<p>No analysis data available.</p>
 {% endif %}
-
-
 
 <!-- Loading Spinner Overlay -->
 <div id="loading-overlay">
     <div class="spinner"></div>
     <p>Making Tailored Interview Questions, please wait...</p>
 </div>
-
-{% if not winners and required_skills %}
-<!-- If no winners, but required skills exist, still show them at the top -->
-<h3>Required Skills:</h3>
-<div class="skills-box">
-    {{ required_skills[0][0] }}
-</div>
-{% endif %}
 
 <!-- Side-by-side containers for Interview Questions and Coding Exercise -->
 <div class="content-row">
@@ -68,11 +55,9 @@ Tailored Questions
             <div class="questions-content">
                 {{ response | safe }}
             </div>
-        {% else %}
-            <p>Run Analysis to get Interview Questions.</p>
         {% endif %}
+
         <!-- Form for getting tailored questions -->
-        
         <form method="post" action="{{ url_for('tailored_interviews') }}" id="analysis-form" class="analysis-form">
             {% if not response %}
             <div class="form-group">
@@ -124,7 +109,7 @@ Tailored Questions
         margin-bottom: 20px;
     }
 
-    /* Table styling (already present in your code) */
+    /* Table styling */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -239,6 +224,7 @@ Tailored Questions
     div {
         margin-bottom: 20px;
     }
+    
 </style>
 {% endblock %}
 

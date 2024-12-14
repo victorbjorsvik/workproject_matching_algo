@@ -12,7 +12,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 import tenacity
 
-from helpers import apology_login, apology_openai, login_required, get_db
+from helpers import apology_login, apology_openai, login_required, get_db, usd
 import main
 
 # Import blueprints for more extensie routes
@@ -21,6 +21,9 @@ from roles import roles_bp
 
 # Configure application
 app = Flask(__name__)
+
+# Custom filter
+app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False

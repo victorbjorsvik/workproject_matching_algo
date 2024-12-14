@@ -79,7 +79,11 @@ Suggested Roles
                 <thead>
                     <tr>
                         {% for column in resume_based_col %}
-                            <th>{{ column.replace('_', ' ').title() }}</th>
+                            {% if column == "annual_wage_variation" %}
+                                <th>Expected Salary Change</th>
+                            {% else %}
+                                <th>{{ column.replace('_', ' ').title() }}</th>
+                            {% endif %}
                         {% endfor %}
                     </tr>
                 </thead>
@@ -87,13 +91,15 @@ Suggested Roles
                     {% for row in resume_based %}
                         <tr>
                             {% for column in resume_based_col %}
-                                <td>
-                                    {% if column == "missing_skills" %}
-                                    {{ row[column] | join(', ') }}
+                                {% if column == "annual_wage_variation" %}
+                                    <td class="{% if row[column] > 0 %}positive{% else %}negative{% endif %}">
+                                        {{ row[column] | usd }}
+                                    </td>
+                                {% elif column == "missing_skills" %}
+                                    <td>{{ row[column] | join(', ') }}</td>
                                 {% else %}
-                                    {{ row[column] }}
+                                    <td>{{ row[column] }}</td>
                                 {% endif %}
-                                </td>
                             {% endfor %}
                         </tr>
                     {% endfor %}
@@ -104,8 +110,12 @@ Suggested Roles
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        {% for column in role_based_col %}
-                            <th>{{ column.replace('_', ' ').title() }}</th>
+                        {% for column in resume_based_col %}
+                            {% if column == "annual_wage_variation" %}
+                                <th>Expected Salary Change</th>
+                            {% else %}
+                                <th>{{ column.replace('_', ' ').title() }}</th>
+                            {% endif %}
                         {% endfor %}
                     </tr>
                 </thead>
@@ -113,20 +123,20 @@ Suggested Roles
                     {% for row in role_based %}
                         <tr>
                             {% for column in role_based_col %}
-                                <td>
-                                    {% if column == "missing_skills" %}
-                                        {{ row[column] | join(', ') }}
-                                    {% else %}
-                                        {{ row[column] }}
-                                    {% endif %}
-                                </td>
+                                {% if column == "annual_wage_variation" %}
+                                    <td class="{% if row[column] > 0 %}positive{% else %}negative{% endif %}">
+                                        {{ row[column] | usd }}
+                                    </td>
+                                {% elif column == "missing_skills" %}
+                                    <td>{{ row[column] | join(', ') }}</td>
+                                {% else %}
+                                    <td>{{ row[column] }}</td>
+                                {% endif %}
                             {% endfor %}
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        {% else %}
-            <p>No analysis data available.</p>
         {% endif %}
     </div>
 </div> <!-- End of content-wrapper -->
@@ -312,22 +322,60 @@ Suggested Roles
 
     /* Table Styles */
     table {
+        table-layout: fixed;
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+    }
+
+    th {
+        background-color: #9aa19a;
+        color: white;
     }
 
     th, td {
         text-align: left;
         padding: 8px;
         border: 1px solid #ddd;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     tr:nth-child(even){background-color: #f9f9f9;}
 
-    th {
-        background-color: #9aa19a;
-        color: white;
+    /* Example column widths using nth-child selectors */
+    table th:nth-child(1),
+    table td:nth-child(1) {
+        width: 25px;
+    }
+
+    table th:nth-child(2),
+    table td:nth-child(2) {
+        width: 175px;
+    }
+
+    table th:nth-child(3),
+    table td:nth-child(3) {
+        width: 350px;
+    }
+
+    table th:nth-child(4),
+    table td:nth-child(4) {
+        width: 100px;
+    }
+
+    table th:nth-child(5),
+    table td:nth-child(5) {
+        width: 125px;
+    }
+
+    .positive {
+        color: green;
+    }
+
+    .negative {
+        color: red;
     }
 
     /* Responsive design for smaller screens */

@@ -5,44 +5,55 @@ Home
 {% endblock %}
 
 {% block main %}
-<p class="hello-user">👋 Hello! Welcome to our AI job recruiter</p>
-<div class="image-container">
-    <img src="{{ url_for('static', filename='images/job_stealer.jpg') }}" alt="Job Stealer" />
+<div class="rectangle-background">
+    <div class="title">SkillMatch.aI</div>
+    <div class="subtitle">Building the Future of Workforce Development</div>
 </div>
 {% endblock %}
 
 {% block styles %}
 <style>
-    /* Center the greeting text */
-    .hello-user {
-        text-align: center;
-        font-size: 1.5em;
-        margin-top: 20px;
-        padding: 0 10px;
-    }
-
-    /* Center and scale the image */
-    .image-container {
+    /* Background Rectangle */
+    .rectangle-background {
+        position: relative;
+        width: 90%; /* Responsive width */
+        max-width: 2500px; /* Matches the original design's dimensions */
+        height: 332px; /* Matches the original design's height */
+        margin: 130px auto; /* Center the rectangle */
+        background: #120A59;
+        border-radius: 30px;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        text-align: center;
+    }
+
+    /* Title Styling */
+    .title {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 110px;
+        line-height: 133px;
+        text-transform: capitalize;
+        color: #FFF5E8;
+        max-width: 769px;
+        margin: 0 auto;
+    }
+
+    /* Subtitle Styling */
+    .subtitle {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+        text-transform: capitalize;
+        color: #FFF5E8;
+        max-width: 720px;
         margin-top: 20px;
     }
 
-    .image-container img {
-        width: 90%;
-        max-width: 600px; /* Adjust as needed */
-        height: auto;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-        .hello-user {
-            font-size: 1.2em;
-        }
-
-        .image-container img {
-            max-width: 100%;
-        }
-    }
 </style>
 {% endblock %}

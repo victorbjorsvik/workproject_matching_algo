@@ -6,42 +6,40 @@ Bespoke Apologies
 
 {% block main %}
 <p class="hello-user">Bespoke Apologies</p>
-    {% if losers %}
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                    <th>Rank</th>
-                    <th>Skills</th>
-                </tr>
-            </thead>
-            {% for loser in losers %}
-            <tr>
-                <td>{{ loser[1] }}</td>
-                <td>{{ loser[5] | round(5, 'floor') }}</td>
-                <td>{{ loser[6] }}</td>
-                <td>
-                   {{ loser[3] }}
-                </td>
-            </tr>
-            {% endfor %}
-        </ul>
-    </div>
-    {% else %}
-    <p>No analysis data available.</p>
-    {% endif %}
 
- 
-<form method="post" action="{{ url_for('bespoke_apology') }}" id="analysis-form" class="analysis-form">
-    <div class="form-group">
-        <label for="password"></label>
-        <input id="password" name="password" placeholder="OpenAI API Key" type="password">
-    </div>
-    <input type="hidden" name="action" value="run_analysis">
-    <button type="submit" class="action-button run-button" {% if not losers or not required_skills %}disabled{% endif %}>Get Bepsoke Apologies</button>
-</form>
+<!-- If losers exist, show required skills at the top -->
+{% if losers and required_skills %}
+<h3>Required Skills:</h3>
+<div class="skills-box">
+    {{ required_skills[0][0] }}
+</div>
+{% endif %}
+
+<!-- If losers exist, show the table next -->
+{% if losers %}
+<div class="losers-table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Rank</th>
+                <th>Skills</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for loser in losers %}
+        <tr>
+            <td>{{ loser[1] }}</td>
+            <td>{{ loser[5] | round(5, 'floor') }}</td>
+            <td>{{ loser[6] }}</td>
+            <td>{{ loser[3] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
 
 <!-- Loading Spinner Overlay -->
 <div id="loading-overlay">
@@ -49,29 +47,109 @@ Bespoke Apologies
     <p>Making bespoke apologies, please wait...</p>
 </div>
 
-    {% if required_skills %}
-    <h3>
-        Required Skills:
-    </h3>
-    <div>
-        {{ required_skills[0][0] }}
-    </div>
-    {% endif %}
+<!-- Container for Bespoke Apologies -->
+<div class="content-row">
+    <div class="content-box">
+        <h3>Bespoke Apologies</h3>
+        {% if response %}
+            <div class="questions-content">
+                {{ response | safe }}
+            </div>
+        {% endif %}
 
-
-    {% if response %}
-    <div>
-        {{ response | safe }}
+        <!-- Form for getting Bespoke Apologies -->
+        <form method="post" action="{{ url_for('bespoke_apology') }}" id="analysis-form" class="analysis-form">
+            {% if not response %}
+            <div class="form-group">
+                <label for="password"></label>
+                <input id="password" name="password" placeholder="OpenAI API Key" type="password">
+            </div>
+            <input type="hidden" name="action" value="run_analysis">
+            <button type="submit" class="action-button run-button" {% if not losers or not required_skills %}disabled{% endif %}>Get Bepsoke Apologies</button>
+            {% endif %}
+        </form>
     </div>
-    {% else %}
-    <p>Run Analysis</p>
-    {% endif %}
+</div>
+
+    
 
 
 {% endblock %}
 
 {% block styles %}
 <style>
+    /* Overall layout improvements */
+    .hello-user {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    /* Skills box styling */
+    .skills-box {
+        background: #e3e3e5; 
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Loisers table container */
+    .losers-table-container {
+        margin-bottom: 20px;
+    }
+
+    /* Table Styling */
+    table {
+        width: 100%; /* Full width */
+        border-collapse: collapse; /* Remove space between cells */
+        margin: 20px 0; /* Add some space around the table */
+        font-size: 16px; /* Font size for better readability */
+        text-align: left; /* Left-align text */
+    }
+
+    table th, table td {
+        border: 1px solid #ddd; /* Add borders */
+        padding: 12px; /* Add padding inside cells */
+    }
+
+    table th {
+        background-color: #f04343; /* Header background color */
+        color: white; /* Header text color */
+        font-weight: bold; /* Bold header text */
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9; /* Light grey for even rows */
+    }
+
+    table tr:hover {
+        background-color: #f1f1f1; /* Highlight row on hover */
+    }
+
+    table td {
+        word-wrap: break-word; /* Wrap long content */
+        max-width: 300px; /* Restrict column width */
+    }
+
+    /* Two-column layout for Interview Questions and Coding Exercise */
+    .content-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .content-box {
+        flex: 1;
+        min-width: 300px;
+        background: #e3e3e5; /* Apple grey background */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
     /* Loading Overlay Styles */
     #loading-overlay {
         display: none; /* Hidden by default */
@@ -130,39 +208,6 @@ Bespoke Apologies
 
     .run-button:hover {
         background-color: darkblue;
-    }
-
-    /* Table Styling */
-    table {
-        width: 100%; /* Full width */
-        border-collapse: collapse; /* Remove space between cells */
-        margin: 20px 0; /* Add some space around the table */
-        font-size: 16px; /* Font size for better readability */
-        text-align: left; /* Left-align text */
-    }
-
-    table th, table td {
-        border: 1px solid #ddd; /* Add borders */
-        padding: 12px; /* Add padding inside cells */
-    }
-
-    table th {
-        background-color: #f04343; /* Header background color */
-        color: white; /* Header text color */
-        font-weight: bold; /* Bold header text */
-    }
-
-    table tr:nth-child(even) {
-        background-color: #f9f9f9; /* Light grey for even rows */
-    }
-
-    table tr:hover {
-        background-color: #f1f1f1; /* Highlight row on hover */
-    }
-
-    table td {
-        word-wrap: break-word; /* Wrap long content */
-        max-width: 300px; /* Restrict column width */
     }
 
     /* Add some spacing to the outer div for better presentation */

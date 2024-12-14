@@ -15,10 +15,6 @@ roles_bp = Blueprint('roles', __name__, template_folder='../templates')
 @login_required
 def roles():
     user_id = session.get('user_id')
-    if not user_id:
-        flash('User not identified')
-        return redirect(url_for('auth.login'))  # Redirect to login if user_id is missing
-
     upload_folder = current_app.config['UPLOAD_FOLDER_ROLES']
     filename = f"user_{user_id}_resume.pdf"
     upload_path = os.path.join(upload_folder, filename)
