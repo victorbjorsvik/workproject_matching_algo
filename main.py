@@ -21,11 +21,11 @@ logging.getLogger('pypdf').setLevel(logging.ERROR)
 warnings.filterwarnings("ignore")
 
 # Get the absolute path of the root directory
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Paths to your pattern files
-skills_patterns_path = os.path.join(ROOT_DIR, 'workproject_matching_algo','patterns', 'skills.jsonl')
-skills_patterns_path_2 = os.path.join(ROOT_DIR, 'workproject_matching_algo','patterns', 'skills_branch.jsonl')
+skills_patterns_path = os.path.join(ROOT_DIR, 'patterns', 'skills.jsonl')
+skills_patterns_path_2 = os.path.join(ROOT_DIR, 'patterns', 'skills_branch.jsonl')
 
 
 def get_resumes(directory):
@@ -478,7 +478,7 @@ def main(open_ai=False):
         print(df_resumes[["name", "Skills"]])
 
     # Create DataFrame for jobs
-    description_file_path = os.path.join(ROOT_DIR, 'workproject_matching_algo', 'job_descriptions', 'job2.txt')
+    description_file_path = os.path.join(ROOT_DIR,  'job_descriptions', 'job2.txt')
     with open(description_file_path, 'r') as file:
         job_description = file.read()
     df_jobs = pd.DataFrame([job_description], columns=["raw"])

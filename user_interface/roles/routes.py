@@ -19,8 +19,12 @@ def roles():
 
     if os.path.exists(upload_path):
         applicant = filename  # This will be used to display or link to the resume
+        applicant_uploaded=True
+        print(applicant_uploaded)
+
     else:
         applicant = None  # No resume uploaded yet
+        applicant_uploaded= False
 
     db = get_db()
     cursor = db.cursor()
@@ -34,7 +38,8 @@ def roles():
     return render_template(
         "roles.html",
         applicant=applicant,
-        roles=roles
+        roles=roles,
+        applicant_uploaded=applicant_uploaded
     )
 
 
@@ -100,7 +105,7 @@ def run_analysis():
         resume_based_col=resume_based_col,
         role_based=role_based,
         role_based_col=role_based_col,
-        analysis_done=True
+        applicant_uploaded=True
     )
 
 @roles_bp.route('/roles/clear', methods=['POST'])

@@ -1,0 +1,32 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment and virtual environment folders
+*.env
+*.venv
+*.conda
+*.ipynb_checkpoints
+*.DS_Store
+
+# Ignore system-specific files
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.log
+
+
+# Ignore specific directories not needed in the container
+workproject_matching_algo/resumes/
+workproject_matching_algo/resumes_2/
+workproject_matching_algo/pictures_from_app/
+workproject_matching_algo/glove.6B/
+workproject_matching_algo/job_descriptions/
+workproject_matching_algo/flask_session/
+
+# Ignore Dockerfile itself
+Dockerfile
+
+
