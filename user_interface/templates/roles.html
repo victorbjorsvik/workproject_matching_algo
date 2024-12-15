@@ -64,7 +64,7 @@ Suggested Roles
 
         <!-- Clear All Results Button -->
         <form method="post" action="/roles/clear" onsubmit="return confirm('Are you sure you want to delete all uploaded resumes and clear results?');">
-            <button type="submit" class="action-button clear-button" {% if not analysis_done %}disabled{% endif %}>
+            <button type="submit" class="action-button clear-button" {% if not applicant_uploaded %}disabled{% endif %}>
                 Clear All Results
             </button>
         </form>

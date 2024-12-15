@@ -12,12 +12,12 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 import tenacity
 
-from helpers import apology_login, apology_openai, login_required, get_db, usd
+from .helpers import apology_login, apology_openai, login_required, get_db, usd
 import main
 
 # Import blueprints for more extensie routes
-from recruitment import recruitment_bp
-from roles import roles_bp
+from .recruitment import recruitment_bp
+from .roles import roles_bp
 
 # Configure application
 app = Flask(__name__)
@@ -168,7 +168,7 @@ def bespoke_apology():
             MODEL = "gpt-4o-mini"
 
             if session.get("user_id") == 1:
-                api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+                api_key = os.environ.get("OPENAI_API_KEY")
             else:
                 api_key = request.form.get("password")
             try:
@@ -204,7 +204,7 @@ def tailored_interviews():
             MODEL = "gpt-4o-mini"
 
             if session.get("user_id") == 1:
-                api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+                api_key = os.environ.get("OPENAI_API_KEY")
             else:
                 api_key = request.form.get("password")
             try:
@@ -233,7 +233,7 @@ def coding_exercise():
     MODEL = "gpt-4o-mini"
 
     if session.get("user_id") == 1:
-        api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+        api_key = os.environ.get("OPENAI_API_KEY")
     else:
         api_key = request.form.get("password")
     try:
@@ -252,4 +252,4 @@ def download_file(name):
     return send_from_directory(app.config['UPLOAD_FOLDER'], name)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

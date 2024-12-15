@@ -2,7 +2,7 @@ from flask import redirect, render_template, session, g
 from functools import wraps
 import sqlite3
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'pdf'}
 
 def allowed_file(filename):
     return '.' in filename and \
