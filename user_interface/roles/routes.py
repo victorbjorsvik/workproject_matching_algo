@@ -1,8 +1,6 @@
 import os
 import sys
-# Add the parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, current_app
 from helpers import allowed_file, get_db, login_required
 from werkzeug.utils import secure_filename
@@ -14,7 +12,7 @@ roles_bp = Blueprint('roles', __name__, template_folder='../templates')
 @roles_bp.route('/roles', methods=['GET'])
 @login_required
 def roles():
-    user_id = session.get('user_id')
+    user_id = session.get('user_id')    
     upload_folder = current_app.config['UPLOAD_FOLDER_ROLES']
     filename = f"user_{user_id}_resume.pdf"
     upload_path = os.path.join(upload_folder, filename)

@@ -1,8 +1,7 @@
 import os
 import sys
-# Add the parent directory to sys.path
+import shutil
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, current_app
 from helpers import allowed_file, get_db, login_required
 from werkzeug.utils import secure_filename
@@ -15,8 +14,10 @@ recruitment_bp = Blueprint('recruitment', __name__, template_folder='../template
 @recruitment_bp.route('/ext_recruit', methods=['GET'])
 @login_required
 def ext_recruit():
-    upload_folder = current_app.config['UPLOAD_FOLDER_EXT']
-    applicants = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
+    user_id = str(session.get("user_id"))
+    upload_folder = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], user_id)
+    os.makedirs(upload_folder, exist_ok=True)
+    applicants = [file for file in os.listdir(upload_folder) if file.endswith("pdf")]
     job_description = session.get('job_description', '')
 
     # Initialize analysis_data as empty
@@ -57,6 +58,9 @@ def ext_recruit():
 @recruitment_bp.route('/ext_recruit/upload_files', methods=['POST'])
 @login_required
 def upload_files():
+    user_id = str(session.get("user_id"))
+    user_folder = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], user_id)
+    os.makedirs(user_folder, exist_ok=True)
     files = request.files.getlist('files')
     if not files or files[0].filename == '':
         flash('No files selected')
@@ -65,7 +69,7 @@ def upload_files():
     for file in files:
         if allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            upload_path = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], filename)
+            upload_path = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], user_id, filename)
             file.save(upload_path)
         else:
             flash(f'File type not allowed: {file.filename}')
@@ -89,9 +93,10 @@ def submit_job_description():
 @recruitment_bp.route('/ext_recruit/run_analysis', methods=['POST'])
 @login_required
 def run_analysis():
+    user_id = str(session.get("user_id"))
     job_description = session.get('job_description')
-    upload_folder = current_app.config['UPLOAD_FOLDER_EXT']
-    applicant_files = [file for file in os.listdir(upload_folder) if file.endswith('.pdf')]
+    upload_folder = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], user_id)
+    applicant_files = [file for file in os.listdir(upload_folder) if file.endswith("pdf")]
 
     if not applicant_files:
         flash('No applicants to analyze')
@@ -196,7 +201,8 @@ def run_analysis():
 @recruitment_bp.route('/ext_recruit/clear', methods=['POST'])
 @login_required
 def clear_results():
-    upload_folder = current_app.config['UPLOAD_FOLDER_EXT']
+    user_id = str(session.get("user_id"))
+    upload_folder = os.path.join(current_app.config['UPLOAD_FOLDER_EXT'], user_id)
     db = get_db()
     cursor = db.cursor()
     try:

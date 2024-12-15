@@ -168,7 +168,7 @@ def bespoke_apology():
             MODEL = "gpt-4o-mini"
 
             if session.get("user_id") == 1:
-                api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+                api_key = os.environ.get("OPENAI_API_KEY")
             else:
                 api_key = request.form.get("password")
             try:
@@ -204,7 +204,7 @@ def tailored_interviews():
             MODEL = "gpt-4o-mini"
 
             if session.get("user_id") == 1:
-                api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+                api_key = os.environ.get("OPENAI_API_KEY")
             else:
                 api_key = request.form.get("password")
             try:
@@ -233,7 +233,7 @@ def coding_exercise():
     MODEL = "gpt-4o-mini"
 
     if session.get("user_id") == 1:
-        api_key = os.getenv("OPENAI_API_KEY", "<your OpenAI API key if not set as an env var>")
+        api_key = os.environ.get("OPENAI_API_KEY")
     else:
         api_key = request.form.get("password")
     try:
