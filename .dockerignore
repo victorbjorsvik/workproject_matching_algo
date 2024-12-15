@@ -9,6 +9,7 @@ __pycache__/
 *.conda
 *.ipynb_checkpoints
 *.DS_Store
+flask_session/
 
 # Ignore system-specific files
 Thumbs.db
