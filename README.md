@@ -45,6 +45,16 @@ docker run -5000:5000 -e OPENAI_API_KEY="<your openai api key>" victorbjorsvik/s
 
 These steps should sucsessfully host an instance of the webapp which you can interact with through your browser.
 
+### **Technical Overview**  
+- **Backend:** Flask for handling routes and application logic.  
+- **Frontend:** Jinja2 templating for dynamic web content
+- **ML Models:**  
+  - `SentenceTransformer` (all-mpnet-base-v2) for embeddings and cosine similarity.  
+  - spaCy for skill extraction with custom EntityRuler patterns.  
+- **Database:** SQLite for managing job postings, applicants, and analysis results.  
+- **APIs:** OpenAI API for generating tailored interview questions, coding exercises, and apology letters.  
+- **Containerization:** Docker for seamless deployment.
+
 ## Overview of the application
 ### File tree: 
 ![img](pictures/file_tree.png)
@@ -57,11 +67,11 @@ These steps should sucsessfully host an instance of the webapp which you can int
 ### Tailored Questions (before analysis): 
 ![img](pictures/quest_before.jpg)
 ### Tailored Questions (after analysis):
-![img](pictures/quest_after.jpg)
+ ![img](pictures/quest_after.jpg)
 ### Bespoke Apologies (before analysis):
-![img](pictures/bespoke_before.png)
+ ![img](pictures/bespoke_before.png)
 ### Bespoke Apologies (after analysis): 
-![img](pictures/bespoke_after.jpg)
+![img](pictures/bespoke_after.png)
 ### Similar Roles (before analysis):
 ![img](pictures/roles_before.jpg)
 ### Similar Roles (after analyis):
