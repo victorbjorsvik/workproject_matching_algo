@@ -47,24 +47,25 @@ These steps should sucsessfully host an instance of the webapp which you can int
 
 ## Overview of the application
 ### File tree: 
-![img](pictures\file_tree.png)
-### Home page:![img](pictures\index.jpg)
+![img](pictures/file_tree.png)
+### Home page:
+![img](pictures/index.jpg)
 ### External Recruiting (before analysis):
- ![img](pictures\ext_before.jpg)
+ ![img](pictures/ext_before.jpg)
 ### External Recruiting (after analysis): 
-![img](pictures\ext_after.jpg)
+![img](pictures/ext_after.jpg)
 ### Tailored Questions (before analysis): 
-![img](pictures\quest_before.jpg)
+![img](pictures/quest_before.jpg)
 ### Tailored Questions (after analysis):
- ![img](pictures\quest_after.jpg)
+ ![img](pictures/quest_after.jpg)
 ### Bespoke Apologies (before analysis):
- ![img](pictures\bespoke_before.jpg)
+ ![img](pictures/bespoke_before.jpg)
 ### Bespoke Apologies (after analysis): 
-![img](pictures\quest_after.png)
+![img](pictures/bespoke_after.png)
 ### Similar Roles (before analysis):
-![img](pictures\roles_before.jpg)
+![img](pictures/roles_before.jpg)
 ### Similar Roles (after analyis):
-![img](pictures\roles_after.jpg)
+![img](pictures/roles_after.jpg)
 
 
 
