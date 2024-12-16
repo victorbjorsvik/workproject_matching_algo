@@ -57,11 +57,11 @@ These steps should sucsessfully host an instance of the webapp which you can int
 ### Tailored Questions (before analysis): 
 ![img](pictures/quest_before.jpg)
 ### Tailored Questions (after analysis):
- ![img](pictures/quest_after.jpg)
+![img](pictures/quest_after.jpg)
 ### Bespoke Apologies (before analysis):
- ![img](pictures/bespoke_before.jpg)
+![img](pictures/bespoke_before.png)
 ### Bespoke Apologies (after analysis): 
-![img](pictures/bespoke_after.png)
+![img](pictures/bespoke_after.jpg)
 ### Similar Roles (before analysis):
 ![img](pictures/roles_before.jpg)
 ### Similar Roles (after analyis):
