@@ -2,7 +2,9 @@
 This repo cotains the source code for **Skillmatch.ai**, a web application that operationalizes the skills-first approach in the labour market. It integrates functionalities such as resume screening, tailored interview questions, bespoke apology letters, and role similarity analysis, offering a comprehensive solution for skills-based hiring and career development.  Built with a scalable architecture, the application addresses recruitment inefficiencies and skill gaps. Although limitations such as scalability constraints, reliance on external APIs, and the need for real-world data remain, future iterations aim to refine infrastructure, enhance usability, and expand applicability, advancing the adoption of skills-first practices across industries.
 
 ## Instructions:
+There are 2 options for running the web application locally on you computer. You could 1) fork or clone the Github repo, activate the conda environment and run it directly with flask (this approach might have some dependency issues depending on your OS) or 2) (recommended) download the latest docker image of the application from dockerhub and run the docker container.
 
+### 1. Method 1: Clone repo and run with flask
 ### Setting up the conda venv
 
 Create the environment with the config-file
@@ -23,6 +25,7 @@ conda python -m ipykernel install --user --name workproject --display-name "work
 ```bash
 flask run
 ```
+### 2. Method 2: Run the Docker container
 ### Download and run the docker image
 
 1. If not already installed, install *Docker* for your OS
