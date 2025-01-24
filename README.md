@@ -39,11 +39,11 @@ docker pull victorbjorsvik/skillmatch_ai:latest
 ```
 1. Run the container (might need sudo first)
 ```bash
-docker run - 5000:5000 victorbjorsvik/skillmatch_ai:latest
+docker run -p 5000:5000 victorbjorsvik/skillmatch_ai:latest
 ```
 or if you want to add the environment variable for using the admin user:
 ```bash
-docker run -5000:5000 -e OPENAI_API_KEY="<your openai api key>" victorbjorsvik/skillmatch_ai:latest
+docker run -p 5000:5000 -e OPENAI_API_KEY="<your openai api key>" victorbjorsvik/skillmatch_ai:latest
 ```
 
 These steps should sucsessfully host an instance of the webapp which you can interact with through your browser.
